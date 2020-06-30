@@ -201,6 +201,8 @@ namespace EXO_MES_Module
         }
         private void ExoSalesLine_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'mESDataSet.PROD_DRAWING' table. You can move, or remove it, as needed.
+            this.pROD_DRAWINGTableAdapter.Fill(this.mESDataSet.PROD_DRAWING);
             try
             {
                 this.pROD_SALESHEADERTableAdapter.Fill(this.mESDataSet.PROD_SALESHEADER, ((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int)))));
@@ -400,23 +402,13 @@ namespace EXO_MES_Module
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ListBoxAll.SelectedItem != null)
-            {
-                InitOperations(ListBoxAll.SelectedItem.ToString(), 100);
-                listBoxSelected.Items.Add(ListBoxAll.SelectedItem);
-                ListBoxAll.Items.Remove(ListBoxAll.SelectedItem);
-            }
+           
             
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (ListBoxAll.SelectedItem != null)
-            {
-                InitOperations(listBoxSelected.SelectedItem.ToString(), 200);
-                ListBoxAll.Items.Add(listBoxSelected.SelectedItem);
-                listBoxSelected.Items.Remove(listBoxSelected.SelectedItem);
-            }
+           
            
             
         }
@@ -524,21 +516,46 @@ namespace EXO_MES_Module
             dbDataSet = db.ConnectDataSet(StrSql, Strtable);
             datatable2 = dbDataSet.Tables[Strtable];
 
-            
-            ListBoxAll.Items.Clear();
-            listBoxSelected.Items.Clear();
 
+            DivisionBox.Items.Clear();
+            int count = 0;
             foreach (DataRow row in datatable2.Rows)
             {
 
                 if (Convert.ToBoolean(row["Enable"].ToString()))
                 {
-                    listBoxSelected.Items.Add(row["OPCode"].ToString());
+                    DivisionBox.Items.Add(row["OPCode"].ToString(), CheckState.Checked);
                 }
                 else
                 {
-                   ListBoxAll.Items.Add(row["OPCode"].ToString());
+                    DivisionBox.Items.Add(row["OPCode"].ToString(), CheckState.Unchecked);
+                    
                 }
+
+                count++;
+
+            }
+        }
+
+
+        public void DataloadtoDrawingList(string StrSql, string Strtable)
+        {
+
+            db = new dbConnectionMyob();
+            dbDataSet = db.ConnectDataSet(StrSql, Strtable);
+            datatable2 = dbDataSet.Tables[Strtable];
+
+
+            DivisionBox.Items.Clear();
+            int count = 0;
+            foreach (DataRow row in datatable2.Rows)
+            {
+
+             
+                    DivisionBox.Items.Add(row["Drawing"].ToString());
+            
+              
+                count++;
 
             }
         }
@@ -796,6 +813,36 @@ namespace EXO_MES_Module
         {
 
         }
+
+        private void DivisionBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                this.pROD_DRAWINGTableAdapter.FillBy(this.mESDataSet.PROD_DRAWING);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
         private void SheduleJob(string UID, int UpdateType)
         {

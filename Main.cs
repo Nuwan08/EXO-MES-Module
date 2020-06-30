@@ -928,7 +928,7 @@ namespace EXO_MES_Module
                     jobcard.Text = "JOB CARD " + JobIDtxt.Text;
                     jobcard.Show();
                 }
-                else
+                else if (e.ColumnIndex == 8)
                 {
                     ExoJobOrder salesline = new ExoJobOrder(Int32.Parse(JobIDtxt.Text));
                     salesline.Show();
@@ -965,6 +965,13 @@ namespace EXO_MES_Module
                 bol_SpliterFlag = true;
 
             }
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.pRODJOBCARDBindingSource.EndEdit();
+            this.pROD_JOBCARDTableAdapter.Update(this.mESDataSet.PROD_JOBCARD);
         }
 
         private void cumulativeSTFToolStripMenuItem_Click(object sender, EventArgs e)

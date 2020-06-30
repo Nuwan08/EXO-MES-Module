@@ -90,14 +90,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Overview = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.operationMasterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Genaral = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.opNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hourlyCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estimatedHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operationMasterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Genaral = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operationMasterBindingSource)).BeginInit();
@@ -647,36 +647,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(618, 350);
             this.dataGridView1.TabIndex = 1;
             // 
-            // opNameDataGridViewTextBoxColumn
-            // 
-            this.opNameDataGridViewTextBoxColumn.DataPropertyName = "OpName";
-            this.opNameDataGridViewTextBoxColumn.HeaderText = "OpName";
-            this.opNameDataGridViewTextBoxColumn.Name = "opNameDataGridViewTextBoxColumn";
-            // 
-            // opCodeDataGridViewTextBoxColumn
-            // 
-            this.opCodeDataGridViewTextBoxColumn.DataPropertyName = "OpCode";
-            this.opCodeDataGridViewTextBoxColumn.HeaderText = "OpCode";
-            this.opCodeDataGridViewTextBoxColumn.Name = "opCodeDataGridViewTextBoxColumn";
-            // 
-            // opTypeDataGridViewTextBoxColumn
-            // 
-            this.opTypeDataGridViewTextBoxColumn.DataPropertyName = "OpType";
-            this.opTypeDataGridViewTextBoxColumn.HeaderText = "OpType";
-            this.opTypeDataGridViewTextBoxColumn.Name = "opTypeDataGridViewTextBoxColumn";
-            // 
-            // hourlyCostDataGridViewTextBoxColumn
-            // 
-            this.hourlyCostDataGridViewTextBoxColumn.DataPropertyName = "HourlyCost";
-            this.hourlyCostDataGridViewTextBoxColumn.HeaderText = "HourlyCost";
-            this.hourlyCostDataGridViewTextBoxColumn.Name = "hourlyCostDataGridViewTextBoxColumn";
-            // 
-            // estimatedHoursDataGridViewTextBoxColumn
-            // 
-            this.estimatedHoursDataGridViewTextBoxColumn.DataPropertyName = "EstimatedHours";
-            this.estimatedHoursDataGridViewTextBoxColumn.HeaderText = "EstimatedHours";
-            this.estimatedHoursDataGridViewTextBoxColumn.Name = "estimatedHoursDataGridViewTextBoxColumn";
-            // 
             // operationMasterBindingSource1
             // 
             this.operationMasterBindingSource1.DataMember = "OperationMaster";
@@ -701,6 +671,38 @@
             this.textBox1.Size = new System.Drawing.Size(122, 20);
             this.textBox1.TabIndex = 0;
             // 
+            // opNameDataGridViewTextBoxColumn
+            // 
+            this.opNameDataGridViewTextBoxColumn.DataPropertyName = "OpName";
+            this.opNameDataGridViewTextBoxColumn.HeaderText = "Division";
+            this.opNameDataGridViewTextBoxColumn.Name = "opNameDataGridViewTextBoxColumn";
+            // 
+            // opCodeDataGridViewTextBoxColumn
+            // 
+            this.opCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.opCodeDataGridViewTextBoxColumn.DataPropertyName = "OpCode";
+            this.opCodeDataGridViewTextBoxColumn.HeaderText = "Division Code";
+            this.opCodeDataGridViewTextBoxColumn.Name = "opCodeDataGridViewTextBoxColumn";
+            this.opCodeDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // opTypeDataGridViewTextBoxColumn
+            // 
+            this.opTypeDataGridViewTextBoxColumn.DataPropertyName = "OpType";
+            this.opTypeDataGridViewTextBoxColumn.HeaderText = "OpType";
+            this.opTypeDataGridViewTextBoxColumn.Name = "opTypeDataGridViewTextBoxColumn";
+            // 
+            // hourlyCostDataGridViewTextBoxColumn
+            // 
+            this.hourlyCostDataGridViewTextBoxColumn.DataPropertyName = "HourlyCost";
+            this.hourlyCostDataGridViewTextBoxColumn.HeaderText = "HourlyCost";
+            this.hourlyCostDataGridViewTextBoxColumn.Name = "hourlyCostDataGridViewTextBoxColumn";
+            // 
+            // estimatedHoursDataGridViewTextBoxColumn
+            // 
+            this.estimatedHoursDataGridViewTextBoxColumn.DataPropertyName = "EstimatedHours";
+            this.estimatedHoursDataGridViewTextBoxColumn.HeaderText = "EstimatedHours";
+            this.estimatedHoursDataGridViewTextBoxColumn.Name = "estimatedHoursDataGridViewTextBoxColumn";
+            // 
             // OperationMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,7 +715,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "OperationMaster";
-            this.Text = "Operation Master ";
+            this.Text = "Production Divisions";
             this.Load += new System.EventHandler(this.OperationMaster_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -802,13 +804,13 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Overview;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage Genaral;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn opNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn opCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn opTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hourlyCostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estimatedHoursDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TabPage Genaral;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
