@@ -6128,6 +6128,14 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnSalesLineRef;
             
+            private global::System.Data.DataColumn columnInStage;
+            
+            private global::System.Data.DataColumn columnDrawing;
+            
+            private global::System.Data.DataColumn columnDivision;
+            
+            private global::System.Data.DataColumn columnProductionStartDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PROD_DashboardDataTable() {
@@ -6363,6 +6371,38 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn InStageColumn {
+                get {
+                    return this.columnInStage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DrawingColumn {
+                get {
+                    return this.columnDrawing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DivisionColumn {
+                get {
+                    return this.columnDivision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductionStartDateColumn {
+                get {
+                    return this.columnProductionStartDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6423,7 +6463,11 @@ namespace EXO_MES_Module {
                         System.DateTime Order_Date, 
                         System.DateTime Due_Date, 
                         int SoSeqNo, 
-                        int SalesLineRef) {
+                        int SalesLineRef, 
+                        string InStage, 
+                        string Drawing, 
+                        string Division, 
+                        System.DateTime ProductionStartDate) {
                 PROD_DashboardRow rowPROD_DashboardRow = ((PROD_DashboardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
@@ -6450,7 +6494,11 @@ namespace EXO_MES_Module {
                         Order_Date,
                         Due_Date,
                         SoSeqNo,
-                        SalesLineRef};
+                        SalesLineRef,
+                        InStage,
+                        Drawing,
+                        Division,
+                        ProductionStartDate};
                 rowPROD_DashboardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_DashboardRow);
                 return rowPROD_DashboardRow;
@@ -6498,6 +6546,10 @@ namespace EXO_MES_Module {
                 this.columnDue_Date = base.Columns["Due Date"];
                 this.columnSoSeqNo = base.Columns["SoSeqNo"];
                 this.columnSalesLineRef = base.Columns["SalesLineRef"];
+                this.columnInStage = base.Columns["InStage"];
+                this.columnDrawing = base.Columns["Drawing"];
+                this.columnDivision = base.Columns["Division"];
+                this.columnProductionStartDate = base.Columns["ProductionStartDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6553,6 +6605,14 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnSoSeqNo);
                 this.columnSalesLineRef = new global::System.Data.DataColumn("SalesLineRef", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalesLineRef);
+                this.columnInStage = new global::System.Data.DataColumn("InStage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInStage);
+                this.columnDrawing = new global::System.Data.DataColumn("Drawing", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDrawing);
+                this.columnDivision = new global::System.Data.DataColumn("Division", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDivision);
+                this.columnProductionStartDate = new global::System.Data.DataColumn("ProductionStartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductionStartDate);
                 this.columnSTOCKCODE.MaxLength = 23;
                 this.columnOPCode.MaxLength = 20;
                 this.columnAssignTo.MaxLength = 50;
@@ -6560,6 +6620,9 @@ namespace EXO_MES_Module {
                 this.columnNote.MaxLength = 2147483647;
                 this.columnAddtionalNotes.MaxLength = 2147483647;
                 this.columnSoSeqNo.AllowDBNull = false;
+                this.columnInStage.MaxLength = 23;
+                this.columnDrawing.MaxLength = 23;
+                this.columnDivision.MaxLength = 23;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14033,6 +14096,70 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string InStage {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_Dashboard.InStageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InStage\' in table \'PROD_Dashboard\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_Dashboard.InStageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Drawing {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_Dashboard.DrawingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Drawing\' in table \'PROD_Dashboard\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_Dashboard.DrawingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Division {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_Dashboard.DivisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Division\' in table \'PROD_Dashboard\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_Dashboard.DivisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ProductionStartDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePROD_Dashboard.ProductionStartDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductionStartDate\' in table \'PROD_Dashboard\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_Dashboard.ProductionStartDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_Dashboard.STOCKCODEColumn);
             }
@@ -14317,6 +14444,54 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSalesLineRefNull() {
                 this[this.tablePROD_Dashboard.SalesLineRefColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInStageNull() {
+                return this.IsNull(this.tablePROD_Dashboard.InStageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInStageNull() {
+                this[this.tablePROD_Dashboard.InStageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDrawingNull() {
+                return this.IsNull(this.tablePROD_Dashboard.DrawingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDrawingNull() {
+                this[this.tablePROD_Dashboard.DrawingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDivisionNull() {
+                return this.IsNull(this.tablePROD_Dashboard.DivisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDivisionNull() {
+                this[this.tablePROD_Dashboard.DivisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProductionStartDateNull() {
+                return this.IsNull(this.tablePROD_Dashboard.ProductionStartDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProductionStartDateNull() {
+                this[this.tablePROD_Dashboard.ProductionStartDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -25707,6 +25882,10 @@ WHERE        (SalesID = @salesID)";
             tableMapping.ColumnMappings.Add("Due Date", "Due Date");
             tableMapping.ColumnMappings.Add("SoSeqNo", "SoSeqNo");
             tableMapping.ColumnMappings.Add("SalesLineRef", "SalesLineRef");
+            tableMapping.ColumnMappings.Add("InStage", "InStage");
+            tableMapping.ColumnMappings.Add("Drawing", "Drawing");
+            tableMapping.ColumnMappings.Add("Division", "Division");
+            tableMapping.ColumnMappings.Add("ProductionStartDate", "ProductionStartDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -25720,20 +25899,31 @@ WHERE        (SalesID = @salesID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, 
-                         FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, [Order Date], [Due Date], SoSeqNo, SalesLineRef
+                         FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, [Order Date], [Due Date], SoSeqNo, SalesLineRef, InStage, Drawing, Division, ProductionStartDate
 FROM            PROD_Dashboard
 WHERE        (AssignTo = @Assignto)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT AddtionalNotes, AssignTo, CompleteDate, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, MakeToStock, Note, OPCode, [Order Date], OrderQTY, ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (AssignTo = @Assignto)";
+            this._commandCollection[1].CommandText = @"SELECT        AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, 
+                         Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
+FROM            PROD_Dashboard
+WHERE        (AssignTo = @Assignto)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, 
+                         FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, [Order Date], [Due Date], SoSeqNo, SalesLineRef, InStage, Drawing, Division, ProductionStartDate
+FROM            PROD_Dashboard
+WHERE        (AssignTo = @Assignto)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25778,6 +25968,25 @@ WHERE        (AssignTo = @Assignto)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(MESDataSet.PROD_DashboardDataTable dataTable, string Assignto) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Assignto == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Assignto));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(MESDataSet.PROD_DashboardDataTable dataTable, string Assignto) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Assignto == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }

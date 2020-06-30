@@ -50,7 +50,7 @@ namespace EXO_MES_Module
 
             this.Dashboard(workerName);
             this.Text = workerName;
-            MainSpliterContainer.SplitterDistance = 450;
+           // MainSpliterContainer.SplitterDistance = 450;
             MainSpliterContainer.Panel1Collapsed = false;
             MainSpliterContainer.Panel2Collapsed = true;
             dataGridView1.Visible = true;
@@ -810,9 +810,13 @@ namespace EXO_MES_Module
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            ExoJobOrder salesline = new ExoJobOrder(Int32.Parse(SalesID.Text.ToString()));
-            salesline.Show();
+            if (SalesID.Text != "")
+            {
+
+                ExoJobOrder salesline = new ExoJobOrder(Int32.Parse(SalesID.Text.ToString()));
+                salesline.Show();
+
+            }
             
 
         }
@@ -934,6 +938,13 @@ namespace EXO_MES_Module
                     salesline.Show();
 
                 }
+                else
+
+                {
+                    this.Validate();
+                    this.pRODJOBCARDBindingSource.EndEdit();
+                    this.pROD_JOBCARDTableAdapter.Update(this.mESDataSet.PROD_JOBCARD);
+                }
                  
 
             }
@@ -973,6 +984,27 @@ namespace EXO_MES_Module
             this.pRODJOBCARDBindingSource.EndEdit();
             this.pROD_JOBCARDTableAdapter.Update(this.mESDataSet.PROD_JOBCARD);
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Validate();
+            this.pRODJOBCARDBindingSource.EndEdit();
+            this.pROD_JOBCARDTableAdapter.Update(this.mESDataSet.PROD_JOBCARD);
+           
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Refresh1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Refresh();
+
+        }
+
+       
 
         private void cumulativeSTFToolStripMenuItem_Click(object sender, EventArgs e)
         {

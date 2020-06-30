@@ -48,7 +48,10 @@ namespace EXO_MES_Module
             {
 
                 SaleID.Text = datatable.Rows[currRecord]["Sales Order"].ToString();
-               
+                label1.Text = SaleID.Text;
+                label3.Text = SaleID.Text;
+
+
 
 
             }
