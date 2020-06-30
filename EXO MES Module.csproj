@@ -144,6 +144,7 @@
     <EmbeddedResource Include="ExoJobOrder.resx">
       <DependentUpon>ExoJobOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JobCard.rdlc" />
     <EmbeddedResource Include="JobCardRpt.resx">
       <DependentUpon>JobCardRpt.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,7 +176,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="MESDataSet.xsc">
       <DependentUpon>MESDataSet.xsd</DependentUpon>
     </None>

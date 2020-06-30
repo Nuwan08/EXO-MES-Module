@@ -139,6 +139,7 @@
             this.pROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
             this.sALESORD_HDRTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.SALESORD_HDRTableAdapter();
             this.pROD_SALESHEADERTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_SALESHEADERTableAdapter();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -577,6 +578,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkedListBox1);
             this.groupBox1.Controls.Add(this.Pickle);
             this.groupBox1.Controls.Add(this.PWelds);
             this.groupBox1.Controls.Add(this.PWO);
@@ -708,7 +710,9 @@
             this.ListBoxAll.FormattingEnabled = true;
             this.ListBoxAll.ItemHeight = 15;
             this.ListBoxAll.Location = new System.Drawing.Point(12, 29);
+            this.ListBoxAll.MultiColumn = true;
             this.ListBoxAll.Name = "ListBoxAll";
+            this.ListBoxAll.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.ListBoxAll.Size = new System.Drawing.Size(182, 182);
             this.ListBoxAll.TabIndex = 18;
             // 
@@ -1241,6 +1245,21 @@
             // 
             this.pROD_SALESHEADERTableAdapter.ClearBeforeFill = true;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "No paint",
+            "Silver",
+            "Blue "});
+            this.checkedListBox1.Location = new System.Drawing.Point(6, 16);
+            this.checkedListBox1.MultiColumn = true;
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(329, 34);
+            this.checkedListBox1.TabIndex = 7;
+            this.checkedListBox1.ThreeDCheckBoxes = true;
+            // 
             // ExoJobOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1406,6 +1425,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionStartDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionCompleteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

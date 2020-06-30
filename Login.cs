@@ -19,11 +19,14 @@ namespace EXO_MES_Module
 
         private void ButtLogin_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "admin")
+            {
 
-            
-            MainForm M1 = new MainForm(comboBox1.SelectedValue.ToString());
-            this.Hide();
-            M1.Show();
+                MainForm M1 = new MainForm(comboBox1.SelectedValue.ToString());
+                this.Hide();
+                M1.Show();
+
+            }
 
            // this.Close();
 
