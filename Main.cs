@@ -914,8 +914,8 @@ namespace EXO_MES_Module
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // MessageBox.Show("Please select sales Line", e.ColumnIndex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            
             if (JobIDtxt.Text == "" )
             {
                   MessageBox.Show("Please select sales Line", JobIDtxt.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -924,15 +924,14 @@ namespace EXO_MES_Module
             else
             {
 
-                if (e.ColumnIndex == 7)
+                if (e.ColumnIndex == 0)
                 {
-
-                    // MessageBox.Show("Please select sales Line", e.ColumnIndex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
                     JobCard jobcard = new JobCard(Int32.Parse(JobIDtxt.Text));
-                    jobcard.Text = "JOB CARD " + JobIDtxt.Text;
+                    jobcard.Text = this.Text;
                     jobcard.Show();
                 }
-                else if (e.ColumnIndex == 8)
+                else if (e.ColumnIndex ==1 )
                 {
                     ExoJobOrder salesline = new ExoJobOrder(Int32.Parse(JobIDtxt.Text));
                     salesline.Show();

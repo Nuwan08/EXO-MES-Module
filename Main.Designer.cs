@@ -83,8 +83,29 @@ namespace EXO_MES_Module
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.MainSpliterContainer = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pRODJOBCARDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mESDataSet = new EXO_MES_Module.MESDataSet();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.sTOCKCODEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignToDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estimatedTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scrapQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.completeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soSeqNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inStageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.divisionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODDashboardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -128,6 +149,18 @@ namespace EXO_MES_Module
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.JobIDtxt = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pRODJOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pROD_DashboardTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_DashboardTableAdapter();
+            this.sTAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.STAFFTableAdapter();
+            this.proD_ROUTETableAdapter1 = new EXO_MES_Module.MESDataSetTableAdapters.PROD_ROUTETableAdapter();
+            this.pROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
+            this.sTOCKCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estimatedTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobCard = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STOCKCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,17 +168,12 @@ namespace EXO_MES_Module
             this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlanProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobCard = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MES = new System.Windows.Forms.DataGridViewButtonColumn();
             this.OrderQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductionStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductionComplete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODJOBCARDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.mESDataSet = new EXO_MES_Module.MESDataSet();
-            this.pRODDashboardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salesIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,48 +202,19 @@ namespace EXO_MES_Module
             this.planProductionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.divisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODJOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pROD_DashboardTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_DashboardTableAdapter();
-            this.sTAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.STAFFTableAdapter();
-            this.proD_ROUTETableAdapter1 = new EXO_MES_Module.MESDataSetTableAdapters.PROD_ROUTETableAdapter();
-            this.pROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sTOCKCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estimatedTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTOCKCODEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignToDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estimatedTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scrapQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.completeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soSeqNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inStageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.divisionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MainSpliterContainer)).BeginInit();
             this.MainSpliterContainer.Panel1.SuspendLayout();
             this.MainSpliterContainer.Panel2.SuspendLayout();
             this.MainSpliterContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODDashboardBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODDashboardBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -581,6 +580,7 @@ namespace EXO_MES_Module
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.JobCard,
             this.dataGridViewTextBoxColumn1,
             this.STOCKCODE,
             this.Status,
@@ -588,8 +588,6 @@ namespace EXO_MES_Module
             this.OrderDate,
             this.DueDate,
             this.PlanProductionDate,
-            this.JobCard,
-            this.MES,
             this.OrderQTY,
             this.ProductionStartDate,
             this.ProductionComplete,
@@ -648,6 +646,17 @@ namespace EXO_MES_Module
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // pRODJOBCARDBindingSource1
+            // 
+            this.pRODJOBCARDBindingSource1.DataMember = "PROD_JOBCARD";
+            this.pRODJOBCARDBindingSource1.DataSource = this.mESDataSet;
+            this.pRODJOBCARDBindingSource1.CurrentChanged += new System.EventHandler(this.pRODJOBCARDBindingSource1_CurrentChanged);
+            // 
+            // mESDataSet
+            // 
+            this.mESDataSet.DataSetName = "MESDataSet";
+            this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView2
             // 
@@ -711,6 +720,123 @@ namespace EXO_MES_Module
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             this.dataGridView2.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_RowEnter);
             // 
+            // sTOCKCODEDataGridViewTextBoxColumn2
+            // 
+            this.sTOCKCODEDataGridViewTextBoxColumn2.DataPropertyName = "STOCKCODE";
+            this.sTOCKCODEDataGridViewTextBoxColumn2.HeaderText = "STOCKCODE";
+            this.sTOCKCODEDataGridViewTextBoxColumn2.Name = "sTOCKCODEDataGridViewTextBoxColumn2";
+            this.sTOCKCODEDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // oPCodeDataGridViewTextBoxColumn1
+            // 
+            this.oPCodeDataGridViewTextBoxColumn1.DataPropertyName = "OPCode";
+            this.oPCodeDataGridViewTextBoxColumn1.HeaderText = "OPCode";
+            this.oPCodeDataGridViewTextBoxColumn1.Name = "oPCodeDataGridViewTextBoxColumn1";
+            this.oPCodeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // assignToDataGridViewTextBoxColumn1
+            // 
+            this.assignToDataGridViewTextBoxColumn1.DataPropertyName = "AssignTo";
+            this.assignToDataGridViewTextBoxColumn1.HeaderText = "AssignTo";
+            this.assignToDataGridViewTextBoxColumn1.Name = "assignToDataGridViewTextBoxColumn1";
+            this.assignToDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // estimatedTimeDataGridViewTextBoxColumn1
+            // 
+            this.estimatedTimeDataGridViewTextBoxColumn1.DataPropertyName = "EstimatedTime";
+            this.estimatedTimeDataGridViewTextBoxColumn1.HeaderText = "EstimatedTime";
+            this.estimatedTimeDataGridViewTextBoxColumn1.Name = "estimatedTimeDataGridViewTextBoxColumn1";
+            this.estimatedTimeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn2
+            // 
+            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn2.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
+            this.statusDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // orderQTYDataGridViewTextBoxColumn
+            // 
+            this.orderQTYDataGridViewTextBoxColumn.DataPropertyName = "OrderQTY";
+            this.orderQTYDataGridViewTextBoxColumn.HeaderText = "OrderQTY";
+            this.orderQTYDataGridViewTextBoxColumn.Name = "orderQTYDataGridViewTextBoxColumn";
+            this.orderQTYDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productionQTYDataGridViewTextBoxColumn
+            // 
+            this.productionQTYDataGridViewTextBoxColumn.DataPropertyName = "ProductionQTY";
+            this.productionQTYDataGridViewTextBoxColumn.HeaderText = "ProductionQTY";
+            this.productionQTYDataGridViewTextBoxColumn.Name = "productionQTYDataGridViewTextBoxColumn";
+            this.productionQTYDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scrapQTYDataGridViewTextBoxColumn
+            // 
+            this.scrapQTYDataGridViewTextBoxColumn.DataPropertyName = "ScrapQTY";
+            this.scrapQTYDataGridViewTextBoxColumn.HeaderText = "ScrapQTY";
+            this.scrapQTYDataGridViewTextBoxColumn.Name = "scrapQTYDataGridViewTextBoxColumn";
+            this.scrapQTYDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // completeDateDataGridViewTextBoxColumn
+            // 
+            this.completeDateDataGridViewTextBoxColumn.DataPropertyName = "CompleteDate";
+            this.completeDateDataGridViewTextBoxColumn.HeaderText = "Production End";
+            this.completeDateDataGridViewTextBoxColumn.Name = "completeDateDataGridViewTextBoxColumn";
+            this.completeDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderDateDataGridViewTextBoxColumn1
+            // 
+            this.orderDateDataGridViewTextBoxColumn1.DataPropertyName = "Order Date";
+            this.orderDateDataGridViewTextBoxColumn1.HeaderText = "Order Date";
+            this.orderDateDataGridViewTextBoxColumn1.Name = "orderDateDataGridViewTextBoxColumn1";
+            this.orderDateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "Due Date";
+            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Due Date";
+            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // soSeqNoDataGridViewTextBoxColumn
+            // 
+            this.soSeqNoDataGridViewTextBoxColumn.DataPropertyName = "SoSeqNo";
+            this.soSeqNoDataGridViewTextBoxColumn.HeaderText = "SoSeqNo";
+            this.soSeqNoDataGridViewTextBoxColumn.Name = "soSeqNoDataGridViewTextBoxColumn";
+            this.soSeqNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // inStageDataGridViewTextBoxColumn1
+            // 
+            this.inStageDataGridViewTextBoxColumn1.DataPropertyName = "InStage";
+            this.inStageDataGridViewTextBoxColumn1.HeaderText = "InStage";
+            this.inStageDataGridViewTextBoxColumn1.Name = "inStageDataGridViewTextBoxColumn1";
+            this.inStageDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // drawingDataGridViewTextBoxColumn1
+            // 
+            this.drawingDataGridViewTextBoxColumn1.DataPropertyName = "Drawing";
+            this.drawingDataGridViewTextBoxColumn1.HeaderText = "Drawing";
+            this.drawingDataGridViewTextBoxColumn1.Name = "drawingDataGridViewTextBoxColumn1";
+            this.drawingDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // divisionDataGridViewTextBoxColumn1
+            // 
+            this.divisionDataGridViewTextBoxColumn1.DataPropertyName = "Division";
+            this.divisionDataGridViewTextBoxColumn1.HeaderText = "Division";
+            this.divisionDataGridViewTextBoxColumn1.Name = "divisionDataGridViewTextBoxColumn1";
+            this.divisionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // pRODDashboardBindingSource
+            // 
+            this.pRODDashboardBindingSource.DataMember = "PROD_Dashboard";
+            this.pRODDashboardBindingSource.DataSource = this.mESDataSet;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -737,6 +863,25 @@ namespace EXO_MES_Module
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(50, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 14);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Job No :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODDashboardBindingSource, "Drawing", true));
+            this.textBox4.Location = new System.Drawing.Point(311, 22);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(199, 20);
+            this.textBox4.TabIndex = 32;
             // 
             // textBox3
             // 
@@ -1148,6 +1293,79 @@ namespace EXO_MES_Module
             this.dateTimePicker1.Enter += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             this.dateTimePicker1.Leave += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // pRODJOBCARDBindingSource
+            // 
+            this.pRODJOBCARDBindingSource.DataMember = "PROD_JOBCARD";
+            this.pRODJOBCARDBindingSource.DataSource = this.mESDataSet;
+            // 
+            // sTAFFBindingSource
+            // 
+            this.sTAFFBindingSource.DataMember = "STAFF";
+            this.sTAFFBindingSource.DataSource = this.mESDataSet;
+            // 
+            // pROD_DashboardTableAdapter
+            // 
+            this.pROD_DashboardTableAdapter.ClearBeforeFill = true;
+            // 
+            // sTAFFTableAdapter
+            // 
+            this.sTAFFTableAdapter.ClearBeforeFill = true;
+            // 
+            // proD_ROUTETableAdapter1
+            // 
+            this.proD_ROUTETableAdapter1.ClearBeforeFill = true;
+            // 
+            // pROD_JOBCARDTableAdapter
+            // 
+            this.pROD_JOBCARDTableAdapter.ClearBeforeFill = true;
+            // 
+            // sTOCKCODEDataGridViewTextBoxColumn
+            // 
+            this.sTOCKCODEDataGridViewTextBoxColumn.DataPropertyName = "STOCKCODE";
+            this.sTOCKCODEDataGridViewTextBoxColumn.HeaderText = "STOCKCODE";
+            this.sTOCKCODEDataGridViewTextBoxColumn.Name = "sTOCKCODEDataGridViewTextBoxColumn";
+            this.sTOCKCODEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPCodeDataGridViewTextBoxColumn
+            // 
+            this.oPCodeDataGridViewTextBoxColumn.DataPropertyName = "OPCode";
+            this.oPCodeDataGridViewTextBoxColumn.HeaderText = "Division";
+            this.oPCodeDataGridViewTextBoxColumn.Name = "oPCodeDataGridViewTextBoxColumn";
+            this.oPCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // assignToDataGridViewTextBoxColumn
+            // 
+            this.assignToDataGridViewTextBoxColumn.DataPropertyName = "AssignTo";
+            this.assignToDataGridViewTextBoxColumn.HeaderText = "AssignTo";
+            this.assignToDataGridViewTextBoxColumn.Name = "assignToDataGridViewTextBoxColumn";
+            this.assignToDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estimatedTimeDataGridViewTextBoxColumn
+            // 
+            this.estimatedTimeDataGridViewTextBoxColumn.DataPropertyName = "EstimatedTime";
+            this.estimatedTimeDataGridViewTextBoxColumn.HeaderText = "EstimatedTime";
+            this.estimatedTimeDataGridViewTextBoxColumn.Name = "estimatedTimeDataGridViewTextBoxColumn";
+            this.estimatedTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // JobCard
+            // 
+            this.JobCard.Frozen = true;
+            this.JobCard.HeaderText = "Job Card";
+            this.JobCard.Name = "JobCard";
+            this.JobCard.ReadOnly = true;
+            this.JobCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.JobCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.JobCard.Text = "Print";
+            this.JobCard.UseColumnTextForButtonValue = true;
+            this.JobCard.Width = 50;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "SalesID";
@@ -1206,28 +1424,6 @@ namespace EXO_MES_Module
             this.PlanProductionDate.Name = "PlanProductionDate";
             this.PlanProductionDate.ReadOnly = true;
             // 
-            // JobCard
-            // 
-            this.JobCard.Frozen = true;
-            this.JobCard.HeaderText = "Job Card";
-            this.JobCard.Name = "JobCard";
-            this.JobCard.ReadOnly = true;
-            this.JobCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.JobCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.JobCard.Text = "View ";
-            this.JobCard.UseColumnTextForButtonValue = true;
-            // 
-            // MES
-            // 
-            this.MES.Frozen = true;
-            this.MES.HeaderText = "Poduction";
-            this.MES.Name = "MES";
-            this.MES.ReadOnly = true;
-            this.MES.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MES.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.MES.Text = "MES";
-            this.MES.UseColumnTextForButtonValue = true;
-            // 
             // OrderQTY
             // 
             this.OrderQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -1272,22 +1468,6 @@ namespace EXO_MES_Module
             this.GP.HeaderText = "GP";
             this.GP.Name = "GP";
             this.GP.ReadOnly = true;
-            // 
-            // pRODJOBCARDBindingSource1
-            // 
-            this.pRODJOBCARDBindingSource1.DataMember = "PROD_JOBCARD";
-            this.pRODJOBCARDBindingSource1.DataSource = this.mESDataSet;
-            this.pRODJOBCARDBindingSource1.CurrentChanged += new System.EventHandler(this.pRODJOBCARDBindingSource1_CurrentChanged);
-            // 
-            // mESDataSet
-            // 
-            this.mESDataSet.DataSetName = "MESDataSet";
-            this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pRODDashboardBindingSource
-            // 
-            this.pRODDashboardBindingSource.DataMember = "PROD_Dashboard";
-            this.pRODDashboardBindingSource.DataSource = this.mESDataSet;
             // 
             // salesIDDataGridViewTextBoxColumn
             // 
@@ -1485,198 +1665,6 @@ namespace EXO_MES_Module
             this.divisionDataGridViewTextBoxColumn.Name = "divisionDataGridViewTextBoxColumn";
             this.divisionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // pRODJOBCARDBindingSource
-            // 
-            this.pRODJOBCARDBindingSource.DataMember = "PROD_JOBCARD";
-            this.pRODJOBCARDBindingSource.DataSource = this.mESDataSet;
-            // 
-            // sTAFFBindingSource
-            // 
-            this.sTAFFBindingSource.DataMember = "STAFF";
-            this.sTAFFBindingSource.DataSource = this.mESDataSet;
-            // 
-            // pROD_DashboardTableAdapter
-            // 
-            this.pROD_DashboardTableAdapter.ClearBeforeFill = true;
-            // 
-            // sTAFFTableAdapter
-            // 
-            this.sTAFFTableAdapter.ClearBeforeFill = true;
-            // 
-            // proD_ROUTETableAdapter1
-            // 
-            this.proD_ROUTETableAdapter1.ClearBeforeFill = true;
-            // 
-            // pROD_JOBCARDTableAdapter
-            // 
-            this.pROD_JOBCARDTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODDashboardBindingSource, "Drawing", true));
-            this.textBox4.Location = new System.Drawing.Point(311, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(199, 20);
-            this.textBox4.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(50, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 14);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Job No :";
-            // 
-            // sTOCKCODEDataGridViewTextBoxColumn
-            // 
-            this.sTOCKCODEDataGridViewTextBoxColumn.DataPropertyName = "STOCKCODE";
-            this.sTOCKCODEDataGridViewTextBoxColumn.HeaderText = "STOCKCODE";
-            this.sTOCKCODEDataGridViewTextBoxColumn.Name = "sTOCKCODEDataGridViewTextBoxColumn";
-            this.sTOCKCODEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPCodeDataGridViewTextBoxColumn
-            // 
-            this.oPCodeDataGridViewTextBoxColumn.DataPropertyName = "OPCode";
-            this.oPCodeDataGridViewTextBoxColumn.HeaderText = "Division";
-            this.oPCodeDataGridViewTextBoxColumn.Name = "oPCodeDataGridViewTextBoxColumn";
-            this.oPCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // assignToDataGridViewTextBoxColumn
-            // 
-            this.assignToDataGridViewTextBoxColumn.DataPropertyName = "AssignTo";
-            this.assignToDataGridViewTextBoxColumn.HeaderText = "AssignTo";
-            this.assignToDataGridViewTextBoxColumn.Name = "assignToDataGridViewTextBoxColumn";
-            this.assignToDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estimatedTimeDataGridViewTextBoxColumn
-            // 
-            this.estimatedTimeDataGridViewTextBoxColumn.DataPropertyName = "EstimatedTime";
-            this.estimatedTimeDataGridViewTextBoxColumn.HeaderText = "EstimatedTime";
-            this.estimatedTimeDataGridViewTextBoxColumn.Name = "estimatedTimeDataGridViewTextBoxColumn";
-            this.estimatedTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sTOCKCODEDataGridViewTextBoxColumn2
-            // 
-            this.sTOCKCODEDataGridViewTextBoxColumn2.DataPropertyName = "STOCKCODE";
-            this.sTOCKCODEDataGridViewTextBoxColumn2.HeaderText = "STOCKCODE";
-            this.sTOCKCODEDataGridViewTextBoxColumn2.Name = "sTOCKCODEDataGridViewTextBoxColumn2";
-            this.sTOCKCODEDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // oPCodeDataGridViewTextBoxColumn1
-            // 
-            this.oPCodeDataGridViewTextBoxColumn1.DataPropertyName = "OPCode";
-            this.oPCodeDataGridViewTextBoxColumn1.HeaderText = "OPCode";
-            this.oPCodeDataGridViewTextBoxColumn1.Name = "oPCodeDataGridViewTextBoxColumn1";
-            this.oPCodeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // assignToDataGridViewTextBoxColumn1
-            // 
-            this.assignToDataGridViewTextBoxColumn1.DataPropertyName = "AssignTo";
-            this.assignToDataGridViewTextBoxColumn1.HeaderText = "AssignTo";
-            this.assignToDataGridViewTextBoxColumn1.Name = "assignToDataGridViewTextBoxColumn1";
-            this.assignToDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // estimatedTimeDataGridViewTextBoxColumn1
-            // 
-            this.estimatedTimeDataGridViewTextBoxColumn1.DataPropertyName = "EstimatedTime";
-            this.estimatedTimeDataGridViewTextBoxColumn1.HeaderText = "EstimatedTime";
-            this.estimatedTimeDataGridViewTextBoxColumn1.Name = "estimatedTimeDataGridViewTextBoxColumn1";
-            this.estimatedTimeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn2
-            // 
-            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn2.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
-            this.statusDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // orderQTYDataGridViewTextBoxColumn
-            // 
-            this.orderQTYDataGridViewTextBoxColumn.DataPropertyName = "OrderQTY";
-            this.orderQTYDataGridViewTextBoxColumn.HeaderText = "OrderQTY";
-            this.orderQTYDataGridViewTextBoxColumn.Name = "orderQTYDataGridViewTextBoxColumn";
-            this.orderQTYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productionQTYDataGridViewTextBoxColumn
-            // 
-            this.productionQTYDataGridViewTextBoxColumn.DataPropertyName = "ProductionQTY";
-            this.productionQTYDataGridViewTextBoxColumn.HeaderText = "ProductionQTY";
-            this.productionQTYDataGridViewTextBoxColumn.Name = "productionQTYDataGridViewTextBoxColumn";
-            this.productionQTYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scrapQTYDataGridViewTextBoxColumn
-            // 
-            this.scrapQTYDataGridViewTextBoxColumn.DataPropertyName = "ScrapQTY";
-            this.scrapQTYDataGridViewTextBoxColumn.HeaderText = "ScrapQTY";
-            this.scrapQTYDataGridViewTextBoxColumn.Name = "scrapQTYDataGridViewTextBoxColumn";
-            this.scrapQTYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // completeDateDataGridViewTextBoxColumn
-            // 
-            this.completeDateDataGridViewTextBoxColumn.DataPropertyName = "CompleteDate";
-            this.completeDateDataGridViewTextBoxColumn.HeaderText = "Production End";
-            this.completeDateDataGridViewTextBoxColumn.Name = "completeDateDataGridViewTextBoxColumn";
-            this.completeDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderDateDataGridViewTextBoxColumn1
-            // 
-            this.orderDateDataGridViewTextBoxColumn1.DataPropertyName = "Order Date";
-            this.orderDateDataGridViewTextBoxColumn1.HeaderText = "Order Date";
-            this.orderDateDataGridViewTextBoxColumn1.Name = "orderDateDataGridViewTextBoxColumn1";
-            this.orderDateDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dueDateDataGridViewTextBoxColumn
-            // 
-            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "Due Date";
-            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Due Date";
-            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
-            this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // soSeqNoDataGridViewTextBoxColumn
-            // 
-            this.soSeqNoDataGridViewTextBoxColumn.DataPropertyName = "SoSeqNo";
-            this.soSeqNoDataGridViewTextBoxColumn.HeaderText = "SoSeqNo";
-            this.soSeqNoDataGridViewTextBoxColumn.Name = "soSeqNoDataGridViewTextBoxColumn";
-            this.soSeqNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // inStageDataGridViewTextBoxColumn1
-            // 
-            this.inStageDataGridViewTextBoxColumn1.DataPropertyName = "InStage";
-            this.inStageDataGridViewTextBoxColumn1.HeaderText = "InStage";
-            this.inStageDataGridViewTextBoxColumn1.Name = "inStageDataGridViewTextBoxColumn1";
-            this.inStageDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // drawingDataGridViewTextBoxColumn1
-            // 
-            this.drawingDataGridViewTextBoxColumn1.DataPropertyName = "Drawing";
-            this.drawingDataGridViewTextBoxColumn1.HeaderText = "Drawing";
-            this.drawingDataGridViewTextBoxColumn1.Name = "drawingDataGridViewTextBoxColumn1";
-            this.drawingDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // divisionDataGridViewTextBoxColumn1
-            // 
-            this.divisionDataGridViewTextBoxColumn1.DataPropertyName = "Division";
-            this.divisionDataGridViewTextBoxColumn1.HeaderText = "Division";
-            this.divisionDataGridViewTextBoxColumn1.Name = "divisionDataGridViewTextBoxColumn1";
-            this.divisionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1705,7 +1693,10 @@ namespace EXO_MES_Module
             ((System.ComponentModel.ISupportInitialize)(this.MainSpliterContainer)).EndInit();
             this.MainSpliterContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODDashboardBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -1713,9 +1704,6 @@ namespace EXO_MES_Module
             this.toolStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODDashboardBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1824,6 +1812,30 @@ namespace EXO_MES_Module
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTOCKCODEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oPCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignToDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estimatedTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTOCKCODEDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oPCodeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignToDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estimatedTimeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderQTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productionQTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scrapQTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn completeDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soSeqNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inStageDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drawingDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn JobCard;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STOCKCODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
@@ -1831,8 +1843,6 @@ namespace EXO_MES_Module
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanProductionDate;
-        private System.Windows.Forms.DataGridViewButtonColumn JobCard;
-        private System.Windows.Forms.DataGridViewButtonColumn MES;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderQTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductionStartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductionComplete;
@@ -1867,29 +1877,6 @@ namespace EXO_MES_Module
         private System.Windows.Forms.DataGridViewTextBoxColumn planProductionDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn drawingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTOCKCODEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oPCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assignToDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estimatedTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTOCKCODEDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oPCodeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assignToDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estimatedTimeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderQTYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productionQTYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scrapQTYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn completeDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soSeqNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inStageDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drawingDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn1;
     }
 }
 

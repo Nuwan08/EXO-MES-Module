@@ -167,6 +167,7 @@
       <DependentUpon>JobCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobCard.rdlc" />
+    <EmbeddedResource Include="JobCardView - Copy.rdlc" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
