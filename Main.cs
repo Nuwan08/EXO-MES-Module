@@ -928,7 +928,7 @@ namespace EXO_MES_Module
                 {
 
                     // MessageBox.Show("Please select sales Line", e.ColumnIndex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    JobCardRpt jobcard = new JobCardRpt(Int32.Parse(JobIDtxt.Text));
+                    JobCard jobcard = new JobCard(Int32.Parse(JobIDtxt.Text));
                     jobcard.Text = "JOB CARD " + JobIDtxt.Text;
                     jobcard.Show();
                 }
