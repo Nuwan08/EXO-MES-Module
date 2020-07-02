@@ -8025,6 +8025,12 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnBINCODE;
             
+            private global::System.Data.DataColumn columnSalesEntered;
+            
+            private global::System.Data.DataColumn columnPlanProductionDate;
+            
+            private global::System.Data.DataColumn columnProductionComplete;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewDataTable() {
@@ -8372,6 +8378,30 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SalesEnteredColumn {
+                get {
+                    return this.columnSalesEntered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PlanProductionDateColumn {
+                get {
+                    return this.columnPlanProductionDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProductionCompleteColumn {
+                get {
+                    return this.columnProductionComplete;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8446,7 +8476,10 @@ namespace EXO_MES_Module {
                         string INSTRUCTIONS, 
                         string NAME, 
                         string PHONE, 
-                        string BINCODE) {
+                        string BINCODE, 
+                        string SalesEntered, 
+                        System.DateTime PlanProductionDate, 
+                        System.DateTime ProductionComplete) {
                 PROD_JobCardViewRow rowPROD_JobCardViewRow = ((PROD_JobCardViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
@@ -8487,7 +8520,10 @@ namespace EXO_MES_Module {
                         INSTRUCTIONS,
                         NAME,
                         PHONE,
-                        BINCODE};
+                        BINCODE,
+                        SalesEntered,
+                        PlanProductionDate,
+                        ProductionComplete};
                 rowPROD_JobCardViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_JobCardViewRow);
                 return rowPROD_JobCardViewRow;
@@ -8549,6 +8585,9 @@ namespace EXO_MES_Module {
                 this.columnNAME = base.Columns["NAME"];
                 this.columnPHONE = base.Columns["PHONE"];
                 this.columnBINCODE = base.Columns["BINCODE"];
+                this.columnSalesEntered = base.Columns["SalesEntered"];
+                this.columnPlanProductionDate = base.Columns["PlanProductionDate"];
+                this.columnProductionComplete = base.Columns["ProductionComplete"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8632,6 +8671,12 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnPHONE);
                 this.columnBINCODE = new global::System.Data.DataColumn("BINCODE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBINCODE);
+                this.columnSalesEntered = new global::System.Data.DataColumn("SalesEntered", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSalesEntered);
+                this.columnPlanProductionDate = new global::System.Data.DataColumn("PlanProductionDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlanProductionDate);
+                this.columnProductionComplete = new global::System.Data.DataColumn("ProductionComplete", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductionComplete);
                 this.columnSTOCKCODE.MaxLength = 23;
                 this.columnOPCode.MaxLength = 20;
                 this.columnAssignTo.MaxLength = 50;
@@ -8652,6 +8697,7 @@ namespace EXO_MES_Module {
                 this.columnNAME.MaxLength = 60;
                 this.columnPHONE.MaxLength = 30;
                 this.columnBINCODE.MaxLength = 12;
+                this.columnSalesEntered.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16332,6 +16378,54 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SalesEntered {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JobCardView.SalesEnteredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SalesEntered\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.SalesEnteredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime PlanProductionDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePROD_JobCardView.PlanProductionDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlanProductionDate\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.PlanProductionDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime ProductionComplete {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePROD_JobCardView.ProductionCompleteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductionComplete\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.ProductionCompleteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_JobCardView.STOCKCODEColumn);
             }
@@ -16784,6 +16878,42 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetBINCODENull() {
                 this[this.tablePROD_JobCardView.BINCODEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSalesEnteredNull() {
+                return this.IsNull(this.tablePROD_JobCardView.SalesEnteredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSalesEnteredNull() {
+                this[this.tablePROD_JobCardView.SalesEnteredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPlanProductionDateNull() {
+                return this.IsNull(this.tablePROD_JobCardView.PlanProductionDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPlanProductionDateNull() {
+                this[this.tablePROD_JobCardView.PlanProductionDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsProductionCompleteNull() {
+                return this.IsNull(this.tablePROD_JobCardView.ProductionCompleteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetProductionCompleteNull() {
+                this[this.tablePROD_JobCardView.ProductionCompleteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -29423,6 +29553,9 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             tableMapping.ColumnMappings.Add("NAME", "NAME");
             tableMapping.ColumnMappings.Add("PHONE", "PHONE");
             tableMapping.ColumnMappings.Add("BINCODE", "BINCODE");
+            tableMapping.ColumnMappings.Add("SalesEntered", "SalesEntered");
+            tableMapping.ColumnMappings.Add("PlanProductionDate", "PlanProductionDate");
+            tableMapping.ColumnMappings.Add("ProductionComplete", "ProductionComplete");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -29441,7 +29574,7 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
                          InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete
 FROM            PROD_JobCardView
 WHERE        (SoSeqNo = @salesID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
