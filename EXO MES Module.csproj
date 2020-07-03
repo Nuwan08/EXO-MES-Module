@@ -193,6 +193,7 @@
     <EmbeddedResource Include="JobCardView.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1 - Copy.rdlc" />
     <EmbeddedResource Include="Report1.rdlc" />
     <None Include="MESDataSet.xsc">
       <DependentUpon>MESDataSet.xsd</DependentUpon>
