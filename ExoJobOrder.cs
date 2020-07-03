@@ -210,7 +210,7 @@ namespace EXO_MES_Module
         private void ExoSalesLine_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mESDataSet.PROD_DRAWING' table. You can move, or remove it, as needed.
-            this.pROD_DRAWINGTableAdapter.Fill(this.mESDataSet.PROD_DRAWING);
+        
             try
             {
                 this.pROD_SALESHEADERTableAdapter.Fill(this.mESDataSet.PROD_SALESHEADER, ((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int)))));
@@ -839,15 +839,7 @@ namespace EXO_MES_Module
 
         private void fillByToolStripButton_Click_2(object sender, EventArgs e)
         {
-            try
-            {
-                this.pROD_DRAWINGTableAdapter.FillBy(this.mESDataSet.PROD_DRAWING);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
