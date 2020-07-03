@@ -55,7 +55,7 @@ namespace EXO_MES_Module
             
 
             OperationLoad();
-
+           
 
             try
             {
@@ -69,7 +69,7 @@ namespace EXO_MES_Module
 
             if (pROD_ROUTEDataGridView.RowCount > 0 )
             {
-                tabControl1.SelectedIndex = 1;
+                tabControl1.SelectedIndex = 0;
                 InsertData.Enabled = true;
                 Save.Enabled = true;
 
@@ -80,6 +80,14 @@ namespace EXO_MES_Module
 
             }
 
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                richTextBox2.Visible = true;
+
+
+            }
+            else
+            { richTextBox2.Visible = false; }
         }
 
 
@@ -684,16 +692,21 @@ namespace EXO_MES_Module
 
             this.pROD_JOBCARDTableAdapter.FillBy(this.mESDataSet.PROD_JOBCARD, new System.Nullable<int>(((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(SalesLine.Text, typeof(int))))), StockItem.Text);
 
+            if (checkBox1.Checked)
+            {
+                richTextBox2.Visible = true;
 
 
-          //  StrSQL3 = "SELECT * FROM dbo.PROD_ROUTE where SoSeqNo = " + TxtOrderId.Text;
+            }
 
-          //  StrSqltable3 = "PROD_ROUTE";
-          //  dbDataSet = db.ConnectDataSet(StrSQL3, StrSqltable3);
-         //   datatableProdRoute = dbDataSet.Tables[StrSqltable3];
-             
+            //  StrSQL3 = "SELECT * FROM dbo.PROD_ROUTE where SoSeqNo = " + TxtOrderId.Text;
 
-      }
+            //  StrSqltable3 = "PROD_ROUTE";
+            //  dbDataSet = db.ConnectDataSet(StrSQL3, StrSqltable3);
+            //   datatableProdRoute = dbDataSet.Tables[StrSqltable3];
+
+
+        }
             
 
         //load default operations frist time when order intiate 
@@ -842,7 +855,31 @@ namespace EXO_MES_Module
 
         }
 
-      
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            JobCard jobcard = new JobCard((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
+            jobcard.Text = this.Text;
+            jobcard.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
+            jobcard2.Text = this.Text;
+            jobcard2.Show();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                richTextBox2.Visible = true;
+
+            
+            }
+            else
+            { richTextBox2.Visible = false; }
+        }
 
         private void SheduleJob(string UID, int UpdateType)
         {

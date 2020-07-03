@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <Width>6.5in</Width>
+  <Body>
+    <Height>2in</Height>
+  </Body>
+  <rd:ReportTemplate>true</rd:ReportTemplate>
+  <Page>
+  </Page>
+</Report>
