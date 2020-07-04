@@ -927,7 +927,7 @@ namespace EXO_MES_Module
                 if (e.ColumnIndex == 0)
                 {
                     
-                    JobCard jobcard = new JobCard(Int32.Parse(JobIDtxt.Text));
+                    JobCard jobcard = new JobCard(Int32.Parse(JobIDtxt.Text), Int32.Parse(SalesLine.Text));
                     jobcard.Text = this.Text;
                     jobcard.Show();
                 }

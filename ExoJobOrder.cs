@@ -831,7 +831,7 @@ namespace EXO_MES_Module
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            JobCard jobcard = new JobCard((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
+            JobCard jobcard = new JobCard((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), (int)(System.Convert.ChangeType(SalesLine.Text, typeof(int))));
             jobcard.Text = this.Text;
             jobcard.Show();
         }

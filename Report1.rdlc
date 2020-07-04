@@ -2043,6 +2043,7 @@
                   <Group Name="STOCKCODE">
                     <GroupExpressions>
                       <GroupExpression>=Fields!STOCKCODE.Value</GroupExpression>
+                      <GroupExpression>=Fields!SalesLineRef.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>

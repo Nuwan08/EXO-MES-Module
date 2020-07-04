@@ -8031,6 +8031,8 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnProductionComplete;
             
+            private global::System.Data.DataColumn columnPrintBy;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewDataTable() {
@@ -8402,6 +8404,14 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PrintByColumn {
+                get {
+                    return this.columnPrintBy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8479,7 +8489,8 @@ namespace EXO_MES_Module {
                         string BINCODE, 
                         string SalesEntered, 
                         System.DateTime PlanProductionDate, 
-                        System.DateTime ProductionComplete) {
+                        System.DateTime ProductionComplete, 
+                        string PrintBy) {
                 PROD_JobCardViewRow rowPROD_JobCardViewRow = ((PROD_JobCardViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
@@ -8523,7 +8534,8 @@ namespace EXO_MES_Module {
                         BINCODE,
                         SalesEntered,
                         PlanProductionDate,
-                        ProductionComplete};
+                        ProductionComplete,
+                        PrintBy};
                 rowPROD_JobCardViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_JobCardViewRow);
                 return rowPROD_JobCardViewRow;
@@ -8588,6 +8600,7 @@ namespace EXO_MES_Module {
                 this.columnSalesEntered = base.Columns["SalesEntered"];
                 this.columnPlanProductionDate = base.Columns["PlanProductionDate"];
                 this.columnProductionComplete = base.Columns["ProductionComplete"];
+                this.columnPrintBy = base.Columns["PrintBy"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8677,6 +8690,8 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnPlanProductionDate);
                 this.columnProductionComplete = new global::System.Data.DataColumn("ProductionComplete", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductionComplete);
+                this.columnPrintBy = new global::System.Data.DataColumn("PrintBy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrintBy);
                 this.columnSTOCKCODE.MaxLength = 23;
                 this.columnOPCode.MaxLength = 20;
                 this.columnAssignTo.MaxLength = 50;
@@ -8698,6 +8713,7 @@ namespace EXO_MES_Module {
                 this.columnPHONE.MaxLength = 30;
                 this.columnBINCODE.MaxLength = 12;
                 this.columnSalesEntered.MaxLength = 30;
+                this.columnPrintBy.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16426,6 +16442,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PrintBy {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JobCardView.PrintByColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrintBy\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.PrintByColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_JobCardView.STOCKCODEColumn);
             }
@@ -16914,6 +16946,18 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetProductionCompleteNull() {
                 this[this.tablePROD_JobCardView.ProductionCompleteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPrintByNull() {
+                return this.IsNull(this.tablePROD_JobCardView.PrintByColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPrintByNull() {
+                this[this.tablePROD_JobCardView.PrintByColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -29556,6 +29600,7 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             tableMapping.ColumnMappings.Add("SalesEntered", "SalesEntered");
             tableMapping.ColumnMappings.Add("PlanProductionDate", "PlanProductionDate");
             tableMapping.ColumnMappings.Add("ProductionComplete", "ProductionComplete");
+            tableMapping.ColumnMappings.Add("PrintBy", "PrintBy");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -29569,16 +29614,47 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
                          InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
 FROM            PROD_JobCardView
 WHERE        (SoSeqNo = @salesID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
+                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+FROM            PROD_JobCardView
+WHERE            (SoSeqNo = @salesID and  SalesLineRef =@SalesLineRef and   OPCode = @OPCode)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
+                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+FROM            PROD_JobCardView
+WHERE        (SoSeqNo = @salesID and  SalesLineRef =@SalesLineRef )";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
+                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+FROM            PROD_JobCardView
+WHERE        (SoSeqNo = @salesID and STOCKCODE = @STOCKCODE )";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STOCKCODE", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29605,6 +29681,96 @@ WHERE        (SoSeqNo = @salesID)";
             MESDataSet.PROD_JobCardViewDataTable dataTable = new MESDataSet.PROD_JobCardViewDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(MESDataSet.PROD_JobCardViewDataTable dataTable, int salesID, global::System.Nullable<int> SalesLineRef, string OPCode) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(salesID));
+            if ((SalesLineRef.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(SalesLineRef.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((OPCode == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(OPCode));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual MESDataSet.PROD_JobCardViewDataTable GetDataBy2(int salesID, global::System.Nullable<int> SalesLineRef, string OPCode) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(salesID));
+            if ((SalesLineRef.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(SalesLineRef.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((OPCode == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(OPCode));
+            }
+            MESDataSet.PROD_JobCardViewDataTable dataTable = new MESDataSet.PROD_JobCardViewDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySalesLineRef(MESDataSet.PROD_JobCardViewDataTable dataTable, int salesID, global::System.Nullable<int> SalesLineRef) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(salesID));
+            if ((SalesLineRef.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(SalesLineRef.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByStockCODE(MESDataSet.PROD_JobCardViewDataTable dataTable, int salesID, string STOCKCODE) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(salesID));
+            if ((STOCKCODE == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(STOCKCODE));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
