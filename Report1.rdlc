@@ -1809,7 +1809,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>1.14583in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1853,7 +1853,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>1.625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2009,8 +2009,16 @@
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
-            <TablixMember />
-            <TablixMember />
+            <TablixMember>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+            </TablixMember>
+            <TablixMember>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+            </TablixMember>
             <TablixMember>
               <Group Name="OPCode">
                 <GroupExpressions>
@@ -2077,9 +2085,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ProdJobCardView</DataSetName>
-        <Top>0.19791in</Top>
-        <Left>0.16319in</Left>
-        <Height>4.6875in</Height>
+        <Top>0.05208in</Top>
+        <Left>0.01909in</Left>
+        <Height>6.95833in</Height>
         <Width>6.32291in</Width>
         <Style>
           <Border>
@@ -2088,10 +2096,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.88541in</Height>
+    <Height>7.01041in</Height>
     <Style />
   </Body>
-  <Width>6.53125in</Width>
+  <Width>6.35417in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
