@@ -1369,7 +1369,9 @@
                       </Paragraphs>
                       <rd:DefaultName>Textbox48</rd:DefaultName>
                       <Style>
-                        <Border />
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1638,6 +1640,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>2</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />

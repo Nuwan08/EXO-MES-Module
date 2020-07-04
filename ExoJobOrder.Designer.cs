@@ -65,6 +65,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Setup = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBoxSelected = new System.Windows.Forms.ListBox();
+            this.ListBoxAll = new System.Windows.Forms.ListBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pRODJOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
@@ -74,7 +78,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.DivisionBox = new System.Windows.Forms.CheckedListBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -308,8 +311,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(873, 580);
-            this.splitContainer1.SplitterDistance = 26;
+            this.splitContainer1.Size = new System.Drawing.Size(873, 497);
+            this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 12;
             // 
             // textBox4
@@ -465,7 +468,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(873, 550);
+            this.tabControl1.Size = new System.Drawing.Size(873, 468);
             this.tabControl1.TabIndex = 13;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabChange);
             // 
@@ -478,7 +481,7 @@
             this.Setup.Location = new System.Drawing.Point(4, 22);
             this.Setup.Name = "Setup";
             this.Setup.Padding = new System.Windows.Forms.Padding(3);
-            this.Setup.Size = new System.Drawing.Size(865, 524);
+            this.Setup.Size = new System.Drawing.Size(865, 442);
             this.Setup.TabIndex = 0;
             this.Setup.Text = "Setup";
             this.Setup.UseVisualStyleBackColor = true;
@@ -486,6 +489,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.listBoxSelected);
+            this.groupBox2.Controls.Add(this.ListBoxAll);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button1);
@@ -494,7 +501,6 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.DivisionBox);
             this.groupBox2.Controls.Add(this.richTextBox2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.checkBox2);
@@ -503,22 +509,68 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 151);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(859, 370);
+            this.groupBox2.Size = new System.Drawing.Size(859, 288);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Production Requirments";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(463, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 27);
+            this.button2.TabIndex = 42;
+            this.button2.Text = " ->";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(463, 100);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(56, 31);
+            this.button4.TabIndex = 43;
+            this.button4.Text = " <-";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listBoxSelected
+            // 
+            this.listBoxSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSelected.FormattingEnabled = true;
+            this.listBoxSelected.HorizontalScrollbar = true;
+            this.listBoxSelected.ItemHeight = 15;
+            this.listBoxSelected.Location = new System.Drawing.Point(543, 31);
+            this.listBoxSelected.Name = "listBoxSelected";
+            this.listBoxSelected.Size = new System.Drawing.Size(149, 109);
+            this.listBoxSelected.TabIndex = 45;
+            // 
+            // ListBoxAll
+            // 
+            this.ListBoxAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListBoxAll.FormattingEnabled = true;
+            this.ListBoxAll.HorizontalExtent = 2;
+            this.ListBoxAll.HorizontalScrollbar = true;
+            this.ListBoxAll.ItemHeight = 15;
+            this.ListBoxAll.Location = new System.Drawing.Point(118, 31);
+            this.ListBoxAll.MultiColumn = true;
+            this.ListBoxAll.Name = "ListBoxAll";
+            this.ListBoxAll.Size = new System.Drawing.Size(330, 109);
+            this.ListBoxAll.Sorted = true;
+            this.ListBoxAll.TabIndex = 44;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pRODJOBCARDBindingSource, "MakeToStock", true));
-            this.checkBox1.Location = new System.Drawing.Point(27, 260);
+            this.checkBox1.Location = new System.Drawing.Point(118, 260);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 17);
+            this.checkBox1.Size = new System.Drawing.Size(162, 17);
             this.checkBox1.TabIndex = 41;
-            this.checkBox1.Text = "Addtional Notes";
+            this.checkBox1.Text = "Addtional Notes & Sketch Box";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -530,7 +582,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(712, 54);
+            this.button3.Location = new System.Drawing.Point(712, 48);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 23);
             this.button3.TabIndex = 40;
@@ -572,7 +624,7 @@
             "Polish Welds"});
             this.comboBoxFinish.Location = new System.Drawing.Point(118, 176);
             this.comboBoxFinish.Name = "comboBoxFinish";
-            this.comboBoxFinish.Size = new System.Drawing.Size(378, 21);
+            this.comboBoxFinish.Size = new System.Drawing.Size(330, 21);
             this.comboBoxFinish.TabIndex = 37;
             // 
             // comboBox1
@@ -584,9 +636,9 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Custom Drawing ",
             "Stock  Drawing"});
-            this.comboBox1.Location = new System.Drawing.Point(118, 140);
+            this.comboBox1.Location = new System.Drawing.Point(118, 149);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(378, 21);
+            this.comboBox1.Size = new System.Drawing.Size(330, 21);
             this.comboBox1.TabIndex = 36;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -602,7 +654,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 179);
+            this.label11.Location = new System.Drawing.Point(27, 176);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 13);
             this.label11.TabIndex = 34;
@@ -611,30 +663,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 140);
+            this.label10.Location = new System.Drawing.Point(27, 149);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 13);
             this.label10.TabIndex = 33;
             this.label10.Text = "Drawing :";
             // 
-            // DivisionBox
-            // 
-            this.DivisionBox.CheckOnClick = true;
-            this.DivisionBox.FormattingEnabled = true;
-            this.DivisionBox.Location = new System.Drawing.Point(118, 19);
-            this.DivisionBox.MultiColumn = true;
-            this.DivisionBox.Name = "DivisionBox";
-            this.DivisionBox.Size = new System.Drawing.Size(378, 109);
-            this.DivisionBox.TabIndex = 30;
-            this.DivisionBox.ThreeDCheckBoxes = true;
-            this.DivisionBox.SelectedIndexChanged += new System.EventHandler(this.DivisionBox_SelectedIndexChanged);
-            // 
             // richTextBox2
             // 
             this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODJOBCARDBindingSource, "AddtionalNotes", true));
-            this.richTextBox2.Location = new System.Drawing.Point(111, 283);
+            this.richTextBox2.Location = new System.Drawing.Point(118, 279);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(707, 46);
+            this.richTextBox2.Size = new System.Drawing.Size(700, 10);
             this.richTextBox2.TabIndex = 29;
             this.richTextBox2.Text = "";
             this.richTextBox2.Visible = false;
@@ -643,7 +683,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(333, 347);
+            this.label4.Location = new System.Drawing.Point(411, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(243, 13);
             this.label4.TabIndex = 28;
@@ -653,7 +693,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pRODJOBCARDBindingSource, "MakeToStock", true));
-            this.checkBox2.Location = new System.Drawing.Point(27, 347);
+            this.checkBox2.Location = new System.Drawing.Point(118, 203);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(300, 17);
             this.checkBox2.TabIndex = 27;
@@ -663,7 +703,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 219);
+            this.label3.Location = new System.Drawing.Point(30, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 25;
@@ -672,7 +712,7 @@
             // richTextBox1
             // 
             this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODJOBCARDBindingSource, "Note", true));
-            this.richTextBox1.Location = new System.Drawing.Point(118, 206);
+            this.richTextBox1.Location = new System.Drawing.Point(118, 219);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(700, 44);
             this.richTextBox1.TabIndex = 24;
@@ -699,6 +739,8 @@
             // 
             // SubFormGrid
             // 
+            this.SubFormGrid.AllowUserToAddRows = false;
+            this.SubFormGrid.AllowUserToDeleteRows = false;
             this.SubFormGrid.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -764,7 +806,7 @@
             this.Operations.Location = new System.Drawing.Point(4, 22);
             this.Operations.Name = "Operations";
             this.Operations.Padding = new System.Windows.Forms.Padding(3);
-            this.Operations.Size = new System.Drawing.Size(865, 524);
+            this.Operations.Size = new System.Drawing.Size(865, 442);
             this.Operations.TabIndex = 1;
             this.Operations.Text = "Divisions";
             this.Operations.UseVisualStyleBackColor = true;
@@ -790,8 +832,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.RefUID);
             this.splitContainer3.Panel2.Controls.Add(this.pROD_ROUTEDataGridView);
             this.splitContainer3.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer3_Panel2_Paint);
-            this.splitContainer3.Size = new System.Drawing.Size(859, 518);
-            this.splitContainer3.SplitterDistance = 37;
+            this.splitContainer3.Size = new System.Drawing.Size(859, 436);
+            this.splitContainer3.SplitterDistance = 31;
             this.splitContainer3.TabIndex = 0;
             // 
             // BttComplete
@@ -1049,7 +1091,7 @@
             this.Summary.Controls.Add(this.dataGridView2);
             this.Summary.Location = new System.Drawing.Point(4, 22);
             this.Summary.Name = "Summary";
-            this.Summary.Size = new System.Drawing.Size(865, 524);
+            this.Summary.Size = new System.Drawing.Size(865, 442);
             this.Summary.TabIndex = 3;
             this.Summary.Text = "Summary";
             this.Summary.UseVisualStyleBackColor = true;
@@ -1077,7 +1119,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(865, 524);
+            this.dataGridView2.Size = new System.Drawing.Size(865, 442);
             this.dataGridView2.TabIndex = 0;
             // 
             // sTOCKCODEDataGridViewTextBoxColumn
@@ -1217,7 +1259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(873, 605);
+            this.ClientSize = new System.Drawing.Size(873, 522);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1354,7 +1396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionStartDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionCompleteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.CheckedListBox DivisionBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -1370,6 +1411,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListBox listBoxSelected;
+        private System.Windows.Forms.ListBox ListBoxAll;
     }
 }
 

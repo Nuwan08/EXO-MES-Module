@@ -914,7 +914,7 @@ namespace EXO_MES_Module
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // MessageBox.Show("Please select sales Line", e.ColumnIndex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //messageBox.Show("Please select sales Line", e.ColumnIndex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             if (JobIDtxt.Text == "" )
             {
@@ -931,7 +931,7 @@ namespace EXO_MES_Module
                     jobcard.Text = this.Text;
                     jobcard.Show();
                 }
-                else if (e.ColumnIndex ==1 )
+                else if (e.ColumnIndex > 0 && e.ColumnIndex < 2)
                 {
                     ExoJobOrder salesline = new ExoJobOrder(Int32.Parse(JobIDtxt.Text));
                     salesline.Show();
@@ -1002,8 +1002,6 @@ namespace EXO_MES_Module
             dataGridView1.Refresh();
 
         }
-
-       
 
         private void cumulativeSTFToolStripMenuItem_Click(object sender, EventArgs e)
         {

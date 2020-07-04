@@ -408,19 +408,6 @@ namespace EXO_MES_Module
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
-           
-            
-        }
-
         private void InsertData_Click(object sender, EventArgs e)
         {
             if (RefUID.Text != "")
@@ -525,24 +512,28 @@ namespace EXO_MES_Module
             datatable2 = dbDataSet.Tables[Strtable];
 
 
-            DivisionBox.Items.Clear();
-            int count = 0;
+            ListBoxAll.Items.Clear();
+            listBoxSelected.Items.Clear();
+
             foreach (DataRow row in datatable2.Rows)
             {
 
                 if (Convert.ToBoolean(row["Enable"].ToString()))
                 {
-                    DivisionBox.Items.Add(row["OPCode"].ToString(), CheckState.Checked);
+                    listBoxSelected.Items.Add(row["OPCode"].ToString());
                 }
                 else
                 {
-                    DivisionBox.Items.Add(row["OPCode"].ToString(), CheckState.Unchecked);
-                    
+                    ListBoxAll.Items.Add(row["OPCode"].ToString());
                 }
 
-                count++;
-
             }
+
+
+
+
+
+            
         }
 
 
@@ -554,18 +545,7 @@ namespace EXO_MES_Module
             datatable2 = dbDataSet.Tables[Strtable];
 
 
-            DivisionBox.Items.Clear();
-            int count = 0;
-            foreach (DataRow row in datatable2.Rows)
-            {
-
-             
-                    DivisionBox.Items.Add(row["Drawing"].ToString());
             
-              
-                count++;
-
-            }
         }
 
         private void GridView_Click(object sender, EventArgs e)
@@ -865,12 +845,44 @@ namespace EXO_MES_Module
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
+                
+             // richTextBox2.Top
+                this.Height = this.Height + 110;
+
+                richTextBox2.Height = 90;
                 richTextBox2.Visible = true;
 
-            
+
+
             }
             else
-            { richTextBox2.Visible = false; }
+            { 
+                this.Height = this.Height - 110;
+                //  checkBox2.Top = 3;
+                richTextBox2.Height = 10;
+                richTextBox2.Visible = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ListBoxAll.SelectedItem != null)
+            {
+                InitOperations(ListBoxAll.SelectedItem.ToString(), 100);
+                listBoxSelected.Items.Add(ListBoxAll.SelectedItem);
+                ListBoxAll.Items.Remove(ListBoxAll.SelectedItem);
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (listBoxSelected.SelectedItem != null)
+            {
+                InitOperations(listBoxSelected.SelectedItem.ToString(), 200);
+                ListBoxAll.Items.Add(listBoxSelected.SelectedItem);
+                listBoxSelected.Items.Remove(listBoxSelected.SelectedItem);
+            }
         }
 
         private void SheduleJob(string UID, int UpdateType)
