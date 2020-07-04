@@ -795,8 +795,6 @@
             this.SubFormGrid.TabIndex = 15;
             this.SubFormGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cellclick);
             this.SubFormGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cellclick);
-            this.SubFormGrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cellclick);
-            this.SubFormGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cellclick);
             this.SubFormGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SubFormGrid_RowHeaderMouseClick);
             this.SubFormGrid.Click += new System.EventHandler(this.Cellclick);
             // 

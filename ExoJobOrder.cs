@@ -116,6 +116,8 @@ namespace EXO_MES_Module
 
             RefreshProdRoute();
 
+            attionalSkechbox();
+
         }
 
         private void OperationLoad()
@@ -841,27 +843,39 @@ namespace EXO_MES_Module
             jobcard2.Show();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void attionalSkechbox()
         {
+
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                
-             // richTextBox2.Top
-                this.Height = this.Height + 110;
 
-                richTextBox2.Height = 90;
-                richTextBox2.Visible = true;
+                // richTextBox2.Top
+                if (this.Height < 671)
+                {
+                    this.Height = this.Height + 110;
+
+                    richTextBox2.Height = 90;
+                    richTextBox2.Visible = true;
+                }
 
 
 
             }
             else
-            { 
-                this.Height = this.Height - 110;
+            {
+                if (this.Height > 561)
+                {
+                    this.Height = this.Height - 110;
+                }
                 //  checkBox2.Top = 3;
                 richTextBox2.Height = 10;
                 richTextBox2.Visible = false;
             }
+
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            attionalSkechbox();
         }
 
         private void button2_Click(object sender, EventArgs e)
