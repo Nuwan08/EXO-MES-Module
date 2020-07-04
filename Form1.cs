@@ -43,17 +43,17 @@ namespace EXO_MES_Module
             string tempvalues = comboBox1.Text;
             this.PROD_JobCardViewTableAdapter.Fill(this.MESDataSet.PROD_JobCardView, SalesID);
 
-            this.reportViewer1.LocalReport.DataSources.Clear();
-            ReportDataSource datasource = new ReportDataSource(pRODJobCardViewBindingSource.DataMember);
-            this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            //this.reportViewer1.LocalReport.DataSources.Clear();
+            // ReportDataSource datasource = new ReportDataSource(pRODJobCardViewBindingSource.DataMember);
+            // this.reportViewer1.LocalReport.DataSources.Add(datasource);
 
-            ReportParameterCollection rptparamter = new ReportParameterCollection();
-            rptparamter.Add(new Microsoft.Reporting.WinForms.ReportParameter("PrintBy", this.Text));
-            rptparamter.Add(new Microsoft.Reporting.WinForms.ReportParameter("OperationCode", tempvalues));
+            // ReportParameterCollection rptparamter = new ReportParameterCollection();
+            // rptparamter.Add(new ReportParameter("PrintBy", this.Text));
+            // rptparamter.Add(new Microsoft.Reporting.WinForms.ReportParameter("OperationCode", tempvalues));
 
-            this.reportViewer1.LocalReport.SetParameters(rptparamter);
+            // this.reportViewer1.LocalReport.SetParameters(rptparamter);
             
-            this.reportViewer1.LocalReport.Refresh();
+            this.reportViewer1.RefreshReport();
         }
     }
 }

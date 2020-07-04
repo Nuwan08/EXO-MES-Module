@@ -193,9 +193,9 @@
     <EmbeddedResource Include="JobCardView.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1 - Copy %282%29.rdlc" />
     <EmbeddedResource Include="Report1 - Copy.rdlc" />
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="MESDataSet.xsc">
       <DependentUpon>MESDataSet.xsd</DependentUpon>
     </None>

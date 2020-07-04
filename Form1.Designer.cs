@@ -94,10 +94,9 @@
             // 
             this.reportViewer1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.pRODJobCardViewBindingSource, "OPCode", true));
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.JobCardViewSelected.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.JobCardbyDivision.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 56);
             this.reportViewer1.Name = "reportViewer1";
-           // this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 394);
             this.reportViewer1.TabIndex = 4;
             // 
