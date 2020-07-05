@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXO MES Module", "EXO MES Module.csproj", "{25A13D6C-A03B-4E27-BD38-B8616880894B}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\Setup1\Setup1.vdproj", "{3D165864-E0F2-4C77-A58C-FC135F6022F9}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MES", "..\MES\MES.vdproj", "{603BABEE-DD74-4F38-9E72-9FBB987D07D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,16 +41,16 @@ Global
 		{25A13D6C-A03B-4E27-BD38-B8616880894B}.Release|x64.Build.0 = Release|Any CPU
 		{25A13D6C-A03B-4E27-BD38-B8616880894B}.Release|x86.ActiveCfg = Release|Any CPU
 		{25A13D6C-A03B-4E27-BD38-B8616880894B}.Release|x86.Build.0 = Release|Any CPU
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Debug|Any CPU.ActiveCfg = Debug
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Debug|ARM.ActiveCfg = Debug
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Debug|ARM64.ActiveCfg = Debug
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Debug|x64.ActiveCfg = Debug
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Debug|x86.ActiveCfg = Debug
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Release|Any CPU.ActiveCfg = Release
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Release|ARM.ActiveCfg = Release
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Release|ARM64.ActiveCfg = Release
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Release|x64.ActiveCfg = Release
-		{3D165864-E0F2-4C77-A58C-FC135F6022F9}.Release|x86.ActiveCfg = Release
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Debug|Any CPU.ActiveCfg = Debug
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Debug|ARM.ActiveCfg = Debug
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Debug|ARM64.ActiveCfg = Debug
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Debug|x64.ActiveCfg = Debug
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Debug|x86.ActiveCfg = Debug
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Release|Any CPU.ActiveCfg = Release
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Release|ARM.ActiveCfg = Release
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Release|ARM64.ActiveCfg = Release
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Release|x64.ActiveCfg = Release
+		{603BABEE-DD74-4F38-9E72-9FBB987D07D4}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

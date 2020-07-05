@@ -135,10 +135,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
+            this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
