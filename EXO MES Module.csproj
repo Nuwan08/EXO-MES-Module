@@ -108,6 +108,12 @@
     <Compile Include="JobCard.Designer.cs">
       <DependentUpon>JobCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="JoboneLinebyDiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoboneLinebyDiv.Designer.cs">
+      <DependentUpon>JoboneLinebyDiv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JobCard.rdlc" />
     <EmbeddedResource Include="JobCardViewSelected.rdlc" />
+    <EmbeddedResource Include="JoboneLinebyDiv.resx">
+      <DependentUpon>JoboneLinebyDiv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

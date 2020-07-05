@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.Odbc;
-
+using System.Diagnostics;
 
 namespace EXO_MES_Module
 {
@@ -113,7 +113,7 @@ namespace EXO_MES_Module
         // Sub Window Load
         public void DataFormload(string selectedForm)
         {
-            bool flag = true;
+           // bool flag = true;
             
             SelectedFrm = selectedForm;
 
@@ -128,7 +128,7 @@ namespace EXO_MES_Module
             Refresh1.Enabled = false;
 
            
-            flag = true;
+            //flag = true;
             //TxtBarcodeReader.Select();
 
         }
@@ -1001,6 +1001,11 @@ namespace EXO_MES_Module
         {
             dataGridView1.Refresh();
 
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
 
         private void cumulativeSTFToolStripMenuItem_Click(object sender, EventArgs e)

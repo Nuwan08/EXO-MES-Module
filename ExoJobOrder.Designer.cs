@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExoJobOrder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.Navigetor = new System.Windows.Forms.ToolStripButton();
             this.Search = new System.Windows.Forms.ToolStripButton();
@@ -65,6 +65,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Setup = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listBoxSelected = new System.Windows.Forms.ListBox();
@@ -138,6 +139,9 @@
             this.pROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
             this.sALESORD_HDRTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.SALESORD_HDRTableAdapter();
             this.pROD_SALESHEADERTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_SALESHEADERTableAdapter();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -165,12 +169,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sALESORDHDRBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip
             // 
             this.toolStrip.BackColor = System.Drawing.Color.White;
-            this.toolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip.BackgroundImage")));
             this.toolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -489,13 +494,13 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.listBoxSelected);
             this.groupBox2.Controls.Add(this.ListBoxAll);
             this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.comboBoxFinish);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label12);
@@ -514,6 +519,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Production Requirments";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(14, 48);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(125, 23);
+            this.button5.TabIndex = 46;
+            this.button5.Text = "Print Selected Division";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -542,7 +557,7 @@
             this.listBoxSelected.FormattingEnabled = true;
             this.listBoxSelected.HorizontalScrollbar = true;
             this.listBoxSelected.ItemHeight = 15;
-            this.listBoxSelected.Location = new System.Drawing.Point(543, 31);
+            this.listBoxSelected.Location = new System.Drawing.Point(534, 30);
             this.listBoxSelected.Name = "listBoxSelected";
             this.listBoxSelected.Size = new System.Drawing.Size(149, 109);
             this.listBoxSelected.TabIndex = 45;
@@ -565,7 +580,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pRODJOBCARDBindingSource, "MakeToStock", true));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pRODJOBCARDBindingSource, "EnableAddNote", true));
             this.checkBox1.Location = new System.Drawing.Point(118, 260);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(162, 17);
@@ -582,7 +597,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(712, 48);
+            this.button3.Location = new System.Drawing.Point(14, 48);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 23);
             this.button3.TabIndex = 40;
@@ -592,7 +607,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(712, 19);
+            this.button1.Location = new System.Drawing.Point(14, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 23);
             this.button1.TabIndex = 38;
@@ -742,49 +757,49 @@
             this.SubFormGrid.AllowUserToAddRows = false;
             this.SubFormGrid.AllowUserToDeleteRows = false;
             this.SubFormGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.SubFormGrid.BackgroundColor = System.Drawing.Color.DimGray;
             this.SubFormGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SubFormGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.SubFormGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.SubFormGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubFormGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SubFormGrid.Location = new System.Drawing.Point(3, 3);
             this.SubFormGrid.Name = "SubFormGrid";
             this.SubFormGrid.ReadOnly = true;
             this.SubFormGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubFormGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.InfoText;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -1251,6 +1266,37 @@
             // 
             this.pROD_SALESHEADERTableAdapter.ClearBeforeFill = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(14, 19);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(125, 23);
+            this.button6.TabIndex = 47;
+            this.button6.Text = "Print All";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Location = new System.Drawing.Point(698, 112);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(155, 84);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "By Stock Item ";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Location = new System.Drawing.Point(698, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(155, 84);
+            this.groupBox3.TabIndex = 49;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "By Job ";
+            // 
             // ExoJobOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1299,6 +1345,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sALESORDHDRBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1413,6 +1461,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox listBoxSelected;
         private System.Windows.Forms.ListBox ListBoxAll;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

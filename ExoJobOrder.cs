@@ -899,6 +899,13 @@ namespace EXO_MES_Module
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            JoboneLinebyDiv jobcard = new JoboneLinebyDiv((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), (int)(System.Convert.ChangeType(SalesLine.Text, typeof(int))));
+            jobcard.Text = this.Text;
+            jobcard.Show();
+        }
+
         private void SheduleJob(string UID, int UpdateType)
         {
 

@@ -6,28 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.67707in</Width>
+              <Width>0.73588in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.05881in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.19791in</Width>
+              <Width>0.25672in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.94793in</Width>
+              <Width>1.00674in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98958in</Width>
+              <Width>1.04839in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.96877in</Width>
+              <Width>1.02758in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.625in</Width>
+              <Width>0.68381in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.91665in</Width>
+              <Width>0.97546in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -374,7 +374,7 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>1.54165in</Width>
+                            <Width>1.65928in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -509,10 +509,10 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>0.17535in</Width>
+                            <Width>0.29298in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>2.64756in</Width>
+                            <Width>2.76519in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -557,7 +557,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=First(Fields!NAME.Value, "ProdJobCardView") &amp; System.Environment.NewLine &amp; "Phone No : " &amp; First(Fields!PHONE.Value, "ProdJobCardView")</Value>
+                                            <Value>=First(Fields!NAME.Value, "ProdJobCardView") &amp; System.Environment.NewLine &amp; " " &amp; System.Environment.NewLine &amp;" " &amp; System.Environment.NewLine &amp;  "Phone No : " &amp; First(Fields!PHONE.Value, "ProdJobCardView")</Value>
                                             <Style>
                                               <FontSize>9pt</FontSize>
                                             </Style>
@@ -592,6 +592,7 @@
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixCell>
                             </TablixCells>
@@ -633,10 +634,10 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>0.1441in</Width>
+                            <Width>0.26172in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>3.35591in</Width>
+                            <Width>3.47353in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -1282,7 +1283,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!BINCODE.Value</Value>
+                              <Value>=First(Fields!BINCODE.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1313,7 +1314,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!STOCKCODE.Value</Value>
+                              <Value>=First(Fields!STOCKCODE.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1379,7 +1380,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DESCRIPTION.Value</Value>
+                              <Value>=First(Fields!DESCRIPTION.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1416,7 +1417,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!OrderQTY.Value</Value>
+                              <Value>=Sum(Fields!OrderQTY.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1454,7 +1455,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="*" + Fields!STOCKCODE.Value + "*"</Value>
+                              <Value>="*" + First(Fields!STOCKCODE.Value, "STOCKCODE")  + "*"</Value>
                               <Style>
                                 <FontFamily>Free 3 of 9 Extended</FontFamily>
                                 <FontSize>18pt</FontSize>
@@ -1684,7 +1685,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= "Assign TO : " &amp; System.Environment.NewLine &amp; First(Fields!AssignTo.Value, "ProdJobCardView")</Value>
+                              <Value>= "Assign TO : " &amp; System.Environment.NewLine &amp; First(Fields!AssignTo.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1718,7 +1719,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="Plan Production Start Date : "&amp; System.Environment.NewLine &amp; Fields!PlanProductionDate.Value</Value>
+                              <Value>="Plan Production Start Date : "&amp; System.Environment.NewLine &amp; First(Fields!PlanProductionDate.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1751,7 +1752,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="Print By "&amp; System.Environment.NewLine</Value>
+                              <Value>="Print By "&amp; System.Environment.NewLine &amp; User!UserID</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1820,7 +1821,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= "NOTES : "  &amp;  First(Fields!Note.Value, "ProdJobCardView")</Value>
+                              <Value>= "NOTES : "  &amp;  First(Fields!Note.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1864,7 +1865,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= "ADDITIONAL NOTES : " +First(Fields!AddtionalNotes.Value, "ProdJobCardView")</Value>
+                              <Value>= "ADDITIONAL NOTES : " + First(Fields!AddtionalNotes.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -2069,7 +2070,7 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=First(Fields!EnableAddNote.Value, "ProdJobCardView")</Hidden>
+                        <Hidden>=IIF(First(Fields!EnableAddNote.Value ,"STOCKCODE"), False, True)</Hidden>
                       </Visibility>
                       <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
@@ -2089,7 +2090,7 @@
         <Top>0.05208in</Top>
         <Left>0.01909in</Left>
         <Height>6.95833in</Height>
-        <Width>6.32291in</Width>
+        <Width>6.79339in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2100,8 +2101,63 @@
     <Height>7.01041in</Height>
     <Style />
   </Body>
-  <Width>6.35417in</Width>
+  <Width>6.8125in</Width>
   <Page>
+    <PageHeader>
+      <Height>0.34375in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.34375in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="PageNumber">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>PageNumber</rd:DefaultName>
+          <Top>0.05556in</Top>
+          <Left>5.15323in</Left>
+          <Height>0.25in</Height>
+          <Width>1.45833in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -2292,6 +2348,10 @@
         <Field Name="ProductionComplete">
           <DataField>ProductionComplete</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="PrintBy">
+          <DataField>PrintBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
