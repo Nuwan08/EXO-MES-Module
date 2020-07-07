@@ -6,28 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.73588in</Width>
+              <Width>0.66036in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.05881in</Width>
+              <Width>0.98329in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.25672in</Width>
+              <Width>0.1812in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.00674in</Width>
+              <Width>0.93122in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04839in</Width>
+              <Width>0.97287in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.02758in</Width>
+              <Width>0.95206in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.68381in</Width>
+              <Width>0.60829in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.97546in</Width>
+              <Width>0.89994in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -324,6 +324,7 @@
                           <Style>None</Style>
                         </Border>
                         <PaddingLeft>12pt</PaddingLeft>
+                        <PaddingBottom>7pt</PaddingBottom>
                       </Style>
                     </Image>
                     <ColSpan>2</ColSpan>
@@ -339,9 +340,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=UCase(Fields!OPCode.Value)</Value>
+                              <Value>=UCase(First(Fields!OpName.Value, "OPCode"))</Value>
                               <Style>
-                                <FontSize>14pt</FontSize>
+                                <FontSize>20pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -356,10 +357,11 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>3pt</PaddingTop>
+                        <PaddingBottom>1pt</PaddingBottom>
                       </Style>
                     </Textbox>
                     <ColSpan>4</ColSpan>
@@ -374,12 +376,12 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>1.65928in</Width>
+                            <Width>1.50823in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>0.25521in</Height>
+                            <Height>0.35938in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -392,7 +394,8 @@
                                           <TextRun>
                                             <Value>=First(Fields!SoSeqNo.Value, "ProdJobCardView")</Value>
                                             <Style>
-                                              <FontSize>8pt</FontSize>
+                                              <FontSize>24pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -418,7 +421,7 @@
                             </TablixCells>
                           </TablixRow>
                           <TablixRow>
-                            <Height>0.25521in</Height>
+                            <Height>0.15104in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -432,7 +435,7 @@
                                             <Value>= "*" &amp; First(Fields!SoSeqNo.Value, "ProdJobCardView") &amp; "*"</Value>
                                             <Style>
                                               <FontFamily>Free 3 of 9 Extended</FontFamily>
-                                              <FontSize>24pt</FontSize>
+                                              <FontSize>22pt</FontSize>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -513,10 +516,10 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>0.29298in</Width>
+                            <Width>0.14193in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>2.76519in</Width>
+                            <Width>2.61414in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -637,10 +640,10 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>0.26172in</Width>
+                            <Width>0.22526in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>3.47353in</Width>
+                            <Width>3.2079in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -804,7 +807,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value EvaluationMode="Constant">Shipped By</Value>
+                              <Value>="Shipped By" &amp; System.Environment.NewLine &amp; First(Fields!DISPATCH_INFO.Value, "ProdJobCardView")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -939,9 +942,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value> Customer Instructions </Value>
+                              <Value> CUSTOMER NOTES :</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -953,6 +958,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Black</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -975,6 +981,7 @@
                               <Value>=Fields!INSTRUCTIONS.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -986,6 +993,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Black</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1047,7 +1055,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.48958in</Height>
+              <Height>0.375in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1124,7 +1132,7 @@
                             <TextRun>
                               <Value>P</Value>
                               <Style>
-                                <FontFamily>Microsoft YaHei UI</FontFamily>
+                                <FontFamily>MS Gothic</FontFamily>
                                 <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1139,7 +1147,7 @@
                             <TextRun>
                               <Value>R</Value>
                               <Style>
-                                <FontFamily>Microsoft YaHei UI</FontFamily>
+                                <FontFamily>MS Gothic</FontFamily>
                                 <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1154,7 +1162,7 @@
                             <TextRun>
                               <Value>O</Value>
                               <Style>
-                                <FontFamily>Microsoft YaHei UI</FontFamily>
+                                <FontFamily>MS Gothic</FontFamily>
                                 <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1169,7 +1177,7 @@
                             <TextRun>
                               <Value>D</Value>
                               <Style>
-                                <FontFamily>Microsoft YaHei UI</FontFamily>
+                                <FontFamily>MS Gothic</FontFamily>
                                 <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1677,7 +1685,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.35417in</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1813,7 +1821,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.14583in</Height>
+              <Height>0.26041in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1857,7 +1865,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.625in</Height>
+              <Height>1.22917in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1901,62 +1909,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.125in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox366">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox366</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Color>Black</Color>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Style>None</Style>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Style>None</Style>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Style>None</Style>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>8</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.0625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2073,16 +2026,11 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=IIF(First(Fields!EnableAddNote.Value ,"STOCKCODE"), False, True)</Hidden>
+                        <Hidden>=IIF(First(Fields!EnableAddNote.Value ,"STOCKCODE"),False,True)</Hidden>
                       </Visibility>
                       <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
                   </TablixMembers>
-                </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                  </Visibility>
                 </TablixMember>
                 <TablixMember />
               </TablixMembers>
@@ -2090,10 +2038,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ProdJobCardView</DataSetName>
-        <Top>0.05208in</Top>
-        <Left>0.01909in</Left>
-        <Height>6.95833in</Height>
-        <Width>6.79339in</Width>
+        <Top>0.06597in</Top>
+        <Height>5.14583in</Height>
+        <Width>6.18923in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2101,10 +2048,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>7.01041in</Height>
+    <Height>5.57639in</Height>
     <Style />
   </Body>
-  <Width>6.8125in</Width>
+  <Width>6.18923in</Width>
   <Page>
     <PageHeader>
       <Height>0.34375in</Height>
@@ -2117,7 +2064,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.34375in</Height>
+      <Height>0.29167in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2140,8 +2087,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.05556in</Top>
-          <Left>5.15323in</Left>
+          <Top>0.04167in</Top>
+          <Left>4.681in</Left>
           <Height>0.25in</Height>
           <Width>1.45833in</Width>
           <Style>
@@ -2354,6 +2301,14 @@
         </Field>
         <Field Name="PrintBy">
           <DataField>PrintBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OpName">
+          <DataField>OpName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DISPATCH_INFO">
+          <DataField>DISPATCH_INFO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.MESDataSet = new EXO_MES_Module.MESDataSet();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.PROD_JobCardViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MESDataSet = new EXO_MES_Module.MESDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PROD_JobCardViewTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JobCardViewTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.MESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROD_JobCardViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MESDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // PROD_JobCardViewBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "ProdJobCardView";
-            reportDataSource2.Value = this.PROD_JobCardViewBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
+            this.PROD_JobCardViewBindingSource.DataMember = "PROD_JobCardView";
+            this.PROD_JobCardViewBindingSource.DataSource = this.MESDataSet;
             // 
             // MESDataSet
             // 
             this.MESDataSet.DataSetName = "MESDataSet";
             this.MESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // PROD_JobCardViewBindingSource
+            // reportViewer1
             // 
-            this.PROD_JobCardViewBindingSource.DataMember = "PROD_JobCardView";
-            this.PROD_JobCardViewBindingSource.DataSource = this.MESDataSet;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "ProdJobCardView";
+            reportDataSource1.Value = this.PROD_JobCardViewBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // PROD_JobCardViewTableAdapter
             // 
@@ -71,12 +71,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.MaximizeBox = false;
             this.Name = "PrintByJob";
             this.Text = "PrintByJob";
             this.Load += new System.EventHandler(this.PrintByJob_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MESDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROD_JobCardViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MESDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -127,10 +127,18 @@ namespace EXO_MES_Module
 
         private void Save_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.operationMasterBindingSource.EndEdit();
-            this.operationMasterTableAdapter.Update(this.mESDataSet.OperationMaster);
-            
+            try
+            {
+                this.Validate();
+                this.operationMasterBindingSource.EndEdit();
+                this.operationMasterTableAdapter.Update(this.mESDataSet.OperationMaster);
+
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
 
 

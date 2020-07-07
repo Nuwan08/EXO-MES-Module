@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExoJobOrder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.Navigetor = new System.Windows.Forms.ToolStripButton();
             this.Search = new System.Windows.Forms.ToolStripButton();
@@ -142,6 +142,8 @@
             this.pROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
             this.sALESORD_HDRTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.SALESORD_HDRTableAdapter();
             this.pROD_SALESHEADERTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_SALESHEADERTableAdapter();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -175,7 +177,7 @@
             // 
             // toolStrip
             // 
-            this.toolStrip.BackColor = System.Drawing.Color.White;
+            this.toolStrip.BackColor = System.Drawing.Color.Silver;
             this.toolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -217,6 +219,7 @@
             this.Search.Size = new System.Drawing.Size(23, 22);
             this.Search.Text = "Search";
             this.Search.ToolTipText = "Search";
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // InsertData
             // 
@@ -297,6 +300,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
+            this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.textBox4);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.richTextBox3);
@@ -316,15 +321,15 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(873, 497);
-            this.splitContainer1.SplitterDistance = 25;
+            this.splitContainer1.Size = new System.Drawing.Size(873, 584);
+            this.splitContainer1.SplitterDistance = 29;
             this.splitContainer1.TabIndex = 12;
             // 
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODSALESHEADERBindingSource, "Customer Name", true));
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(355, 34);
+            this.textBox4.Location = new System.Drawing.Point(400, 37);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(366, 20);
@@ -343,7 +348,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(239, 41);
+            this.label8.Location = new System.Drawing.Point(302, 40);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 12;
@@ -353,7 +358,7 @@
             // 
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODSALESHEADERBindingSource, "Customer Ref", true));
-            this.richTextBox3.Location = new System.Drawing.Point(355, 70);
+            this.richTextBox3.Location = new System.Drawing.Point(400, 73);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
             this.richTextBox3.Size = new System.Drawing.Size(366, 36);
@@ -363,7 +368,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 70);
+            this.label7.Location = new System.Drawing.Point(280, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 13);
             this.label7.TabIndex = 10;
@@ -373,7 +378,7 @@
             // 
             this.TxtDueDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODSALESHEADERBindingSource, "Due Date", true));
             this.TxtDueDate.Enabled = false;
-            this.TxtDueDate.Location = new System.Drawing.Point(90, 83);
+            this.TxtDueDate.Location = new System.Drawing.Point(140, 80);
             this.TxtDueDate.Name = "TxtDueDate";
             this.TxtDueDate.ReadOnly = true;
             this.TxtDueDate.Size = new System.Drawing.Size(100, 20);
@@ -388,12 +393,13 @@
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Due Date :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODSALESHEADERBindingSource, "Order Date", true));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(90, 41);
+            this.textBox2.Location = new System.Drawing.Point(140, 37);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -412,7 +418,7 @@
             // 
             this.TxtOverDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtOverDue.Enabled = false;
-            this.TxtOverDue.Location = new System.Drawing.Point(621, 3);
+            this.TxtOverDue.Location = new System.Drawing.Point(666, 3);
             this.TxtOverDue.Name = "TxtOverDue";
             this.TxtOverDue.Size = new System.Drawing.Size(100, 20);
             this.TxtOverDue.TabIndex = 5;
@@ -420,7 +426,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(529, 6);
+            this.label2.Location = new System.Drawing.Point(574, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 4;
@@ -431,7 +437,7 @@
             this.TxtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODSALESHEADERBindingSource, "Status", true));
             this.TxtStatus.Enabled = false;
-            this.TxtStatus.Location = new System.Drawing.Point(355, 4);
+            this.TxtStatus.Location = new System.Drawing.Point(400, 3);
             this.TxtStatus.Name = "TxtStatus";
             this.TxtStatus.ReadOnly = true;
             this.TxtStatus.Size = new System.Drawing.Size(100, 20);
@@ -440,7 +446,7 @@
             // TxtOrderId
             // 
             this.TxtOrderId.Enabled = false;
-            this.TxtOrderId.Location = new System.Drawing.Point(90, 4);
+            this.TxtOrderId.Location = new System.Drawing.Point(140, 2);
             this.TxtOrderId.Name = "TxtOrderId";
             this.TxtOrderId.ReadOnly = true;
             this.TxtOrderId.Size = new System.Drawing.Size(100, 20);
@@ -449,7 +455,7 @@
             // Status
             // 
             this.Status.AutoSize = true;
-            this.Status.Location = new System.Drawing.Point(248, 7);
+            this.Status.Location = new System.Drawing.Point(327, 7);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(63, 13);
             this.Status.TabIndex = 1;
@@ -473,7 +479,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(873, 468);
+            this.tabControl1.Size = new System.Drawing.Size(873, 551);
             this.tabControl1.TabIndex = 13;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabChange);
             // 
@@ -486,7 +492,7 @@
             this.Setup.Location = new System.Drawing.Point(4, 22);
             this.Setup.Name = "Setup";
             this.Setup.Padding = new System.Windows.Forms.Padding(3);
-            this.Setup.Size = new System.Drawing.Size(865, 442);
+            this.Setup.Size = new System.Drawing.Size(865, 525);
             this.Setup.TabIndex = 0;
             this.Setup.Text = "Setup";
             this.Setup.UseVisualStyleBackColor = true;
@@ -514,7 +520,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 151);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(859, 288);
+            this.groupBox2.Size = new System.Drawing.Size(859, 371);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Production Requirments";
@@ -609,24 +615,25 @@
             this.listBoxSelected.FormattingEnabled = true;
             this.listBoxSelected.HorizontalScrollbar = true;
             this.listBoxSelected.ItemHeight = 15;
-            this.listBoxSelected.Location = new System.Drawing.Point(534, 30);
+            this.listBoxSelected.Location = new System.Drawing.Point(525, 24);
             this.listBoxSelected.Name = "listBoxSelected";
-            this.listBoxSelected.Size = new System.Drawing.Size(149, 109);
+            this.listBoxSelected.Size = new System.Drawing.Size(167, 124);
             this.listBoxSelected.TabIndex = 45;
             // 
             // ListBoxAll
             // 
             this.ListBoxAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListBoxAll.ColumnWidth = 120;
+            this.ListBoxAll.ColumnWidth = 170;
             this.ListBoxAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBoxAll.FormattingEnabled = true;
             this.ListBoxAll.HorizontalExtent = 1;
             this.ListBoxAll.HorizontalScrollbar = true;
             this.ListBoxAll.ItemHeight = 15;
-            this.ListBoxAll.Location = new System.Drawing.Point(118, 31);
+            this.ListBoxAll.Location = new System.Drawing.Point(83, 24);
+            this.ListBoxAll.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.ListBoxAll.MultiColumn = true;
             this.ListBoxAll.Name = "ListBoxAll";
-            this.ListBoxAll.Size = new System.Drawing.Size(330, 107);
+            this.ListBoxAll.Size = new System.Drawing.Size(365, 122);
             this.ListBoxAll.Sorted = true;
             this.ListBoxAll.TabIndex = 44;
             // 
@@ -635,11 +642,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pRODJOBCARDBindingSource, "EnableAddNote", true));
-            this.checkBox1.Location = new System.Drawing.Point(118, 260);
+            this.checkBox1.Location = new System.Drawing.Point(83, 250);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(162, 17);
+            this.checkBox1.Size = new System.Drawing.Size(81, 17);
             this.checkBox1.TabIndex = 41;
-            this.checkBox1.Text = "Addtional Notes & Sketch Box";
+            this.checkBox1.Text = "Sketch Box";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -671,10 +678,11 @@
             "Pickel",
             "Paint Welds Only ",
             "Polish Welds"});
-            this.comboBoxFinish.Location = new System.Drawing.Point(118, 176);
+            this.comboBoxFinish.Location = new System.Drawing.Point(83, 176);
             this.comboBoxFinish.Name = "comboBoxFinish";
-            this.comboBoxFinish.Size = new System.Drawing.Size(330, 21);
+            this.comboBoxFinish.Size = new System.Drawing.Size(365, 21);
             this.comboBoxFinish.TabIndex = 37;
+            this.comboBoxFinish.SelectedIndexChanged += new System.EventHandler(this.comboBoxFinish_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -685,9 +693,9 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Custom Drawing ",
             "Stock  Drawing"});
-            this.comboBox1.Location = new System.Drawing.Point(118, 149);
+            this.comboBox1.Location = new System.Drawing.Point(83, 149);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(330, 21);
+            this.comboBox1.Size = new System.Drawing.Size(365, 21);
             this.comboBox1.TabIndex = 36;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -721,9 +729,9 @@
             // richTextBox2
             // 
             this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODJOBCARDBindingSource, "AddtionalNotes", true));
-            this.richTextBox2.Location = new System.Drawing.Point(118, 279);
+            this.richTextBox2.Location = new System.Drawing.Point(83, 273);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(700, 10);
+            this.richTextBox2.Size = new System.Drawing.Size(735, 78);
             this.richTextBox2.TabIndex = 29;
             this.richTextBox2.Text = "";
             this.richTextBox2.Visible = false;
@@ -742,12 +750,13 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pRODJOBCARDBindingSource, "MakeToStock", true));
-            this.checkBox2.Location = new System.Drawing.Point(118, 203);
+            this.checkBox2.Location = new System.Drawing.Point(83, 203);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(300, 17);
             this.checkBox2.TabIndex = 27;
             this.checkBox2.Text = "ITEM BEEN MADE FOR THIS ORDER ( stock or custom)";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label3
             // 
@@ -761,9 +770,9 @@
             // richTextBox1
             // 
             this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODJOBCARDBindingSource, "Note", true));
-            this.richTextBox1.Location = new System.Drawing.Point(118, 219);
+            this.richTextBox1.Location = new System.Drawing.Point(83, 220);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(700, 44);
+            this.richTextBox1.Size = new System.Drawing.Size(735, 26);
             this.richTextBox1.TabIndex = 24;
             this.richTextBox1.Text = "";
             this.richTextBox1.Leave += new System.EventHandler(this.saveJobCardRec);
@@ -791,49 +800,49 @@
             this.SubFormGrid.AllowUserToAddRows = false;
             this.SubFormGrid.AllowUserToDeleteRows = false;
             this.SubFormGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.SubFormGrid.BackgroundColor = System.Drawing.Color.DimGray;
             this.SubFormGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SubFormGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.SubFormGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle43;
             this.SubFormGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubFormGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SubFormGrid.Location = new System.Drawing.Point(3, 3);
             this.SubFormGrid.Name = "SubFormGrid";
             this.SubFormGrid.ReadOnly = true;
             this.SubFormGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
-            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle45;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubFormGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.InfoText;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -853,7 +862,7 @@
             this.Operations.Location = new System.Drawing.Point(4, 22);
             this.Operations.Name = "Operations";
             this.Operations.Padding = new System.Windows.Forms.Padding(3);
-            this.Operations.Size = new System.Drawing.Size(865, 442);
+            this.Operations.Size = new System.Drawing.Size(865, 485);
             this.Operations.TabIndex = 1;
             this.Operations.Text = "Divisions";
             this.Operations.UseVisualStyleBackColor = true;
@@ -879,8 +888,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.RefUID);
             this.splitContainer3.Panel2.Controls.Add(this.pROD_ROUTEDataGridView);
             this.splitContainer3.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer3_Panel2_Paint);
-            this.splitContainer3.Size = new System.Drawing.Size(859, 436);
-            this.splitContainer3.SplitterDistance = 31;
+            this.splitContainer3.Size = new System.Drawing.Size(859, 479);
+            this.splitContainer3.SplitterDistance = 34;
             this.splitContainer3.TabIndex = 0;
             // 
             // BttComplete
@@ -1138,7 +1147,7 @@
             this.Summary.Controls.Add(this.dataGridView2);
             this.Summary.Location = new System.Drawing.Point(4, 22);
             this.Summary.Name = "Summary";
-            this.Summary.Size = new System.Drawing.Size(865, 442);
+            this.Summary.Size = new System.Drawing.Size(865, 485);
             this.Summary.TabIndex = 3;
             this.Summary.Text = "Summary";
             this.Summary.UseVisualStyleBackColor = true;
@@ -1166,7 +1175,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(865, 442);
+            this.dataGridView2.Size = new System.Drawing.Size(865, 485);
             this.dataGridView2.TabIndex = 0;
             // 
             // sTOCKCODEDataGridViewTextBoxColumn
@@ -1300,12 +1309,31 @@
             // 
             this.pROD_SALESHEADERTableAdapter.ClearBeforeFill = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Plan Production Date :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pRODJOBCARDBindingSource, "PlanProductionDate", true));
+            this.dateTimePicker1.Location = new System.Drawing.Point(140, 123);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 31;
+            // 
             // ExoJobOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(873, 522);
+            this.ClientSize = new System.Drawing.Size(873, 609);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1314,6 +1342,7 @@
             this.Name = "ExoJobOrder";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Production Order";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExoJobOrder_FormClosing);
             this.Load += new System.EventHandler(this.ExoSalesLine_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
@@ -1467,6 +1496,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

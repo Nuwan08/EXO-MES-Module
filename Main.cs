@@ -17,7 +17,7 @@ namespace EXO_MES_Module
         
         
         private string  depatmentNo;
-        private bool bol_SpliterFlag;
+        private bool bol_SpliterFlag ,Save_Chanages;
 
 
 
@@ -47,6 +47,7 @@ namespace EXO_MES_Module
         {
             InitializeComponent();
             bol_SpliterFlag = true;
+            Save_Chanages = false;
 
             this.Dashboard(workerName);
             this.Text = workerName;
@@ -982,6 +983,7 @@ namespace EXO_MES_Module
             this.Validate();
             this.pRODJOBCARDBindingSource.EndEdit();
             this.pROD_JOBCARDTableAdapter.Update(this.mESDataSet.PROD_JOBCARD);
+            Save_Chanages = false;
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -1006,6 +1008,42 @@ namespace EXO_MES_Module
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Save_Chanages)
+            {
+                DialogResult result = MessageBox.Show("Would you like to save your changes",
+                    "Save?",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Validate();
+                    this.pRODJOBCARDBindingSource.EndEdit();
+                    this.pROD_JOBCARDTableAdapter.Update(this.mESDataSet.PROD_JOBCARD);
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Stop the closing and return to the form
+                    // e.Cancel = true;
+                    Save_Chanages = false;
+                    this.Close();
+                }
+
+            }
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            ListofValue L1 = new ListofValue("PROD_Dashboard");
+            L1.ShowDialog();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            Save_Chanages = true;
         }
 
         private void cumulativeSTFToolStripMenuItem_Click(object sender, EventArgs e)

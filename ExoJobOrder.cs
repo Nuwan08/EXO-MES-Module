@@ -15,7 +15,7 @@ namespace EXO_MES_Module
     public partial class ExoJobOrder : Form
     {
         
-        private bool bol_SpliterFlag;
+        private bool bol_SpliterFlag, Save_Chanages;
         
         private dbConnectionMyob db;
         
@@ -30,6 +30,7 @@ namespace EXO_MES_Module
         {
             InitializeComponent();
             TxtOrderId.Text= SEQNO.ToString();
+            Save_Chanages = false;
            // soSeqNoToolStripTextBox.Text = SEQNO.ToString();
             this.Text = "Production Order " + TxtOrderId.Text;
             conn = new SqlConnection(global::EXO_MES_Module.Properties.Settings.Default.UpgradeConnectionString);
@@ -93,7 +94,11 @@ namespace EXO_MES_Module
 
         public void FillControlers(int currentRec, bool PramerterFlag)
         {
-            SubFormGrid.Refresh();
+            this.saveJobCard();
+
+            this.saveProdRoute();
+
+            //SubFormGrid.Refresh();
             if (PramerterFlag == true)
             { currRecord = currentRec; }
 
@@ -116,7 +121,7 @@ namespace EXO_MES_Module
 
             RefreshProdRoute();
 
-            attionalSkechbox();
+           attionalSkechbox();
 
         }
 
@@ -826,7 +831,7 @@ namespace EXO_MES_Module
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Save_Chanages = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -850,25 +855,25 @@ namespace EXO_MES_Module
             {
 
                 // richTextBox2.Top
-                if (this.Height < 671)
-                {
-                    this.Height = this.Height + 110;
+               // if (this.Height < 671)
+               /// {
+                //    this.Height = this.Height + 110;
 
-                    richTextBox2.Height = 90;
+                   ////// richTextBox2.Height = 90;
                     richTextBox2.Visible = true;
-                }
+              //  }
 
 
 
             }
             else
             {
-                if (this.Height > 561)
-                {
-                    this.Height = this.Height - 110;
-                }
+              //  if (this.Height > 561)
+              //  {
+               //     this.Height = this.Height - 110;
+              //  }
                 //  checkBox2.Top = 3;
-                richTextBox2.Height = 10;
+               //// richTextBox2.Height = 10;
                 richTextBox2.Visible = false;
             }
 
@@ -876,6 +881,8 @@ namespace EXO_MES_Module
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             attionalSkechbox();
+
+            Save_Chanages = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -885,6 +892,8 @@ namespace EXO_MES_Module
                 InitOperations(ListBoxAll.SelectedItem.ToString(), 100);
                 listBoxSelected.Items.Add(ListBoxAll.SelectedItem);
                 ListBoxAll.Items.Remove(ListBoxAll.SelectedItem);
+
+                Save_Chanages = true;
             }
 
         }
@@ -896,6 +905,8 @@ namespace EXO_MES_Module
                 InitOperations(listBoxSelected.SelectedItem.ToString(), 200);
                 ListBoxAll.Items.Add(listBoxSelected.SelectedItem);
                 listBoxSelected.Items.Remove(listBoxSelected.SelectedItem);
+
+                Save_Chanages = true;
             }
         }
 
@@ -913,6 +924,56 @@ namespace EXO_MES_Module
             jobcard.Show();
         }
 
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Save_Chanages = true;
+        }
+
+        private void comboBoxFinish_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Save_Chanages = true;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            ListofValue L1 = new ListofValue("JobCard");
+            L1.ShowDialog();
+        }
+
+        private void ExoJobOrder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Save_Chanages)
+            {
+                DialogResult result = MessageBox.Show("Would you like to save your changes",
+                    "Save?",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.saveJobCard();
+
+                    this.saveProdRoute();
+                    Save_Chanages = false;
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Stop the closing and return to the form
+                    // e.Cancel = true;
+                    Save_Chanages = false;
+                    this.Close();
+                }
+            }
+        }
         private void SheduleJob(string UID, int UpdateType)
         {
 

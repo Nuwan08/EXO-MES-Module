@@ -124,12 +124,9 @@
   <data name="Navigetor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEdSURBVDhPYyAVTKly/L98euF/KJd4sGFm1v9nW2P//z+Z
-        /X/PFD/SDABp+L0/4f//Q0lgfGJuIHEG7FrR9P/uYu///3dFouCT04lwwY5JIf8/rvD8/39b2P//G31R
-        6BNTPPEbcHmK0///a4A2wzBIIxL/2ARX7AbsmpsJsRWkAQ8+PhWLCzZNjf7/f3cwfnwwCkxjDcSdsyL/
-        /zoZTxQ+uTgMuxfOrs/6//8sMKoupeLGQPmTCyNxB+K5A/P/Pz0c////nTxUDDIYFI2gWCAmHRyHuQbk
-        b1DgIcUCUekABE7umPb/0XIvjMAkOiXCwJGlieDAA7sIFAbLI0gzAAQOb534//6+GHB4HFoRS7oBMLB2
-        WtT/XWu7oQYwMAAAG9FcnfI1PaIAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABhSURBVDhPYzju7PwfF2YgBoAUfu/vx8BDzABcGKqEeJBW
+        2Y9Vk1/V1v+4MFQJBOAzoHv7BwyM1QBsmCQDoEwUQBUDcGGoEgjAZQDRgGYuACkkOgywYaINwAWoYgB2
+        vPU/AMRITWGMOfR6AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="Search.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -226,17 +223,23 @@
         DlWrQblHWBB2AP7wQhCwXWPSAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="pRODSALESHEADERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>258, 158</value>
-  </metadata>
   <metadata name="pRODJOBCARDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>645, 80</value>
   </metadata>
   <metadata name="pRODSALESHEADERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>258, 158</value>
   </metadata>
+  <metadata name="pRODSALESHEADERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>258, 158</value>
+  </metadata>
+  <metadata name="pRODSALESHEADERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>258, 158</value>
+  </metadata>
   <metadata name="mESDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>115, 17</value>
+  </metadata>
+  <metadata name="pRODJOBCARDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>645, 80</value>
   </metadata>
   <metadata name="mESDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>115, 17</value>

@@ -30,15 +30,15 @@ namespace EXO_MES_Module
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -83,6 +83,35 @@ namespace EXO_MES_Module
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.MainSpliterContainer = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.JobCard = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.STOCKCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InStage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductionStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductionComplete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTOCKCODEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inStageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderQTYDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planProductionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.divisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRODJOBCARDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mESDataSet = new EXO_MES_Module.MESDataSet();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -148,7 +177,6 @@ namespace EXO_MES_Module
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.JobIDtxt = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pRODJOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pROD_DashboardTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_DashboardTableAdapter();
@@ -161,35 +189,6 @@ namespace EXO_MES_Module
             this.estimatedTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalesLine = new System.Windows.Forms.TextBox();
-            this.JobCard = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.STOCKCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InStage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlanProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductionStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductionComplete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTOCKCODEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inStageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderQTYDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planProductionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.divisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MainSpliterContainer)).BeginInit();
             this.MainSpliterContainer.Panel1.SuspendLayout();
             this.MainSpliterContainer.Panel2.SuspendLayout();
@@ -553,19 +552,19 @@ namespace EXO_MES_Module
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.JobCard,
@@ -598,29 +597,253 @@ namespace EXO_MES_Module
             this.drawingDataGridViewTextBoxColumn,
             this.divisionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pRODJOBCARDBindingSource1;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1149, 99);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // JobCard
+            // 
+            this.JobCard.Frozen = true;
+            this.JobCard.HeaderText = "Job Card";
+            this.JobCard.Name = "JobCard";
+            this.JobCard.ReadOnly = true;
+            this.JobCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.JobCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.JobCard.Text = "Print";
+            this.JobCard.UseColumnTextForButtonValue = true;
+            this.JobCard.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SalesID";
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "SalesID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // STOCKCODE
+            // 
+            this.STOCKCODE.DataPropertyName = "STOCKCODE";
+            this.STOCKCODE.Frozen = true;
+            this.STOCKCODE.HeaderText = "Stock Code";
+            this.STOCKCODE.Name = "STOCKCODE";
+            this.STOCKCODE.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.Frozen = true;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // InStage
+            // 
+            this.InStage.DataPropertyName = "InStage";
+            this.InStage.Frozen = true;
+            this.InStage.HeaderText = "InStage";
+            this.InStage.Name = "InStage";
+            this.InStage.ReadOnly = true;
+            // 
+            // OrderDate
+            // 
+            this.OrderDate.DataPropertyName = "OrderDate";
+            this.OrderDate.Frozen = true;
+            this.OrderDate.HeaderText = "Order Date";
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            // 
+            // DueDate
+            // 
+            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.Frozen = true;
+            this.DueDate.HeaderText = "Due Date";
+            this.DueDate.Name = "DueDate";
+            this.DueDate.ReadOnly = true;
+            // 
+            // PlanProductionDate
+            // 
+            this.PlanProductionDate.DataPropertyName = "PlanProductionDate";
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Blue;
+            this.PlanProductionDate.DefaultCellStyle = dataGridViewCellStyle21;
+            this.PlanProductionDate.Frozen = true;
+            this.PlanProductionDate.HeaderText = "Plan Due Date";
+            this.PlanProductionDate.Name = "PlanProductionDate";
+            this.PlanProductionDate.ReadOnly = true;
+            // 
+            // OrderQTY
+            // 
+            this.OrderQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.OrderQTY.DataPropertyName = "OrderQTY";
+            this.OrderQTY.Frozen = true;
+            this.OrderQTY.HeaderText = "Order QTY";
+            this.OrderQTY.Name = "OrderQTY";
+            this.OrderQTY.ReadOnly = true;
+            this.OrderQTY.Width = 78;
+            // 
+            // ProductionStartDate
+            // 
+            this.ProductionStartDate.DataPropertyName = "ProductionStartDate";
+            this.ProductionStartDate.HeaderText = "Production Start";
+            this.ProductionStartDate.Name = "ProductionStartDate";
+            this.ProductionStartDate.ReadOnly = true;
+            // 
+            // ProductionComplete
+            // 
+            this.ProductionComplete.DataPropertyName = "ProductionComplete";
+            this.ProductionComplete.HeaderText = "End Production";
+            this.ProductionComplete.Name = "ProductionComplete";
+            this.ProductionComplete.ReadOnly = true;
+            // 
+            // Sales
+            // 
+            this.Sales.DataPropertyName = "Sales";
+            this.Sales.HeaderText = "Sales";
+            this.Sales.Name = "Sales";
+            this.Sales.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Cost";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            // 
+            // GP
+            // 
+            this.GP.DataPropertyName = "GP";
+            this.GP.HeaderText = "GP";
+            this.GP.Name = "GP";
+            this.GP.ReadOnly = true;
+            // 
+            // salesIDDataGridViewTextBoxColumn
+            // 
+            this.salesIDDataGridViewTextBoxColumn.DataPropertyName = "SalesID";
+            this.salesIDDataGridViewTextBoxColumn.HeaderText = "SalesID";
+            this.salesIDDataGridViewTextBoxColumn.Name = "salesIDDataGridViewTextBoxColumn";
+            this.salesIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sTOCKCODEDataGridViewTextBoxColumn1
+            // 
+            this.sTOCKCODEDataGridViewTextBoxColumn1.DataPropertyName = "STOCKCODE";
+            this.sTOCKCODEDataGridViewTextBoxColumn1.HeaderText = "STOCKCODE";
+            this.sTOCKCODEDataGridViewTextBoxColumn1.Name = "sTOCKCODEDataGridViewTextBoxColumn1";
+            this.sTOCKCODEDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // salesLineDataGridViewTextBoxColumn
+            // 
+            this.salesLineDataGridViewTextBoxColumn.DataPropertyName = "SalesLine";
+            this.salesLineDataGridViewTextBoxColumn.HeaderText = "SalesLine";
+            this.salesLineDataGridViewTextBoxColumn.Name = "salesLineDataGridViewTextBoxColumn";
+            this.salesLineDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productionStartDateDataGridViewTextBoxColumn
+            // 
+            this.productionStartDateDataGridViewTextBoxColumn.DataPropertyName = "ProductionStartDate";
+            this.productionStartDateDataGridViewTextBoxColumn.HeaderText = "ProductionStartDate";
+            this.productionStartDateDataGridViewTextBoxColumn.Name = "productionStartDateDataGridViewTextBoxColumn";
+            this.productionStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
+            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // inStageDataGridViewTextBoxColumn
+            // 
+            this.inStageDataGridViewTextBoxColumn.DataPropertyName = "InStage";
+            this.inStageDataGridViewTextBoxColumn.HeaderText = "InStage";
+            this.inStageDataGridViewTextBoxColumn.Name = "inStageDataGridViewTextBoxColumn";
+            this.inStageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderQTYDataGridViewTextBoxColumn1
+            // 
+            this.orderQTYDataGridViewTextBoxColumn1.DataPropertyName = "OrderQTY";
+            this.orderQTYDataGridViewTextBoxColumn1.HeaderText = "OrderQTY";
+            this.orderQTYDataGridViewTextBoxColumn1.Name = "orderQTYDataGridViewTextBoxColumn1";
+            this.orderQTYDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // salesDataGridViewTextBoxColumn
+            // 
+            this.salesDataGridViewTextBoxColumn.DataPropertyName = "Sales";
+            this.salesDataGridViewTextBoxColumn.HeaderText = "Sales";
+            this.salesDataGridViewTextBoxColumn.Name = "salesDataGridViewTextBoxColumn";
+            this.salesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gPDataGridViewTextBoxColumn
+            // 
+            this.gPDataGridViewTextBoxColumn.DataPropertyName = "GP";
+            this.gPDataGridViewTextBoxColumn.HeaderText = "GP";
+            this.gPDataGridViewTextBoxColumn.Name = "gPDataGridViewTextBoxColumn";
+            this.gPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productionCompleteDataGridViewTextBoxColumn
+            // 
+            this.productionCompleteDataGridViewTextBoxColumn.DataPropertyName = "ProductionComplete";
+            this.productionCompleteDataGridViewTextBoxColumn.HeaderText = "ProductionComplete";
+            this.productionCompleteDataGridViewTextBoxColumn.Name = "productionCompleteDataGridViewTextBoxColumn";
+            this.productionCompleteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // planProductionDateDataGridViewTextBoxColumn
+            // 
+            this.planProductionDateDataGridViewTextBoxColumn.DataPropertyName = "PlanProductionDate";
+            this.planProductionDateDataGridViewTextBoxColumn.HeaderText = "PlanProductionDate";
+            this.planProductionDateDataGridViewTextBoxColumn.Name = "planProductionDateDataGridViewTextBoxColumn";
+            this.planProductionDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // drawingDataGridViewTextBoxColumn
+            // 
+            this.drawingDataGridViewTextBoxColumn.DataPropertyName = "Drawing";
+            this.drawingDataGridViewTextBoxColumn.HeaderText = "Drawing";
+            this.drawingDataGridViewTextBoxColumn.Name = "drawingDataGridViewTextBoxColumn";
+            this.drawingDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // divisionDataGridViewTextBoxColumn
+            // 
+            this.divisionDataGridViewTextBoxColumn.DataPropertyName = "Division";
+            this.divisionDataGridViewTextBoxColumn.HeaderText = "Division";
+            this.divisionDataGridViewTextBoxColumn.Name = "divisionDataGridViewTextBoxColumn";
+            this.divisionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRODJOBCARDBindingSource1
             // 
@@ -637,19 +860,19 @@ namespace EXO_MES_Module
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.soSeqNoDataGridViewTextBoxColumn,
@@ -669,23 +892,23 @@ namespace EXO_MES_Module
             this.drawingDataGridViewTextBoxColumn1,
             this.divisionDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.pRODDashboardBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView2.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1069,6 +1292,7 @@ namespace EXO_MES_Module
             this.Search.Size = new System.Drawing.Size(23, 22);
             this.Search.Text = "Search";
             this.Search.ToolTipText = "Search";
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // InsertData
             // 
@@ -1259,17 +1483,6 @@ namespace EXO_MES_Module
             this.JobIDtxt.Size = new System.Drawing.Size(74, 13);
             this.JobIDtxt.TabIndex = 29;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pRODJOBCARDBindingSource1, "PlanProductionDate", true));
-            this.dateTimePicker1.Location = new System.Drawing.Point(545, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 30;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            this.dateTimePicker1.Enter += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            this.dateTimePicker1.Leave += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
             // pRODJOBCARDBindingSource
             // 
             this.pRODJOBCARDBindingSource.DataMember = "PROD_JOBCARD";
@@ -1343,229 +1556,6 @@ namespace EXO_MES_Module
             this.SalesLine.Size = new System.Drawing.Size(100, 13);
             this.SalesLine.TabIndex = 31;
             // 
-            // JobCard
-            // 
-            this.JobCard.Frozen = true;
-            this.JobCard.HeaderText = "Job Card";
-            this.JobCard.Name = "JobCard";
-            this.JobCard.ReadOnly = true;
-            this.JobCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.JobCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.JobCard.Text = "Print";
-            this.JobCard.UseColumnTextForButtonValue = true;
-            this.JobCard.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SalesID";
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "SalesID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // STOCKCODE
-            // 
-            this.STOCKCODE.DataPropertyName = "STOCKCODE";
-            this.STOCKCODE.Frozen = true;
-            this.STOCKCODE.HeaderText = "Stock Code";
-            this.STOCKCODE.Name = "STOCKCODE";
-            this.STOCKCODE.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.Frozen = true;
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // InStage
-            // 
-            this.InStage.DataPropertyName = "InStage";
-            this.InStage.Frozen = true;
-            this.InStage.HeaderText = "InStage";
-            this.InStage.Name = "InStage";
-            this.InStage.ReadOnly = true;
-            // 
-            // OrderDate
-            // 
-            this.OrderDate.DataPropertyName = "OrderDate";
-            this.OrderDate.Frozen = true;
-            this.OrderDate.HeaderText = "Order Date";
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            // 
-            // DueDate
-            // 
-            this.DueDate.DataPropertyName = "DueDate";
-            this.DueDate.Frozen = true;
-            this.DueDate.HeaderText = "Due Date";
-            this.DueDate.Name = "DueDate";
-            this.DueDate.ReadOnly = true;
-            // 
-            // PlanProductionDate
-            // 
-            this.PlanProductionDate.DataPropertyName = "PlanProductionDate";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.PlanProductionDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.PlanProductionDate.Frozen = true;
-            this.PlanProductionDate.HeaderText = "Plan Due Date";
-            this.PlanProductionDate.Name = "PlanProductionDate";
-            this.PlanProductionDate.ReadOnly = true;
-            // 
-            // OrderQTY
-            // 
-            this.OrderQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.OrderQTY.DataPropertyName = "OrderQTY";
-            this.OrderQTY.Frozen = true;
-            this.OrderQTY.HeaderText = "Order QTY";
-            this.OrderQTY.Name = "OrderQTY";
-            this.OrderQTY.ReadOnly = true;
-            this.OrderQTY.Width = 78;
-            // 
-            // ProductionStartDate
-            // 
-            this.ProductionStartDate.DataPropertyName = "ProductionStartDate";
-            this.ProductionStartDate.HeaderText = "Production Start";
-            this.ProductionStartDate.Name = "ProductionStartDate";
-            this.ProductionStartDate.ReadOnly = true;
-            // 
-            // ProductionComplete
-            // 
-            this.ProductionComplete.DataPropertyName = "ProductionComplete";
-            this.ProductionComplete.HeaderText = "End Production";
-            this.ProductionComplete.Name = "ProductionComplete";
-            this.ProductionComplete.ReadOnly = true;
-            // 
-            // Sales
-            // 
-            this.Sales.DataPropertyName = "Sales";
-            this.Sales.HeaderText = "Sales";
-            this.Sales.Name = "Sales";
-            this.Sales.ReadOnly = true;
-            // 
-            // Cost
-            // 
-            this.Cost.DataPropertyName = "Cost";
-            this.Cost.HeaderText = "Cost";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            // 
-            // GP
-            // 
-            this.GP.DataPropertyName = "GP";
-            this.GP.HeaderText = "GP";
-            this.GP.Name = "GP";
-            this.GP.ReadOnly = true;
-            // 
-            // salesIDDataGridViewTextBoxColumn
-            // 
-            this.salesIDDataGridViewTextBoxColumn.DataPropertyName = "SalesID";
-            this.salesIDDataGridViewTextBoxColumn.HeaderText = "SalesID";
-            this.salesIDDataGridViewTextBoxColumn.Name = "salesIDDataGridViewTextBoxColumn";
-            this.salesIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sTOCKCODEDataGridViewTextBoxColumn1
-            // 
-            this.sTOCKCODEDataGridViewTextBoxColumn1.DataPropertyName = "STOCKCODE";
-            this.sTOCKCODEDataGridViewTextBoxColumn1.HeaderText = "STOCKCODE";
-            this.sTOCKCODEDataGridViewTextBoxColumn1.Name = "sTOCKCODEDataGridViewTextBoxColumn1";
-            this.sTOCKCODEDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // salesLineDataGridViewTextBoxColumn
-            // 
-            this.salesLineDataGridViewTextBoxColumn.DataPropertyName = "SalesLine";
-            this.salesLineDataGridViewTextBoxColumn.HeaderText = "SalesLine";
-            this.salesLineDataGridViewTextBoxColumn.Name = "salesLineDataGridViewTextBoxColumn";
-            this.salesLineDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productionStartDateDataGridViewTextBoxColumn
-            // 
-            this.productionStartDateDataGridViewTextBoxColumn.DataPropertyName = "ProductionStartDate";
-            this.productionStartDateDataGridViewTextBoxColumn.HeaderText = "ProductionStartDate";
-            this.productionStartDateDataGridViewTextBoxColumn.Name = "productionStartDateDataGridViewTextBoxColumn";
-            this.productionStartDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn1
-            // 
-            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
-            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // inStageDataGridViewTextBoxColumn
-            // 
-            this.inStageDataGridViewTextBoxColumn.DataPropertyName = "InStage";
-            this.inStageDataGridViewTextBoxColumn.HeaderText = "InStage";
-            this.inStageDataGridViewTextBoxColumn.Name = "inStageDataGridViewTextBoxColumn";
-            this.inStageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderQTYDataGridViewTextBoxColumn1
-            // 
-            this.orderQTYDataGridViewTextBoxColumn1.DataPropertyName = "OrderQTY";
-            this.orderQTYDataGridViewTextBoxColumn1.HeaderText = "OrderQTY";
-            this.orderQTYDataGridViewTextBoxColumn1.Name = "orderQTYDataGridViewTextBoxColumn1";
-            this.orderQTYDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // salesDataGridViewTextBoxColumn
-            // 
-            this.salesDataGridViewTextBoxColumn.DataPropertyName = "Sales";
-            this.salesDataGridViewTextBoxColumn.HeaderText = "Sales";
-            this.salesDataGridViewTextBoxColumn.Name = "salesDataGridViewTextBoxColumn";
-            this.salesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gPDataGridViewTextBoxColumn
-            // 
-            this.gPDataGridViewTextBoxColumn.DataPropertyName = "GP";
-            this.gPDataGridViewTextBoxColumn.HeaderText = "GP";
-            this.gPDataGridViewTextBoxColumn.Name = "gPDataGridViewTextBoxColumn";
-            this.gPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productionCompleteDataGridViewTextBoxColumn
-            // 
-            this.productionCompleteDataGridViewTextBoxColumn.DataPropertyName = "ProductionComplete";
-            this.productionCompleteDataGridViewTextBoxColumn.HeaderText = "ProductionComplete";
-            this.productionCompleteDataGridViewTextBoxColumn.Name = "productionCompleteDataGridViewTextBoxColumn";
-            this.productionCompleteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // planProductionDateDataGridViewTextBoxColumn
-            // 
-            this.planProductionDateDataGridViewTextBoxColumn.DataPropertyName = "PlanProductionDate";
-            this.planProductionDateDataGridViewTextBoxColumn.HeaderText = "PlanProductionDate";
-            this.planProductionDateDataGridViewTextBoxColumn.Name = "planProductionDateDataGridViewTextBoxColumn";
-            this.planProductionDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // drawingDataGridViewTextBoxColumn
-            // 
-            this.drawingDataGridViewTextBoxColumn.DataPropertyName = "Drawing";
-            this.drawingDataGridViewTextBoxColumn.HeaderText = "Drawing";
-            this.drawingDataGridViewTextBoxColumn.Name = "drawingDataGridViewTextBoxColumn";
-            this.drawingDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // divisionDataGridViewTextBoxColumn
-            // 
-            this.divisionDataGridViewTextBoxColumn.DataPropertyName = "Division";
-            this.divisionDataGridViewTextBoxColumn.HeaderText = "Division";
-            this.divisionDataGridViewTextBoxColumn.Name = "divisionDataGridViewTextBoxColumn";
-            this.divisionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1576,7 +1566,6 @@ namespace EXO_MES_Module
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 509);
             this.Controls.Add(this.SalesLine);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.JobIDtxt);
             this.Controls.Add(this.MainSpliterContainer);
             this.Controls.Add(this.toolStrip);
@@ -1588,6 +1577,7 @@ namespace EXO_MES_Module
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.Resize += new System.EventHandler(this.Main_Resize);
@@ -1712,7 +1702,6 @@ namespace EXO_MES_Module
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TextBox JobIDtxt;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

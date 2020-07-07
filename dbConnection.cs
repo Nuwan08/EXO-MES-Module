@@ -30,8 +30,8 @@ namespace EXO_MES_Module
 
             // Connection String /
             //string connectionString =  "Dsn=WMS;description=WMS;uid=root;app=Microsoft® Visual Studio® 2005;wsid=nuwan;database=WMS;trusted_connection=Yes";
-            string connectionString = "Dsn=wms1";
-            return connectionString;
+           // string connectionString = "Dsn=wms1";
+            return global::EXO_MES_Module.Properties.Settings.Default.UpgradeConnectionString;
 
         }
 

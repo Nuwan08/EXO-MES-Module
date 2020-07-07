@@ -8033,6 +8033,10 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnPrintBy;
             
+            private global::System.Data.DataColumn columnOpName;
+            
+            private global::System.Data.DataColumn columnDISPATCH_INFO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewDataTable() {
@@ -8412,6 +8416,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpNameColumn {
+                get {
+                    return this.columnOpName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DISPATCH_INFOColumn {
+                get {
+                    return this.columnDISPATCH_INFO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8490,7 +8510,9 @@ namespace EXO_MES_Module {
                         string SalesEntered, 
                         System.DateTime PlanProductionDate, 
                         System.DateTime ProductionComplete, 
-                        string PrintBy) {
+                        string PrintBy, 
+                        string OpName, 
+                        string DISPATCH_INFO) {
                 PROD_JobCardViewRow rowPROD_JobCardViewRow = ((PROD_JobCardViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
@@ -8535,7 +8557,9 @@ namespace EXO_MES_Module {
                         SalesEntered,
                         PlanProductionDate,
                         ProductionComplete,
-                        PrintBy};
+                        PrintBy,
+                        OpName,
+                        DISPATCH_INFO};
                 rowPROD_JobCardViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_JobCardViewRow);
                 return rowPROD_JobCardViewRow;
@@ -8601,6 +8625,8 @@ namespace EXO_MES_Module {
                 this.columnPlanProductionDate = base.Columns["PlanProductionDate"];
                 this.columnProductionComplete = base.Columns["ProductionComplete"];
                 this.columnPrintBy = base.Columns["PrintBy"];
+                this.columnOpName = base.Columns["OpName"];
+                this.columnDISPATCH_INFO = base.Columns["DISPATCH_INFO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8692,6 +8718,10 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnProductionComplete);
                 this.columnPrintBy = new global::System.Data.DataColumn("PrintBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrintBy);
+                this.columnOpName = new global::System.Data.DataColumn("OpName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpName);
+                this.columnDISPATCH_INFO = new global::System.Data.DataColumn("DISPATCH_INFO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDISPATCH_INFO);
                 this.columnSTOCKCODE.MaxLength = 23;
                 this.columnOPCode.MaxLength = 20;
                 this.columnAssignTo.MaxLength = 50;
@@ -8714,6 +8744,8 @@ namespace EXO_MES_Module {
                 this.columnBINCODE.MaxLength = 12;
                 this.columnSalesEntered.MaxLength = 30;
                 this.columnPrintBy.MaxLength = 50;
+                this.columnOpName.MaxLength = 50;
+                this.columnDISPATCH_INFO.MaxLength = 70;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16458,6 +16490,38 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string OpName {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JobCardView.OpNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpName\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.OpNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DISPATCH_INFO {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JobCardView.DISPATCH_INFOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DISPATCH_INFO\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.DISPATCH_INFOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_JobCardView.STOCKCODEColumn);
             }
@@ -16958,6 +17022,30 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPrintByNull() {
                 this[this.tablePROD_JobCardView.PrintByColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpNameNull() {
+                return this.IsNull(this.tablePROD_JobCardView.OpNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpNameNull() {
+                this[this.tablePROD_JobCardView.OpNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDISPATCH_INFONull() {
+                return this.IsNull(this.tablePROD_JobCardView.DISPATCH_INFOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDISPATCH_INFONull() {
+                this[this.tablePROD_JobCardView.DISPATCH_INFOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -29601,6 +29689,8 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             tableMapping.ColumnMappings.Add("PlanProductionDate", "PlanProductionDate");
             tableMapping.ColumnMappings.Add("ProductionComplete", "ProductionComplete");
             tableMapping.ColumnMappings.Add("PrintBy", "PrintBy");
+            tableMapping.ColumnMappings.Add("OpName", "OpName");
+            tableMapping.ColumnMappings.Add("DISPATCH_INFO", "DISPATCH_INFO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -29619,39 +29709,39 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
                          InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy, OpName, DISPATCH_INFO
 FROM            PROD_JobCardView
 WHERE        (SoSeqNo = @salesID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
-                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+            this._commandCollection[1].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
+                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
+                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
 FROM            PROD_JobCardView
-WHERE            (SoSeqNo = @salesID and  SalesLineRef =@SalesLineRef and   OPCode = @OPCode)";
+WHERE        (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef) AND (OPCode = @OPCode)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
-                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+            this._commandCollection[2].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
+                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
+                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
 FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID and  SalesLineRef =@SalesLineRef )";
+WHERE        (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
-                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy
+            this._commandCollection[3].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
+                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
+                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
 FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID and STOCKCODE = @STOCKCODE )";
+WHERE        (SoSeqNo = @salesID) AND (STOCKCODE = @STOCKCODE)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STOCKCODE", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

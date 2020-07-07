@@ -16,9 +16,12 @@ namespace EXO_MES_Module
         private string Navi_Selected, tableName, SQLstr;
         private int Fieldindex;
         //private int currRec = 1;
-        public ListofValue()
+
+
+        public ListofValue( string _TableName)
         {
-            //InitializeComponent();
+            tableName = _TableName;
+            InitializeComponent();
         }
         public void GetCurrentSubForm(int fieldindex, MainForm sender, string SelectedFrm)
         {   MDIMain = sender;
@@ -51,13 +54,13 @@ namespace EXO_MES_Module
                 }
             }
             QueryBox.Text = StrSQL;
-            
-            dbConnection db = new dbConnection();
+
+          /*  dbConnectionMyob db = new dbConnectionMyob();
             dbDataSet = db.ConnectDataSet(StrSQL, tableName);
             dbTable = dbDataSet.Tables[tableName];
             dataGridView2.DataSource = dbDataSet;
             dataGridView2.DataMember = tableName;
-            dataGridView2.Refresh();
+            dataGridView2.Refresh();*/
         }
 
         private void GO_Click(object sender, EventArgs e)
@@ -124,11 +127,11 @@ namespace EXO_MES_Module
 
         private void ListofValue_Load(object sender, EventArgs e)
         {
-            dbConnection db = new dbConnection();
-            tableName = "select * from Navigation where Name = '" + Navi_Selected + "'";
-            dbTable = db.connect(tableName, "Navigation");
-            tableName = dbTable.Rows[0][Fieldindex].ToString();
-            SQLstr = "select * from QueryIndex where Q_TableName ='" + tableName + "'";
+            dbConnectionMyob db = new dbConnectionMyob();
+            //tableName = "select * from Navigation where Name = '" + Navi_Selected + "'";
+           // dbTable = db.connect(tableName, "Navigation");
+           // tableName = 
+            SQLstr = "select * from X_PROD_QueryIndex where Q_TableName ='" + tableName + "'";
             
             
         
