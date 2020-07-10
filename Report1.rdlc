@@ -1466,7 +1466,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="*" + First(Fields!STOCKCODE.Value, "STOCKCODE")  + "*"</Value>
+                              <Value>="*" + Fields!STOCKCODE.Value  + "*"</Value>
                               <Style>
                                 <FontFamily>Free 3 of 9 Extended</FontFamily>
                                 <FontSize>18pt</FontSize>
@@ -2039,8 +2039,8 @@
         </TablixRowHierarchy>
         <DataSetName>ProdJobCardView</DataSetName>
         <Top>0.00882in</Top>
-        <Height>5.82291in</Height>
-        <Width>7.65798in</Width>
+        <Height>5.82287in</Height>
+        <Width>7.65795in</Width>
         <Style>
           <Border>
             <Style>None</Style>

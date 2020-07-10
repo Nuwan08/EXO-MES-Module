@@ -843,9 +843,9 @@ namespace EXO_MES_Module
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
-            jobcard2.Text = this.Text;
-            jobcard2.Show();
+          //  Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))),);
+          //  jobcard2.Text = this.Text;
+          //  jobcard2.Show();
         }
 
         private void attionalSkechbox()
