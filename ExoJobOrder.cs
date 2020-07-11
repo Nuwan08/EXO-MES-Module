@@ -119,7 +119,7 @@ namespace EXO_MES_Module
 
             DataloadtoList(StrSQL2, "PROD_ROUTE");
 
-            RefreshProdRoute();
+           // RefreshProdRoute();
 
            attionalSkechbox();
 
@@ -209,9 +209,27 @@ namespace EXO_MES_Module
 
         private void Cellclick(object sender, DataGridViewCellEventArgs e)
         {
+           
+
+
+            if (e.ColumnIndex <= 1 )
+            {
+                if (SubFormGrid.Rows[e.RowIndex].Cells[0].Value is true)
+                { SubFormGrid.Rows[e.RowIndex].Cells[0].Value = false; }
+                else 
+                
+                { SubFormGrid.Rows[e.RowIndex].Cells[0].Value = true; }
+
+
+            }
+
+
             currRecord = e.RowIndex;
 
             FillControlers(0, false);
+
+
+
 
         }
         private void ExoSalesLine_Load(object sender, EventArgs e)
@@ -843,9 +861,21 @@ namespace EXO_MES_Module
 
         private void button3_Click(object sender, EventArgs e)
         {
-          //  Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))),);
-          //  jobcard2.Text = this.Text;
-          //  jobcard2.Show();
+            string selectedvalues;
+
+            selectedvalues = "";
+            bool moretanone = false;
+
+            foreach (DataGridViewRow row in SubFormGrid.Rows)
+            {
+                if (moretanone)
+                selectedvalues += ",";
+                selectedvalues += row.Cells[1].Value.ToString();
+                moretanone = true;
+            }
+              Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), selectedvalues);
+              jobcard2.Text = selectedvalues;
+              jobcard2.Show();
         }
 
         private void attionalSkechbox()
@@ -948,6 +978,13 @@ namespace EXO_MES_Module
         {
             ListofValue L1 = new ListofValue("JobCard");
             L1.ShowDialog();
+        }
+
+        private void SubFormGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            currRecord = e.RowIndex;
+
+            FillControlers(0, false);
         }
 
         private void ExoJobOrder_FormClosing(object sender, FormClosingEventArgs e)
