@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.PROD_JobCardViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MESDataSet = new EXO_MES_Module.MESDataSet();
             this.PROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
             this.PROD_JobCardViewTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JobCardViewTableAdapter();
             this.pRODJobCardViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PROD_JOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.PROD_JobCardViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJobCardViewBindingSource)).BeginInit();
@@ -66,23 +65,18 @@
             this.pRODJobCardViewBindingSource.DataMember = "PROD_JobCardView";
             this.pRODJobCardViewBindingSource.DataSource = this.MESDataSet;
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.pRODJobCardViewBindingSource, "OPCode", true));
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ProdJobCardView";
-            reportDataSource1.Value = this.PROD_JobCardViewBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.Report1 - Copy.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 4;
-            // 
             // PROD_JOBCARDBindingSource
             // 
             this.PROD_JOBCARDBindingSource.DataMember = "PROD_JOBCARD";
             this.PROD_JOBCARDBindingSource.DataSource = this.MESDataSet;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -104,10 +98,10 @@
         #endregion
         private MESDataSetTableAdapters.PROD_JOBCARDTableAdapter PROD_JOBCARDTableAdapter;
         private MESDataSetTableAdapters.PROD_JobCardViewTableAdapter PROD_JobCardViewTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource PROD_JOBCARDBindingSource;
         private MESDataSet MESDataSet;
         private System.Windows.Forms.BindingSource pRODJobCardViewBindingSource;
         private System.Windows.Forms.BindingSource PROD_JobCardViewBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

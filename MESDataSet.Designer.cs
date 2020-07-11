@@ -29731,10 +29731,10 @@ WHERE        (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef) AND (OPCode
                          FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
                          PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
 FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID) AND (SalesLineRef  IN ( @SalesLineRef))";
+WHERE        (SoSeqNo = @salesID) AND (SalesLineRef  IN ( @SalesLineReftxt))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.NVarChar,200, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineReftxt", global::System.Data.SqlDbType.NVarChar,200, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
