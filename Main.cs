@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Diagnostics;
+using System.Data.SqlClient;
 
 namespace EXO_MES_Module
 {
@@ -156,6 +157,8 @@ namespace EXO_MES_Module
         //-> Event Main Form Load 
         private void Main_Load(object sender, EventArgs e)
         {
+            INACTIVETransactions(0);
+
             // TODO: This line of code loads data into the 'mESDataSet.STAFF' table. You can move, or remove it, as needed.
             this.sTAFFTableAdapter.Fill(this.mESDataSet.STAFF);
 
@@ -179,9 +182,33 @@ namespace EXO_MES_Module
         //..........
 
 
-    
+        private void INACTIVETransactions(int UpdateType)
+        {
 
-       
+
+            SqlConnection conn = null;
+            SqlDataReader rdr = null;
+            conn = new SqlConnection(global::EXO_MES_Module.Properties.Settings.Default.UpgradeConnectionString);
+            conn.Open();
+
+            // 1.  create a command object identifying
+            //     the stored procedure
+            SqlCommand cmd = new SqlCommand("UPDATE_PRODCTION_RouteInActiveSalesLine", conn);
+
+            // 2. set the command object so it knows
+            //    to execute a stored procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // 3. add parameter to command, which
+            //    will be passed to the stored procedure
+
+            cmd.Parameters.Add(new SqlParameter("@UpdateType", UpdateType));
+            // execute the command
+            rdr = cmd.ExecuteReader();
+
+        }
+
+
 
         public void formclose()
         {
@@ -934,6 +961,8 @@ namespace EXO_MES_Module
                 }
                 else if (e.ColumnIndex > 0 && e.ColumnIndex < 2)
                 {
+
+                    
                     ExoJobOrder salesline = new ExoJobOrder(Int32.Parse(JobIDtxt.Text));
                     salesline.Show();
 
@@ -1039,6 +1068,16 @@ namespace EXO_MES_Module
         {
             ListofValue L1 = new ListofValue("PROD_Dashboard");
             L1.ShowDialog();
+        }
+
+        private void GridView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

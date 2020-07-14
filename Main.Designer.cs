@@ -112,7 +112,7 @@ namespace EXO_MES_Module
             this.planProductionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.divisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODJOBCARDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pRODJOBCARDBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.mESDataSet = new EXO_MES_Module.MESDataSet();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.soSeqNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -146,6 +146,7 @@ namespace EXO_MES_Module
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.Depatment = new System.Windows.Forms.Label();
+            this.pRODJOBCARDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.navigatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
@@ -189,23 +190,22 @@ namespace EXO_MES_Module
             this.estimatedTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalesLine = new System.Windows.Forms.TextBox();
-            this.pRODJOBCARDBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainSpliterContainer)).BeginInit();
             this.MainSpliterContainer.Panel1.SuspendLayout();
             this.MainSpliterContainer.Panel2.SuspendLayout();
             this.MainSpliterContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODDashboardBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripSeparator9
@@ -847,11 +847,10 @@ namespace EXO_MES_Module
             this.divisionDataGridViewTextBoxColumn.Name = "divisionDataGridViewTextBoxColumn";
             this.divisionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // pRODJOBCARDBindingSource1
+            // pRODJOBCARDBindingSource2
             // 
-            this.pRODJOBCARDBindingSource1.DataMember = "PROD_JOBCARD";
-            this.pRODJOBCARDBindingSource1.DataSource = this.mESDataSet;
-            this.pRODJOBCARDBindingSource1.CurrentChanged += new System.EventHandler(this.pRODJOBCARDBindingSource1_CurrentChanged);
+            this.pRODJOBCARDBindingSource2.DataMember = "PROD_JOBCARD";
+            this.pRODJOBCARDBindingSource2.DataSource = this.mESDataSet;
             // 
             // mESDataSet
             // 
@@ -1199,6 +1198,12 @@ namespace EXO_MES_Module
             this.Depatment.TabIndex = 18;
             this.Depatment.Click += new System.EventHandler(this.Depatment_Click);
             // 
+            // pRODJOBCARDBindingSource1
+            // 
+            this.pRODJOBCARDBindingSource1.DataMember = "PROD_JOBCARD";
+            this.pRODJOBCARDBindingSource1.DataSource = this.mESDataSet;
+            this.pRODJOBCARDBindingSource1.CurrentChanged += new System.EventHandler(this.pRODJOBCARDBindingSource1_CurrentChanged);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1368,6 +1373,7 @@ namespace EXO_MES_Module
             this.GridView.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GridView.Name = "GridView";
             this.GridView.Size = new System.Drawing.Size(23, 22);
+            this.GridView.Click += new System.EventHandler(this.GridView_Click);
             // 
             // toolStripSeparator16
             // 
@@ -1405,6 +1411,7 @@ namespace EXO_MES_Module
             this.toolStrip.TabIndex = 14;
             this.toolStrip.Text = "Main Menu";
             this.toolStrip.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270;
+            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
             // 
             // fIleToolStripMenuItem
             // 
@@ -1478,7 +1485,7 @@ namespace EXO_MES_Module
             // 
             this.JobIDtxt.BackColor = System.Drawing.Color.LightGray;
             this.JobIDtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.JobIDtxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODJOBCARDBindingSource1, "SalesID", true));
+            this.JobIDtxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODJOBCARDBindingSource2, "SalesID", true));
             this.JobIDtxt.Location = new System.Drawing.Point(311, 27);
             this.JobIDtxt.Name = "JobIDtxt";
             this.JobIDtxt.ReadOnly = true;
@@ -1558,11 +1565,6 @@ namespace EXO_MES_Module
             this.SalesLine.Size = new System.Drawing.Size(100, 13);
             this.SalesLine.TabIndex = 31;
             // 
-            // pRODJOBCARDBindingSource2
-            // 
-            this.pRODJOBCARDBindingSource2.DataMember = "PROD_JOBCARD";
-            this.pRODJOBCARDBindingSource2.DataSource = this.mESDataSet;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1593,12 +1595,13 @@ namespace EXO_MES_Module
             ((System.ComponentModel.ISupportInitialize)(this.MainSpliterContainer)).EndInit();
             this.MainSpliterContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODDashboardBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
@@ -1606,7 +1609,6 @@ namespace EXO_MES_Module
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

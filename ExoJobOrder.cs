@@ -575,6 +575,7 @@ namespace EXO_MES_Module
 
         private void GridView_Click(object sender, EventArgs e)
         {
+            this.INACTIVETransactions(0);
             this.CostCalculation((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), 100);
             this.pROD_JOBCARDTableAdapter.Summary(this.mESDataSet.PROD_JOBCARD, new System.Nullable<int>(((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))))));
 
@@ -868,14 +869,28 @@ namespace EXO_MES_Module
 
             foreach (DataGridViewRow row in SubFormGrid.Rows)
             {
-                if (moretanone)
-                selectedvalues += ",";
-                selectedvalues += row.Cells[1].Value.ToString();
-                moretanone = true;
+                if(row.Cells[0].Value is true)
+                {
+                    if (moretanone)
+                        selectedvalues += ",";
+
+                    selectedvalues += row.Cells[1].Value.ToString();
+                    moretanone = true;
+                }
             }
-              Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), selectedvalues);
-              jobcard2.Text = selectedvalues;
-              jobcard2.Show();
+
+            if (selectedvalues != "")
+            {
+                INACTIVETransactions(0);
+                Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), selectedvalues);
+                jobcard2.Text = selectedvalues;
+                jobcard2.Show();
+            }
+             else
+            {
+
+                MessageBox.Show("Select Production Order Lines");
+            }
         }
 
         private void attionalSkechbox()
@@ -949,6 +964,7 @@ namespace EXO_MES_Module
 
         private void button6_Click(object sender, EventArgs e)
         {
+            INACTIVETransactions(0);
             PrintByJob jobcard = new PrintByJob((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
             jobcard.Text = this.Text;
             jobcard.Show();
@@ -1058,7 +1074,7 @@ namespace EXO_MES_Module
 
 
 
-        private void PostJobCost( int recid, int UpdateType)
+    private void PostJobCost( int recid, int UpdateType)
         {
             this.saveJobCostLine();
 
@@ -1097,8 +1113,32 @@ namespace EXO_MES_Module
 
         }
 
+    private void INACTIVETransactions( int UpdateType)
+        {
 
-        private void CostCalculation(int SalesOrderID, int UpdateType)
+
+            SqlConnection conn = null;
+            SqlDataReader rdr = null;
+            conn = new SqlConnection(global::EXO_MES_Module.Properties.Settings.Default.UpgradeConnectionString);
+            conn.Open();
+
+            // 1.  create a command object identifying
+            //     the stored procedure
+            SqlCommand cmd = new SqlCommand("UPDATE_PRODCTION_RouteInActiveSalesLine", conn);
+
+            // 2. set the command object so it knows
+            //    to execute a stored procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // 3. add parameter to command, which
+            //    will be passed to the stored procedure
+           
+            cmd.Parameters.Add(new SqlParameter("@UpdateType", UpdateType));
+            // execute the command
+            rdr = cmd.ExecuteReader();
+
+    }
+    private void CostCalculation(int SalesOrderID, int UpdateType)
         {
 
 
@@ -1124,5 +1164,7 @@ namespace EXO_MES_Module
 
 
         }
+
+        //End class
     }
 }
