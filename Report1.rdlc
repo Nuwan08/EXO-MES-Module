@@ -1987,7 +1987,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!OPCode.Value</Value>
+                  <Value>=Fields!SalesLineRef.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -2041,6 +2041,11 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ProdJobCardView</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=Fields!SalesLineRef.Value</Value>
+          </SortExpression>
+        </SortExpressions>
         <Top>0.00882in</Top>
         <Height>5.82287in</Height>
         <Width>7.65795in</Width>

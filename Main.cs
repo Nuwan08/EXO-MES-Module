@@ -157,7 +157,7 @@ namespace EXO_MES_Module
         //-> Event Main Form Load 
         private void Main_Load(object sender, EventArgs e)
         {
-           // INACTIVETransactions(0);
+            INACTIVETransactions(0);
 
             // TODO: This line of code loads data into the 'mESDataSet.STAFF' table. You can move, or remove it, as needed.
             this.sTAFFTableAdapter.Fill(this.mESDataSet.STAFF);
@@ -184,7 +184,6 @@ namespace EXO_MES_Module
 
         private void INACTIVETransactions(int UpdateType)
         {
-
 
             SqlConnection conn = null;
             SqlDataReader rdr = null;
@@ -1030,7 +1029,20 @@ namespace EXO_MES_Module
 
         private void Refresh1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Refresh();
+            INACTIVETransactions(0);
+
+            try
+            {
+                this.pROD_JOBCARDTableAdapter.FillBy1(this.mESDataSet.PROD_JOBCARD);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+
+
+
 
         }
 

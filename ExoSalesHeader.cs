@@ -219,6 +219,11 @@ namespace EXO_MES_Module
 
         }
 
+        private void Refresh1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void ExoSalesHeader_Load(object sender, EventArgs e)
         {
             MainLIstViewDataload();

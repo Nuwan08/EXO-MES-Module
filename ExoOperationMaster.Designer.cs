@@ -632,6 +632,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -658,7 +659,7 @@
             this.Genaral.Location = new System.Drawing.Point(4, 22);
             this.Genaral.Name = "Genaral";
             this.Genaral.Padding = new System.Windows.Forms.Padding(3);
-            this.Genaral.Size = new System.Drawing.Size(624, 356);
+            this.Genaral.Size = new System.Drawing.Size(693, 356);
             this.Genaral.TabIndex = 1;
             this.Genaral.Text = "Genaral";
             this.Genaral.UseVisualStyleBackColor = true;
@@ -675,15 +676,18 @@
             // 
             this.opNameDataGridViewTextBoxColumn.DataPropertyName = "OpName";
             this.opNameDataGridViewTextBoxColumn.HeaderText = "Division";
+            this.opNameDataGridViewTextBoxColumn.MinimumWidth = 150;
             this.opNameDataGridViewTextBoxColumn.Name = "opNameDataGridViewTextBoxColumn";
+            this.opNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // opCodeDataGridViewTextBoxColumn
             // 
             this.opCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.opCodeDataGridViewTextBoxColumn.DataPropertyName = "OpCode";
             this.opCodeDataGridViewTextBoxColumn.HeaderText = "Division Code";
+            this.opCodeDataGridViewTextBoxColumn.MinimumWidth = 150;
             this.opCodeDataGridViewTextBoxColumn.Name = "opCodeDataGridViewTextBoxColumn";
-            this.opCodeDataGridViewTextBoxColumn.Width = 97;
+            this.opCodeDataGridViewTextBoxColumn.Width = 150;
             // 
             // opTypeDataGridViewTextBoxColumn
             // 
