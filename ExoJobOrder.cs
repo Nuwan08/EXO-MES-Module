@@ -94,9 +94,7 @@ namespace EXO_MES_Module
 
         public void FillControlers(int currentRec, bool PramerterFlag)
         {
-            this.saveJobCard();
-
-            this.saveProdRoute();
+           
 
             //SubFormGrid.Refresh();
             if (PramerterFlag == true)
@@ -105,7 +103,7 @@ namespace EXO_MES_Module
             if (currRecord >= 0 && currRecord < datatable.Rows.Count)
             {
 
-              SalesLine.Text = datatable.Rows[currRecord]["SEQNO"].ToString();
+              SalesLine.Text = datatable.Rows[currRecord]["SOLINEID"].ToString();
               StockItem.Text = datatable.Rows[currRecord]["STOCKCODE"].ToString();
 
                 // Initalized operations 
@@ -119,7 +117,7 @@ namespace EXO_MES_Module
 
             DataloadtoList(StrSQL2, "PROD_ROUTE");
 
-           // RefreshProdRoute();
+            RefreshProdRoute();
 
            attionalSkechbox();
 
@@ -153,7 +151,7 @@ namespace EXO_MES_Module
         {
 
             StrSqltable = "SALESORD_LINES";
-            StrSQL = "SELECT [SeqNO],[STOCKCODE],[DESCRIPTION] "
+            StrSQL = "SELECT [SOLINEID],[STOCKCODE],[DESCRIPTION] "
       + ",[ORD_QUANT],[INV_QUANT],[UNITPRICE] ,[LOCATION]"
       + " FROM [SALESORD_LINES] where X_PRODUCTIONREQUIRED ='Y' and HDR_SEQNO =" + TxtOrderId.Text;
 
@@ -212,7 +210,7 @@ namespace EXO_MES_Module
            
 
 
-            if (e.ColumnIndex <= 1 )
+            if (e.ColumnIndex < 1 )
             {
                 if (SubFormGrid.Rows[e.RowIndex].Cells[0].Value is true)
                 { SubFormGrid.Rows[e.RowIndex].Cells[0].Value = false; }
@@ -850,6 +848,7 @@ namespace EXO_MES_Module
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Save_Chanages = true;
         }
 
@@ -881,7 +880,7 @@ namespace EXO_MES_Module
 
             if (selectedvalues != "")
             {
-                INACTIVETransactions(0);
+               // INACTIVETransactions(0);
                 Form1 jobcard2 = new Form1((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))), selectedvalues);
                 jobcard2.Text = selectedvalues;
                 jobcard2.Show();
@@ -964,7 +963,7 @@ namespace EXO_MES_Module
 
         private void button6_Click(object sender, EventArgs e)
         {
-            INACTIVETransactions(0);
+           // INACTIVETransactions(0);
             PrintByJob jobcard = new PrintByJob((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
             jobcard.Text = this.Text;
             jobcard.Show();
@@ -972,6 +971,7 @@ namespace EXO_MES_Module
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
+             
             Save_Chanages = true;
         }
 
@@ -1027,6 +1027,37 @@ namespace EXO_MES_Module
                 }
             }
         }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ////this.saveJobCard();
+        }
+
+        private void comboBoxFinish_SelectedValueChanged(object sender, EventArgs e)
+        {
+           // this.saveJobCard();
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            //this.saveJobCard();
+        }
+
+        private void comboBoxFinish_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            this.saveJobCard();
+        }
+
+        private void comboBoxFinish_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+           this.saveJobCard();
+        }
+
         private void SheduleJob(string UID, int UpdateType)
         {
 

@@ -2003,7 +2003,7 @@
                       <GroupExpression>=Fields!SalesLineRef.Value</GroupExpression>
                     </GroupExpressions>
                     <PageBreak>
-                      <BreakLocation>End</BreakLocation>
+                      <BreakLocation>Between</BreakLocation>
                     </PageBreak>
                   </Group>
                   <SortExpressions>
@@ -2051,7 +2051,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>5.83173in</Height>
+    <Height>5.83169in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -2071,7 +2071,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.27084in</Height>
+      <Height>0.09414in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>

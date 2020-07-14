@@ -157,7 +157,7 @@ namespace EXO_MES_Module
         //-> Event Main Form Load 
         private void Main_Load(object sender, EventArgs e)
         {
-            INACTIVETransactions(0);
+           // INACTIVETransactions(0);
 
             // TODO: This line of code loads data into the 'mESDataSet.STAFF' table. You can move, or remove it, as needed.
             this.sTAFFTableAdapter.Fill(this.mESDataSet.STAFF);
