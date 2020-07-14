@@ -2002,9 +2002,6 @@
                       <GroupExpression>=Fields!SalesLineRef.Value</GroupExpression>
                       <GroupExpression>=Fields!SalesLineRef.Value</GroupExpression>
                     </GroupExpressions>
-                    <PageBreak>
-                      <BreakLocation>Between</BreakLocation>
-                    </PageBreak>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
