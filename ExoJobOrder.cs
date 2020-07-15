@@ -30,6 +30,7 @@ namespace EXO_MES_Module
         {
             InitializeComponent();
             TxtOrderId.Text= SEQNO.ToString();
+            tabControl1.TabPages.Remove(_tabPage2);
             Save_Chanages = false;
            // soSeqNoToolStripTextBox.Text = SEQNO.ToString();
             this.Text = "Production Order " + TxtOrderId.Text;

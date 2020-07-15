@@ -69,7 +69,7 @@ namespace EXO_MES_Module
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+           // toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace EXO_MES_Module
         private void OperationMaster_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mESDataSet.OperationMaster' table. You can move, or remove it, as needed.
-            this.operationMasterTableAdapter.Fill(this.mESDataSet.OperationMaster);
+           // this.operationMasterTableAdapter.Fill(this.mESDataSet.OperationMaster);
 
         }
 
@@ -116,7 +116,7 @@ namespace EXO_MES_Module
         {
             try
             {
-                this.operationMasterTableAdapter.Fill(this.mESDataSet.OperationMaster);
+               // this.operationMasterTableAdapter.Fill(this.mESDataSet.OperationMaster);
             }
             catch (System.Exception ex)
             {
@@ -130,8 +130,8 @@ namespace EXO_MES_Module
             try
             {
                 this.Validate();
-                this.operationMasterBindingSource.EndEdit();
-                this.operationMasterTableAdapter.Update(this.mESDataSet.OperationMaster);
+               // this.operationMasterBindingSource1.EndEdit();
+               // this.operationMasterTableAdapter.Update(this.mESDataSet.OperationMaster);
 
             }
             catch (System.Exception ex)

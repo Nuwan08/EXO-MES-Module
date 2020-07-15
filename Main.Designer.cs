@@ -1441,15 +1441,16 @@ namespace EXO_MES_Module
             // 
             this.mPOLineDataToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mPOLineDataToolStripMenuItem.BackgroundImage")));
             this.mPOLineDataToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.mPOLineDataToolStripMenuItem.Enabled = false;
             this.mPOLineDataToolStripMenuItem.Name = "mPOLineDataToolStripMenuItem";
-            this.mPOLineDataToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.mPOLineDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mPOLineDataToolStripMenuItem.Text = "Divisions";
             this.mPOLineDataToolStripMenuItem.Click += new System.EventHandler(this.mPOLineDataToolStripMenuItem_Click_1);
             // 
             // salesOrdersToolStripMenuItem
             // 
             this.salesOrdersToolStripMenuItem.Name = "salesOrdersToolStripMenuItem";
-            this.salesOrdersToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.salesOrdersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salesOrdersToolStripMenuItem.Text = "Sales Orders";
             this.salesOrdersToolStripMenuItem.Click += new System.EventHandler(this.salesOrdersToolStripMenuItem_Click);
             // 

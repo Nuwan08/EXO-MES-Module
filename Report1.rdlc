@@ -1920,11 +1920,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Globals!PageNumber</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox367</rd:DefaultName>
@@ -1939,6 +1943,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>8</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -2005,7 +2010,7 @@
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!STOCKCODE.Value</Value>
+                      <Value>=Fields!SalesLineRef.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>

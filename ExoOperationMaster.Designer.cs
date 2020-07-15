@@ -73,44 +73,22 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.operationMasterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mESDataSet = new EXO_MES_Module.MESDataSet();
-            this.operationMasterTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.OperationMasterTableAdapter();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.Search = new System.Windows.Forms.ToolStripButton();
-            this.InsertData = new System.Windows.Forms.ToolStripButton();
-            this.Save = new System.Windows.Forms.ToolStripButton();
-            this.Refresh1 = new System.Windows.Forms.ToolStripButton();
-            this.DeleteRecord = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Overview = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.operationMasterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Genaral = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.opNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hourlyCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estimatedHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.operationMasterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
-            this.toolStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Overview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationMasterBindingSource1)).BeginInit();
             this.Genaral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -469,126 +447,10 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // operationMasterBindingSource
-            // 
-            this.operationMasterBindingSource.DataMember = "OperationMaster";
-            this.operationMasterBindingSource.DataSource = this.mESDataSet;
-            // 
             // mESDataSet
             // 
             this.mESDataSet.DataSetName = "MESDataSet";
             this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // operationMasterTableAdapter
-            // 
-            this.operationMasterTableAdapter.ClearBeforeFill = true;
-            // 
-            // toolStrip
-            // 
-            this.toolStrip.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip.BackgroundImage")));
-            this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Search,
-            this.InsertData,
-            this.Save,
-            this.Refresh1,
-            this.DeleteRecord,
-            this.toolStripSeparator16,
-            this.toolStripSeparator17,
-            this.toolStripButton15,
-            this.toolStripButton1});
-            this.toolStrip.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(176, 25);
-            this.toolStrip.TabIndex = 11;
-            this.toolStrip.Text = "Main Menu";
-            this.toolStrip.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270;
-            // 
-            // Search
-            // 
-            this.Search.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Search.Image = ((System.Drawing.Image)(resources.GetObject("Search.Image")));
-            this.Search.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(23, 22);
-            this.Search.Text = "Search";
-            this.Search.ToolTipText = "Search";
-            // 
-            // InsertData
-            // 
-            this.InsertData.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.InsertData.Enabled = false;
-            this.InsertData.Image = ((System.Drawing.Image)(resources.GetObject("InsertData.Image")));
-            this.InsertData.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.InsertData.Name = "InsertData";
-            this.InsertData.Size = new System.Drawing.Size(23, 22);
-            this.InsertData.Text = "Add New Raw";
-            this.InsertData.ToolTipText = "Add New Raw";
-            this.InsertData.Click += new System.EventHandler(this.InsertData_Click);
-            // 
-            // Save
-            // 
-            this.Save.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Save.Image = ((System.Drawing.Image)(resources.GetObject("Save.Image")));
-            this.Save.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(23, 22);
-            this.Save.Text = "Save";
-            this.Save.ToolTipText = "Save";
-            this.Save.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // Refresh1
-            // 
-            this.Refresh1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Refresh1.Enabled = false;
-            this.Refresh1.Image = ((System.Drawing.Image)(resources.GetObject("Refresh1.Image")));
-            this.Refresh1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Refresh1.Name = "Refresh1";
-            this.Refresh1.Size = new System.Drawing.Size(23, 22);
-            this.Refresh1.Text = "Refresh";
-            // 
-            // DeleteRecord
-            // 
-            this.DeleteRecord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.DeleteRecord.Image = ((System.Drawing.Image)(resources.GetObject("DeleteRecord.Image")));
-            this.DeleteRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DeleteRecord.Name = "DeleteRecord";
-            this.DeleteRecord.Size = new System.Drawing.Size(23, 22);
-            this.DeleteRecord.Text = "Delete Record";
-            this.DeleteRecord.ToolTipText = "Delete Record";
-            this.DeleteRecord.Click += new System.EventHandler(this.DeleteRecord_Click);
-            // 
-            // toolStripSeparator16
-            // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
-            this.toolStripSeparator16.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            // 
-            // toolStripSeparator17
-            // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 25);
-            this.toolStripSeparator17.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            // 
-            // toolStripButton15
-            // 
-            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton15.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton15.Image")));
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Black;
-            this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton15.Text = "Help";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripContainer1
             // 
@@ -596,17 +458,13 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(632, 382);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(632, 407);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 24);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(632, 407);
             this.toolStripContainer1.TabIndex = 12;
             this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
             // 
             // tabControl1
             // 
@@ -616,7 +474,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(632, 382);
+            this.tabControl1.Size = new System.Drawing.Size(632, 407);
             this.tabControl1.TabIndex = 0;
             // 
             // Overview
@@ -625,33 +483,10 @@
             this.Overview.Location = new System.Drawing.Point(4, 22);
             this.Overview.Name = "Overview";
             this.Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.Overview.Size = new System.Drawing.Size(624, 356);
+            this.Overview.Size = new System.Drawing.Size(624, 381);
             this.Overview.TabIndex = 0;
             this.Overview.Text = "Overview";
             this.Overview.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.opNameDataGridViewTextBoxColumn,
-            this.opCodeDataGridViewTextBoxColumn,
-            this.opTypeDataGridViewTextBoxColumn,
-            this.hourlyCostDataGridViewTextBoxColumn,
-            this.estimatedHoursDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.operationMasterBindingSource1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(618, 350);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // operationMasterBindingSource1
-            // 
-            this.operationMasterBindingSource1.DataMember = "OperationMaster";
-            this.operationMasterBindingSource1.DataSource = this.mESDataSet;
             // 
             // Genaral
             // 
@@ -659,53 +494,29 @@
             this.Genaral.Location = new System.Drawing.Point(4, 22);
             this.Genaral.Name = "Genaral";
             this.Genaral.Padding = new System.Windows.Forms.Padding(3);
-            this.Genaral.Size = new System.Drawing.Size(693, 356);
+            this.Genaral.Size = new System.Drawing.Size(624, 356);
             this.Genaral.TabIndex = 1;
             this.Genaral.Text = "Genaral";
             this.Genaral.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.operationMasterBindingSource, "OpCode", true));
             this.textBox1.Location = new System.Drawing.Point(113, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(122, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // opNameDataGridViewTextBoxColumn
+            // dataGridView1
             // 
-            this.opNameDataGridViewTextBoxColumn.DataPropertyName = "OpName";
-            this.opNameDataGridViewTextBoxColumn.HeaderText = "Division";
-            this.opNameDataGridViewTextBoxColumn.MinimumWidth = 150;
-            this.opNameDataGridViewTextBoxColumn.Name = "opNameDataGridViewTextBoxColumn";
-            this.opNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // opCodeDataGridViewTextBoxColumn
-            // 
-            this.opCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.opCodeDataGridViewTextBoxColumn.DataPropertyName = "OpCode";
-            this.opCodeDataGridViewTextBoxColumn.HeaderText = "Division Code";
-            this.opCodeDataGridViewTextBoxColumn.MinimumWidth = 150;
-            this.opCodeDataGridViewTextBoxColumn.Name = "opCodeDataGridViewTextBoxColumn";
-            this.opCodeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // opTypeDataGridViewTextBoxColumn
-            // 
-            this.opTypeDataGridViewTextBoxColumn.DataPropertyName = "OpType";
-            this.opTypeDataGridViewTextBoxColumn.HeaderText = "OpType";
-            this.opTypeDataGridViewTextBoxColumn.Name = "opTypeDataGridViewTextBoxColumn";
-            // 
-            // hourlyCostDataGridViewTextBoxColumn
-            // 
-            this.hourlyCostDataGridViewTextBoxColumn.DataPropertyName = "HourlyCost";
-            this.hourlyCostDataGridViewTextBoxColumn.HeaderText = "HourlyCost";
-            this.hourlyCostDataGridViewTextBoxColumn.Name = "hourlyCostDataGridViewTextBoxColumn";
-            // 
-            // estimatedHoursDataGridViewTextBoxColumn
-            // 
-            this.estimatedHoursDataGridViewTextBoxColumn.DataPropertyName = "EstimatedHours";
-            this.estimatedHoursDataGridViewTextBoxColumn.HeaderText = "EstimatedHours";
-            this.estimatedHoursDataGridViewTextBoxColumn.Name = "estimatedHoursDataGridViewTextBoxColumn";
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.mESDataSet;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(618, 375);
+            this.dataGridView1.TabIndex = 0;
             // 
             // OperationMaster
             // 
@@ -725,21 +536,15 @@
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.operationMasterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.Overview.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationMasterBindingSource1)).EndInit();
             this.Genaral.ResumeLayout(false);
             this.Genaral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -791,30 +596,12 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private MESDataSet mESDataSet;
-        private System.Windows.Forms.BindingSource operationMasterBindingSource;
-        private MESDataSetTableAdapters.OperationMasterTableAdapter operationMasterTableAdapter;
-        private System.Windows.Forms.ToolStrip toolStrip;
-        public System.Windows.Forms.ToolStripButton InsertData;
-        public System.Windows.Forms.ToolStripButton Save;
-        public System.Windows.Forms.ToolStripButton Refresh1;
-        public System.Windows.Forms.ToolStripButton DeleteRecord;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-        private System.Windows.Forms.ToolStripButton toolStripButton15;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.BindingSource operationMasterBindingSource1;
-        public System.Windows.Forms.ToolStripButton Search;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Overview;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage Genaral;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hourlyCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estimatedHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

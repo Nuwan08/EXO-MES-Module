@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExoJobOrder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.Navigetor = new System.Windows.Forms.ToolStripButton();
             this.Search = new System.Windows.Forms.ToolStripButton();
@@ -581,9 +581,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(463, 46);
+            this.button2.Location = new System.Drawing.Point(471, 50);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 27);
+            this.button2.Size = new System.Drawing.Size(48, 27);
             this.button2.TabIndex = 42;
             this.button2.Text = " ->";
             this.button2.UseVisualStyleBackColor = true;
@@ -591,9 +591,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(463, 100);
+            this.button4.Location = new System.Drawing.Point(471, 100);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 31);
+            this.button4.Size = new System.Drawing.Size(48, 31);
             this.button4.TabIndex = 43;
             this.button4.Text = " <-";
             this.button4.UseVisualStyleBackColor = true;
@@ -613,17 +613,19 @@
             // ListBoxAll
             // 
             this.ListBoxAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListBoxAll.ColumnWidth = 170;
+            this.ListBoxAll.ColumnWidth = 176;
             this.ListBoxAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBoxAll.FormattingEnabled = true;
             this.ListBoxAll.HorizontalExtent = 1;
             this.ListBoxAll.HorizontalScrollbar = true;
             this.ListBoxAll.ItemHeight = 15;
+            this.ListBoxAll.Items.AddRange(new object[] {
+            "123456789012345678901234567890"});
             this.ListBoxAll.Location = new System.Drawing.Point(83, 24);
             this.ListBoxAll.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.ListBoxAll.MultiColumn = true;
             this.ListBoxAll.Name = "ListBoxAll";
-            this.ListBoxAll.Size = new System.Drawing.Size(365, 122);
+            this.ListBoxAll.Size = new System.Drawing.Size(374, 122);
             this.ListBoxAll.Sorted = true;
             this.ListBoxAll.TabIndex = 44;
             // 
@@ -663,7 +665,7 @@
             "Polish Welds"});
             this.comboBoxFinish.Location = new System.Drawing.Point(83, 176);
             this.comboBoxFinish.Name = "comboBoxFinish";
-            this.comboBoxFinish.Size = new System.Drawing.Size(365, 21);
+            this.comboBoxFinish.Size = new System.Drawing.Size(374, 21);
             this.comboBoxFinish.TabIndex = 37;
             this.comboBoxFinish.SelectedIndexChanged += new System.EventHandler(this.comboBoxFinish_SelectedIndexChanged_1);
             // 
@@ -676,7 +678,7 @@
             "Stock  Drawing"});
             this.comboBox1.Location = new System.Drawing.Point(83, 149);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(365, 21);
+            this.comboBox1.Size = new System.Drawing.Size(374, 21);
             this.comboBox1.TabIndex = 36;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
@@ -684,7 +686,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(30, 31);
+            this.label12.Location = new System.Drawing.Point(24, 24);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 35;
@@ -782,51 +784,51 @@
             this.SubFormGrid.AllowUserToAddRows = false;
             this.SubFormGrid.AllowUserToDeleteRows = false;
             this.SubFormGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle86.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle86.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle86;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.SubFormGrid.BackgroundColor = System.Drawing.Color.DimGray;
             this.SubFormGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SubFormGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.SubFormGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle87.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle87;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.SubFormGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle88.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle88.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle88;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.SubFormGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubFormGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SubFormGrid.Location = new System.Drawing.Point(3, 3);
             this.SubFormGrid.Name = "SubFormGrid";
             this.SubFormGrid.ReadOnly = true;
             this.SubFormGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle89.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle89.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle89.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle89;
-            dataGridViewCellStyle90.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle90;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubFormGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.InfoText;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));

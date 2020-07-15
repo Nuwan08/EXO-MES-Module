@@ -5833,6 +5833,8 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnEstimatedHours;
             
+            private global::System.Data.DataColumn columnDIVISIONCODE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public OperationMasterDataTable() {
@@ -5908,6 +5910,14 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DIVISIONCODEColumn {
+                get {
+                    return this.columnDIVISIONCODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5943,17 +5953,25 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OperationMasterRow AddOperationMasterRow(string OpName, string OpCode, int OpType, float HourlyCost, float EstimatedHours) {
+            public OperationMasterRow AddOperationMasterRow(string OpName, string OpCode, int OpType, float HourlyCost, float EstimatedHours, string DIVISIONCODE) {
                 OperationMasterRow rowOperationMasterRow = ((OperationMasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OpName,
                         OpCode,
                         OpType,
                         HourlyCost,
-                        EstimatedHours};
+                        EstimatedHours,
+                        DIVISIONCODE};
                 rowOperationMasterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOperationMasterRow);
                 return rowOperationMasterRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OperationMasterRow FindByOpCode(string OpCode) {
+                return ((OperationMasterRow)(this.Rows.Find(new object[] {
+                            OpCode})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5978,6 +5996,7 @@ namespace EXO_MES_Module {
                 this.columnOpType = base.Columns["OpType"];
                 this.columnHourlyCost = base.Columns["HourlyCost"];
                 this.columnEstimatedHours = base.Columns["EstimatedHours"];
+                this.columnDIVISIONCODE = base.Columns["DIVISIONCODE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5993,8 +6012,15 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnHourlyCost);
                 this.columnEstimatedHours = new global::System.Data.DataColumn("EstimatedHours", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstimatedHours);
+                this.columnDIVISIONCODE = new global::System.Data.DataColumn("DIVISIONCODE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIVISIONCODE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnOpCode}, true));
                 this.columnOpName.MaxLength = 50;
+                this.columnOpCode.AllowDBNull = false;
+                this.columnOpCode.Unique = true;
                 this.columnOpCode.MaxLength = 20;
+                this.columnDIVISIONCODE.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14574,12 +14600,7 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string OpCode {
                 get {
-                    try {
-                        return ((string)(this[this.tableOperationMaster.OpCodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OpCode\' in table \'OperationMaster\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableOperationMaster.OpCodeColumn]));
                 }
                 set {
                     this[this.tableOperationMaster.OpCodeColumn] = value;
@@ -14636,6 +14657,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DIVISIONCODE {
+                get {
+                    try {
+                        return ((string)(this[this.tableOperationMaster.DIVISIONCODEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DIVISIONCODE\' in table \'OperationMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOperationMaster.DIVISIONCODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsOpNameNull() {
                 return this.IsNull(this.tableOperationMaster.OpNameColumn);
             }
@@ -14644,18 +14681,6 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOpNameNull() {
                 this[this.tableOperationMaster.OpNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOpCodeNull() {
-                return this.IsNull(this.tableOperationMaster.OpCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOpCodeNull() {
-                this[this.tableOperationMaster.OpCodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14692,6 +14717,18 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEstimatedHoursNull() {
                 this[this.tableOperationMaster.EstimatedHoursColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDIVISIONCODENull() {
+                return this.IsNull(this.tableOperationMaster.DIVISIONCODEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDIVISIONCODENull() {
+                this[this.tableOperationMaster.DIVISIONCODEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -27922,17 +27959,56 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             tableMapping.ColumnMappings.Add("OpType", "OpType");
             tableMapping.ColumnMappings.Add("HourlyCost", "HourlyCost");
             tableMapping.ColumnMappings.Add("EstimatedHours", "EstimatedHours");
+            tableMapping.ColumnMappings.Add("DIVISIONCODE", "DIVISIONCODE");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [OperationMaster] WHERE (((@IsNull_HourlyCost = 1 AND [HourlyCost] IS NULL) OR ([HourlyCost] = @Original_HourlyCost)) AND ((@IsNull_EstimatedHours = 1 AND [EstimatedHours] IS NULL) OR ([EstimatedHours] = @Original_EstimatedHours)) AND ((@IsNull_DIVISIONCODE = 1 AND [DIVISIONCODE] IS NULL) OR ([DIVISIONCODE] = @Original_DIVISIONCODE)) AND ((@IsNull_OpName = 1 AND [OpName] IS NULL) OR ([OpName] = @Original_OpName)) AND ([OpCode] = @Original_OpCode) AND ((@IsNull_OpType = 1 AND [OpType] IS NULL) OR ([OpType] = @Original_OpType)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HourlyCost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HourlyCost", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EstimatedHours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstimatedHours", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DIVISIONCODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIVISIONCODE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIVISIONCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIVISIONCODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [OperationMaster] ([OpName], [OpCode], [OpType], [HourlyCost], [Estim" +
-                "atedHours]) VALUES (@OpName, @OpCode, @OpType, @HourlyCost, @EstimatedHours)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [OperationMaster] ([HourlyCost], [EstimatedHours], [DIVISIONCODE], [O" +
+                "pName], [OpCode], [OpType]) VALUES (@HourlyCost, @EstimatedHours, @DIVISIONCODE," +
+                " @OpName, @OpCode, @OpType)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourlyCost", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimatedHours", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIVISIONCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIVISIONCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourlyCost", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimatedHours", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [OperationMaster] SET [HourlyCost] = @HourlyCost, [EstimatedHours] = @EstimatedHours, [DIVISIONCODE] = @DIVISIONCODE, [OpName] = @OpName, [OpCode] = @OpCode, [OpType] = @OpType WHERE (((@IsNull_HourlyCost = 1 AND [HourlyCost] IS NULL) OR ([HourlyCost] = @Original_HourlyCost)) AND ((@IsNull_EstimatedHours = 1 AND [EstimatedHours] IS NULL) OR ([EstimatedHours] = @Original_EstimatedHours)) AND ((@IsNull_DIVISIONCODE = 1 AND [DIVISIONCODE] IS NULL) OR ([DIVISIONCODE] = @Original_DIVISIONCODE)) AND ((@IsNull_OpName = 1 AND [OpName] IS NULL) OR ([OpName] = @Original_OpName)) AND ([OpCode] = @Original_OpCode) AND ((@IsNull_OpType = 1 AND [OpType] IS NULL) OR ([OpType] = @Original_OpType)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourlyCost", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimatedHours", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIVISIONCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIVISIONCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HourlyCost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HourlyCost", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EstimatedHours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstimatedHours", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedHours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DIVISIONCODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIVISIONCODE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIVISIONCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIVISIONCODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpCode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27948,7 +28024,8 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        OperationMaster.*\r\nFROM            OperationMaster";
+            this._commandCollection[0].CommandText = "SELECT        HourlyCost, EstimatedHours, DIVISIONCODE, OpName, OpCode, OpType\r\nF" +
+                "ROM            OperationMaster\r\nWHERE        (OpCode IS NOT NULL)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -28008,37 +28085,110 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(global::System.Nullable<float> Original_HourlyCost, global::System.Nullable<float> Original_EstimatedHours, string Original_DIVISIONCODE, string Original_OpName, string Original_OpCode, global::System.Nullable<int> Original_OpType) {
+            if ((Original_HourlyCost.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((float)(Original_HourlyCost.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EstimatedHours.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((float)(Original_EstimatedHours.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DIVISIONCODE == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DIVISIONCODE));
+            }
+            if ((Original_OpName == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_OpName));
+            }
+            if ((Original_OpCode == null)) {
+                throw new global::System.ArgumentNullException("Original_OpCode");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_OpCode));
+            }
+            if ((Original_OpType.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_OpType.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string OpName, string OpCode, global::System.Nullable<int> OpType, global::System.Nullable<float> HourlyCost, global::System.Nullable<float> EstimatedHours) {
-            if ((OpName == null)) {
+        public virtual int Insert(global::System.Nullable<float> HourlyCost, global::System.Nullable<float> EstimatedHours, string DIVISIONCODE, string OpName, string OpCode, global::System.Nullable<int> OpType) {
+            if ((HourlyCost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((float)(HourlyCost.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OpName));
+            if ((EstimatedHours.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((float)(EstimatedHours.Value));
             }
-            if ((OpCode == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(OpCode));
-            }
-            if ((OpType.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(OpType.Value));
-            }
-            else {
+            if ((DIVISIONCODE == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((HourlyCost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((float)(HourlyCost.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DIVISIONCODE));
+            }
+            if ((OpName == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((EstimatedHours.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((float)(EstimatedHours.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(OpName));
+            }
+            if ((OpCode == null)) {
+                throw new global::System.ArgumentNullException("OpCode");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(OpCode));
+            }
+            if ((OpType.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(OpType.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -28054,6 +28204,117 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<float> HourlyCost, global::System.Nullable<float> EstimatedHours, string DIVISIONCODE, string OpName, string OpCode, global::System.Nullable<int> OpType, global::System.Nullable<float> Original_HourlyCost, global::System.Nullable<float> Original_EstimatedHours, string Original_DIVISIONCODE, string Original_OpName, string Original_OpCode, global::System.Nullable<int> Original_OpType) {
+            if ((HourlyCost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((float)(HourlyCost.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((EstimatedHours.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((float)(EstimatedHours.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DIVISIONCODE == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DIVISIONCODE));
+            }
+            if ((OpName == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OpName));
+            }
+            if ((OpCode == null)) {
+                throw new global::System.ArgumentNullException("OpCode");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(OpCode));
+            }
+            if ((OpType.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(OpType.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HourlyCost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((float)(Original_HourlyCost.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EstimatedHours.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((float)(Original_EstimatedHours.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DIVISIONCODE == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DIVISIONCODE));
+            }
+            if ((Original_OpName == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_OpName));
+            }
+            if ((Original_OpCode == null)) {
+                throw new global::System.ArgumentNullException("Original_OpCode");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_OpCode));
+            }
+            if ((Original_OpType.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_OpType.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<float> HourlyCost, global::System.Nullable<float> EstimatedHours, string DIVISIONCODE, string OpName, global::System.Nullable<int> OpType, global::System.Nullable<float> Original_HourlyCost, global::System.Nullable<float> Original_EstimatedHours, string Original_DIVISIONCODE, string Original_OpName, string Original_OpCode, global::System.Nullable<int> Original_OpType) {
+            return this.Update(HourlyCost, EstimatedHours, DIVISIONCODE, OpName, Original_OpCode, OpType, Original_HourlyCost, Original_EstimatedHours, Original_DIVISIONCODE, Original_OpName, Original_OpCode, Original_OpType);
         }
     }
     
