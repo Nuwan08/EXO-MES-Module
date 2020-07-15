@@ -65,11 +65,15 @@ WHERE        (SoSeqNo = " + SalesID + ") "
             // Must match the DataSet in the RDLC
             //reportDataSource.Name = "MESDataSet";
             //reportDataSource.Value = datatable;
+            this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             var reportDataSource1 = new ReportDataSource("ProdJobCardView", datatable);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.Report1.rdlc";
+
             this.reportViewer1.LocalReport.Refresh();
+
             this.reportViewer1.RefreshReport();
+            
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)

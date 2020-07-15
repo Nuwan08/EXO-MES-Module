@@ -16,10 +16,7 @@ namespace EXO_MES_Module
     {
         
         private bool bol_SpliterFlag, Save_Chanages;
-        
         private dbConnectionMyob db;
-        
-       
         private string StrSqltable, StrSQL, StrSQL2;
         private DataSet dbDataSet;
         private DataTable datatable, datatable2;
@@ -30,7 +27,8 @@ namespace EXO_MES_Module
         {
             InitializeComponent();
             TxtOrderId.Text= SEQNO.ToString();
-            tabControl1.TabPages.Remove(_tabPage2);
+            tabControl1.TabPages.Remove(Summary);
+            tabControl1.TabPages.Remove(Operations);
             Save_Chanages = false;
            // soSeqNoToolStripTextBox.Text = SEQNO.ToString();
             this.Text = "Production Order " + TxtOrderId.Text;
@@ -120,7 +118,7 @@ namespace EXO_MES_Module
 
             RefreshProdRoute();
 
-           attionalSkechbox();
+            attionalSkechbox();
 
         }
 
