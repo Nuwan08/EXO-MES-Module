@@ -1685,7 +1685,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.29836in</Height>
+              <Height>0.19419in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1730,7 +1730,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="Plan Production Start Date : "&amp; System.Environment.NewLine &amp; First(Fields!PlanProductionDate.Value, "STOCKCODE")</Value>
+                              <Value>="Plan Production Start Date : " &amp; First(Fields!PlanProductionDate.Value, "STOCKCODE")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -1750,73 +1750,12 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <ColSpan>2</ColSpan>
+                    <ColSpan>5</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox4">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>="Print By "&amp; System.Environment.NewLine &amp; User!UserID</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox8">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>="Document Print Date" &amp; System.Environment.NewLine &amp; Globals!ExecutionTime</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>2</ColSpan>
-                  </CellContents>
-                </TablixCell>
+                <TablixCell />
+                <TablixCell />
                 <TablixCell />
               </TablixCells>
             </TablixRow>
@@ -1865,7 +1804,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.27753in</Height>
+              <Height>1.2567in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1943,6 +1882,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>8</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -2047,8 +1987,9 @@
             <Value>=Fields!SalesLineRef.Value</Value>
           </SortExpression>
         </SortExpressions>
-        <Top>0.00882in</Top>
-        <Height>5.82287in</Height>
+        <Top>0.04514in</Top>
+        <Left>0.00004in</Left>
+        <Height>5.69787in</Height>
         <Width>7.65795in</Width>
         <Style>
           <Border>
@@ -2057,14 +1998,14 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>5.83169in</Height>
+    <Height>5.74301in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.98833in</Width>
+  <Width>7.65799in</Width>
   <Page>
     <PageHeader>
       <Height>0in</Height>
@@ -2077,9 +2018,76 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.38581in</Height>
+      <Height>0.28125in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Print By : " &amp; User!UserID</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.06944in</Top>
+          <Left>0.00004in</Left>
+          <Height>0.14583in</Height>
+          <Width>3.65411in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Document Print Date : " &amp; Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox8</rd:DefaultName>
+          <Top>0.06944in</Top>
+          <Left>4.08292in</Left>
+          <Height>0.14583in</Height>
+          <Width>3.43791in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

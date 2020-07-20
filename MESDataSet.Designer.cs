@@ -1112,8 +1112,6 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnSTOCKCODE;
             
-            private global::System.Data.DataColumn columnOPCode;
-            
             private global::System.Data.DataColumn columnAssignTo;
             
             private global::System.Data.DataColumn columnEstimatedTime;
@@ -1137,6 +1135,10 @@ namespace EXO_MES_Module {
             private global::System.Data.DataColumn columnCompleteDate;
             
             private global::System.Data.DataColumn columnSalesLineRef;
+            
+            private global::System.Data.DataColumn columnEnable;
+            
+            private global::System.Data.DataColumn columnOPCode;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1176,14 +1178,6 @@ namespace EXO_MES_Module {
             public global::System.Data.DataColumn STOCKCODEColumn {
                 get {
                     return this.columnSTOCKCODE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OPCodeColumn {
-                get {
-                    return this.columnOPCode;
                 }
             }
             
@@ -1285,6 +1279,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EnableColumn {
+                get {
+                    return this.columnEnable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OPCodeColumn {
+                get {
+                    return this.columnOPCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1320,11 +1330,10 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PROD_ROUTERow AddPROD_ROUTERow(string STOCKCODE, string OPCode, string AssignTo, float EstimatedTime, float ActualHours, string Status, System.Guid ID, int SoSeqNo, float OrderQTY, float ProductionQTY, float ScrapQTY, System.DateTime StartDate, System.DateTime CompleteDate, int SalesLineRef) {
+            public PROD_ROUTERow AddPROD_ROUTERow(string STOCKCODE, string AssignTo, float EstimatedTime, float ActualHours, string Status, System.Guid ID, int SoSeqNo, float OrderQTY, float ProductionQTY, float ScrapQTY, System.DateTime StartDate, System.DateTime CompleteDate, int SalesLineRef, bool Enable, string OPCode) {
                 PROD_ROUTERow rowPROD_ROUTERow = ((PROD_ROUTERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
-                        OPCode,
                         AssignTo,
                         EstimatedTime,
                         ActualHours,
@@ -1336,7 +1345,9 @@ namespace EXO_MES_Module {
                         ScrapQTY,
                         StartDate,
                         CompleteDate,
-                        SalesLineRef};
+                        SalesLineRef,
+                        Enable,
+                        OPCode};
                 rowPROD_ROUTERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_ROUTERow);
                 return rowPROD_ROUTERow;
@@ -1367,7 +1378,6 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnSTOCKCODE = base.Columns["STOCKCODE"];
-                this.columnOPCode = base.Columns["OPCode"];
                 this.columnAssignTo = base.Columns["AssignTo"];
                 this.columnEstimatedTime = base.Columns["EstimatedTime"];
                 this.columnActualHours = base.Columns["ActualHours"];
@@ -1380,6 +1390,8 @@ namespace EXO_MES_Module {
                 this.columnStartDate = base.Columns["StartDate"];
                 this.columnCompleteDate = base.Columns["CompleteDate"];
                 this.columnSalesLineRef = base.Columns["SalesLineRef"];
+                this.columnEnable = base.Columns["Enable"];
+                this.columnOPCode = base.Columns["OPCode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1387,8 +1399,6 @@ namespace EXO_MES_Module {
             private void InitClass() {
                 this.columnSTOCKCODE = new global::System.Data.DataColumn("STOCKCODE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTOCKCODE);
-                this.columnOPCode = new global::System.Data.DataColumn("OPCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOPCode);
                 this.columnAssignTo = new global::System.Data.DataColumn("AssignTo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssignTo);
                 this.columnEstimatedTime = new global::System.Data.DataColumn("EstimatedTime", typeof(float), null, global::System.Data.MappingType.Element);
@@ -1413,15 +1423,20 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnCompleteDate);
                 this.columnSalesLineRef = new global::System.Data.DataColumn("SalesLineRef", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalesLineRef);
+                this.columnEnable = new global::System.Data.DataColumn("Enable", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnable);
+                this.columnOPCode = new global::System.Data.DataColumn("OPCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOPCode);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnSTOCKCODE.MaxLength = 23;
-                this.columnOPCode.MaxLength = 20;
                 this.columnAssignTo.MaxLength = 50;
                 this.columnStatus.MaxLength = 10;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnSoSeqNo.AllowDBNull = false;
+                this.columnEnable.AllowDBNull = false;
+                this.columnOPCode.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7990,8 +8005,6 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnSTOCKCODE;
             
-            private global::System.Data.DataColumn columnOPCode;
-            
             private global::System.Data.DataColumn columnAssignTo;
             
             private global::System.Data.DataColumn columnEstimatedTime;
@@ -8078,6 +8091,8 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnDISPATCH_INFO;
             
+            private global::System.Data.DataColumn columnOPCode;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewDataTable() {
@@ -8116,14 +8131,6 @@ namespace EXO_MES_Module {
             public global::System.Data.DataColumn STOCKCODEColumn {
                 get {
                     return this.columnSTOCKCODE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OPCodeColumn {
-                get {
-                    return this.columnOPCode;
                 }
             }
             
@@ -8473,6 +8480,14 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OPCodeColumn {
+                get {
+                    return this.columnOPCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8510,7 +8525,6 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewRow AddPROD_JobCardViewRow(
                         string STOCKCODE, 
-                        string OPCode, 
                         string AssignTo, 
                         float EstimatedTime, 
                         string Status, 
@@ -8553,11 +8567,11 @@ namespace EXO_MES_Module {
                         System.DateTime ProductionComplete, 
                         string PrintBy, 
                         string OpName, 
-                        string DISPATCH_INFO) {
+                        string DISPATCH_INFO, 
+                        string OPCode) {
                 PROD_JobCardViewRow rowPROD_JobCardViewRow = ((PROD_JobCardViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
-                        OPCode,
                         AssignTo,
                         EstimatedTime,
                         Status,
@@ -8600,7 +8614,8 @@ namespace EXO_MES_Module {
                         ProductionComplete,
                         PrintBy,
                         OpName,
-                        DISPATCH_INFO};
+                        DISPATCH_INFO,
+                        OPCode};
                 rowPROD_JobCardViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_JobCardViewRow);
                 return rowPROD_JobCardViewRow;
@@ -8624,7 +8639,6 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnSTOCKCODE = base.Columns["STOCKCODE"];
-                this.columnOPCode = base.Columns["OPCode"];
                 this.columnAssignTo = base.Columns["AssignTo"];
                 this.columnEstimatedTime = base.Columns["EstimatedTime"];
                 this.columnStatus = base.Columns["Status"];
@@ -8668,6 +8682,7 @@ namespace EXO_MES_Module {
                 this.columnPrintBy = base.Columns["PrintBy"];
                 this.columnOpName = base.Columns["OpName"];
                 this.columnDISPATCH_INFO = base.Columns["DISPATCH_INFO"];
+                this.columnOPCode = base.Columns["OPCode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8675,8 +8690,6 @@ namespace EXO_MES_Module {
             private void InitClass() {
                 this.columnSTOCKCODE = new global::System.Data.DataColumn("STOCKCODE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTOCKCODE);
-                this.columnOPCode = new global::System.Data.DataColumn("OPCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOPCode);
                 this.columnAssignTo = new global::System.Data.DataColumn("AssignTo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssignTo);
                 this.columnEstimatedTime = new global::System.Data.DataColumn("EstimatedTime", typeof(float), null, global::System.Data.MappingType.Element);
@@ -8763,8 +8776,9 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnOpName);
                 this.columnDISPATCH_INFO = new global::System.Data.DataColumn("DISPATCH_INFO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDISPATCH_INFO);
+                this.columnOPCode = new global::System.Data.DataColumn("OPCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOPCode);
                 this.columnSTOCKCODE.MaxLength = 23;
-                this.columnOPCode.MaxLength = 20;
                 this.columnAssignTo.MaxLength = 50;
                 this.columnStatus.MaxLength = 10;
                 this.columnNote.MaxLength = 2147483647;
@@ -8787,6 +8801,7 @@ namespace EXO_MES_Module {
                 this.columnPrintBy.MaxLength = 50;
                 this.columnOpName.MaxLength = 50;
                 this.columnDISPATCH_INFO.MaxLength = 70;
+                this.columnOPCode.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9195,22 +9210,6 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string OPCode {
-                get {
-                    try {
-                        return ((string)(this[this.tablePROD_ROUTE.OPCodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OPCode\' in table \'PROD_ROUTE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePROD_ROUTE.OPCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AssignTo {
                 get {
                     try {
@@ -9393,6 +9392,33 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Enable {
+                get {
+                    return ((bool)(this[this.tablePROD_ROUTE.EnableColumn]));
+                }
+                set {
+                    this[this.tablePROD_ROUTE.EnableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string OPCode {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_ROUTE.OPCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OPCode\' in table \'PROD_ROUTE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_ROUTE.OPCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_ROUTE.STOCKCODEColumn);
             }
@@ -9401,18 +9427,6 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSTOCKCODENull() {
                 this[this.tablePROD_ROUTE.STOCKCODEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOPCodeNull() {
-                return this.IsNull(this.tablePROD_ROUTE.OPCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOPCodeNull() {
-                this[this.tablePROD_ROUTE.OPCodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9533,6 +9547,18 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSalesLineRefNull() {
                 this[this.tablePROD_ROUTE.SalesLineRefColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOPCodeNull() {
+                return this.IsNull(this.tablePROD_ROUTE.OPCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOPCodeNull() {
+                this[this.tablePROD_ROUTE.OPCodeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -15902,22 +15928,6 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string OPCode {
-                get {
-                    try {
-                        return ((string)(this[this.tablePROD_JobCardView.OPCodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OPCode\' in table \'PROD_JobCardView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePROD_JobCardView.OPCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AssignTo {
                 get {
                     try {
@@ -16602,6 +16612,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string OPCode {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JobCardView.OPCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OPCode\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.OPCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_JobCardView.STOCKCODEColumn);
             }
@@ -16610,18 +16636,6 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSTOCKCODENull() {
                 this[this.tablePROD_JobCardView.STOCKCODEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOPCodeNull() {
-                return this.IsNull(this.tablePROD_JobCardView.OPCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOPCodeNull() {
-                this[this.tablePROD_JobCardView.OPCodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17126,6 +17140,18 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDISPATCH_INFONull() {
                 this[this.tablePROD_JobCardView.DISPATCH_INFOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOPCodeNull() {
+                return this.IsNull(this.tablePROD_JobCardView.OPCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOPCodeNull() {
+                this[this.tablePROD_JobCardView.OPCodeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -18345,7 +18371,6 @@ namespace EXO_MES_Module.MESDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PROD_ROUTE";
             tableMapping.ColumnMappings.Add("STOCKCODE", "STOCKCODE");
-            tableMapping.ColumnMappings.Add("OPCode", "OPCode");
             tableMapping.ColumnMappings.Add("AssignTo", "AssignTo");
             tableMapping.ColumnMappings.Add("EstimatedTime", "EstimatedTime");
             tableMapping.ColumnMappings.Add("ActualHours", "ActualHours");
@@ -18358,15 +18383,15 @@ namespace EXO_MES_Module.MESDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("StartDate", "StartDate");
             tableMapping.ColumnMappings.Add("CompleteDate", "CompleteDate");
             tableMapping.ColumnMappings.Add("SalesLineRef", "SalesLineRef");
+            tableMapping.ColumnMappings.Add("Enable", "Enable");
+            tableMapping.ColumnMappings.Add("OPCode", "OPCode");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PROD_ROUTE] WHERE (((@IsNull_STOCKCODE = 1 AND [STOCKCODE] IS NULL) OR ([STOCKCODE] = @Original_STOCKCODE)) AND ((@IsNull_OPCode = 1 AND [OPCode] IS NULL) OR ([OPCode] = @Original_OPCode)) AND ((@IsNull_SalesLineRef = 1 AND [SalesLineRef] IS NULL) OR ([SalesLineRef] = @Original_SalesLineRef)) AND ((@IsNull_AssignTo = 1 AND [AssignTo] IS NULL) OR ([AssignTo] = @Original_AssignTo)) AND ((@IsNull_EstimatedTime = 1 AND [EstimatedTime] IS NULL) OR ([EstimatedTime] = @Original_EstimatedTime)) AND ((@IsNull_ActualHours = 1 AND [ActualHours] IS NULL) OR ([ActualHours] = @Original_ActualHours)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ([SoSeqNo] = @Original_SoSeqNo) AND ([ID] = @Original_ID) AND ((@IsNull_OrderQTY = 1 AND [OrderQTY] IS NULL) OR ([OrderQTY] = @Original_OrderQTY)) AND ((@IsNull_ProductionQTY = 1 AND [ProductionQTY] IS NULL) OR ([ProductionQTY] = @Original_ProductionQTY)) AND ((@IsNull_ScrapQTY = 1 AND [ScrapQTY] IS NULL) OR ([ScrapQTY] = @Original_ScrapQTY)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_CompleteDate = 1 AND [CompleteDate] IS NULL) OR ([CompleteDate] = @Original_CompleteDate)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PROD_ROUTE] WHERE (((@IsNull_STOCKCODE = 1 AND [STOCKCODE] IS NULL) OR ([STOCKCODE] = @Original_STOCKCODE)) AND ((@IsNull_SalesLineRef = 1 AND [SalesLineRef] IS NULL) OR ([SalesLineRef] = @Original_SalesLineRef)) AND ((@IsNull_AssignTo = 1 AND [AssignTo] IS NULL) OR ([AssignTo] = @Original_AssignTo)) AND ((@IsNull_EstimatedTime = 1 AND [EstimatedTime] IS NULL) OR ([EstimatedTime] = @Original_EstimatedTime)) AND ((@IsNull_ActualHours = 1 AND [ActualHours] IS NULL) OR ([ActualHours] = @Original_ActualHours)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ([SoSeqNo] = @Original_SoSeqNo) AND ([ID] = @Original_ID) AND ((@IsNull_OrderQTY = 1 AND [OrderQTY] IS NULL) OR ([OrderQTY] = @Original_OrderQTY)) AND ((@IsNull_ProductionQTY = 1 AND [ProductionQTY] IS NULL) OR ([ProductionQTY] = @Original_ProductionQTY)) AND ((@IsNull_ScrapQTY = 1 AND [ScrapQTY] IS NULL) OR ([ScrapQTY] = @Original_ScrapQTY)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_CompleteDate = 1 AND [CompleteDate] IS NULL) OR ([CompleteDate] = @Original_CompleteDate)) AND ([Enable] = @Original_Enable) AND ((@IsNull_OPCode = 1 AND [OPCode] IS NULL) OR ([OPCode] = @Original_OPCode)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STOCKCODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STOCKCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OPCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AssignTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18389,34 +18414,57 @@ namespace EXO_MES_Module.MESDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CompleteDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompleteDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompleteDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompleteDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OPCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PROD_ROUTE] ([STOCKCODE], [SalesLineRef], [AssignTo], [EstimatedTime], [ActualHours], [Status], [SoSeqNo], [ID], [OrderQTY], [ProductionQTY], [ScrapQTY], [StartDate], [CompleteDate], [Enable], [OPCode]) VALUES (@STOCKCODE, @SalesLineRef, @AssignTo, @EstimatedTime, @ActualHours, @Status, @SoSeqNo, @ID, @OrderQTY, @ProductionQTY, @ScrapQTY, @StartDate, @CompleteDate, @Enable, @OPCode);
+SELECT STOCKCODE, SalesLineRef, AssignTo, EstimatedTime, ActualHours, Status, SoSeqNo, ID, OrderQTY, ProductionQTY, ScrapQTY, StartDate, CompleteDate, Enable, OPCode FROM PROD_ROUTE WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STOCKCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimatedTime", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActualHours", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActualHours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoSeqNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderQTY", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderQTY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductionQTY", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductionQTY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScrapQTY", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScrapQTY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompleteDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompleteDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [PROD_ROUTE] SET [STOCKCODE] = @STOCKCODE, [OPCode] = @OPCode, [SalesLineR" +
-                "ef] = @SalesLineRef, [AssignTo] = @AssignTo, [EstimatedTime] = @EstimatedTime, [" +
-                "ActualHours] = @ActualHours, [Status] = @Status, [SoSeqNo] = @SoSeqNo, [ID] = @I" +
-                "D, [OrderQTY] = @OrderQTY, [ProductionQTY] = @ProductionQTY, [ScrapQTY] = @Scrap" +
-                "QTY, [StartDate] = @StartDate, [CompleteDate] = @CompleteDate WHERE (((@IsNull_S" +
-                "TOCKCODE = 1 AND [STOCKCODE] IS NULL) OR ([STOCKCODE] = @Original_STOCKCODE)) AN" +
-                "D ((@IsNull_OPCode = 1 AND [OPCode] IS NULL) OR ([OPCode] = @Original_OPCode)) A" +
-                "ND ((@IsNull_SalesLineRef = 1 AND [SalesLineRef] IS NULL) OR ([SalesLineRef] = @" +
-                "Original_SalesLineRef)) AND ((@IsNull_AssignTo = 1 AND [AssignTo] IS NULL) OR ([" +
-                "AssignTo] = @Original_AssignTo)) AND ((@IsNull_EstimatedTime = 1 AND [EstimatedT" +
-                "ime] IS NULL) OR ([EstimatedTime] = @Original_EstimatedTime)) AND ((@IsNull_Actu" +
-                "alHours = 1 AND [ActualHours] IS NULL) OR ([ActualHours] = @Original_ActualHours" +
-                ")) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Statu" +
-                "s)) AND ([SoSeqNo] = @Original_SoSeqNo) AND ([ID] = @Original_ID) AND ((@IsNull_" +
-                "OrderQTY = 1 AND [OrderQTY] IS NULL) OR ([OrderQTY] = @Original_OrderQTY)) AND (" +
-                "(@IsNull_ProductionQTY = 1 AND [ProductionQTY] IS NULL) OR ([ProductionQTY] = @O" +
-                "riginal_ProductionQTY)) AND ((@IsNull_ScrapQTY = 1 AND [ScrapQTY] IS NULL) OR ([" +
-                "ScrapQTY] = @Original_ScrapQTY)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS " +
-                "NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_CompleteDate = 1 AND" +
-                " [CompleteDate] IS NULL) OR ([CompleteDate] = @Original_CompleteDate)));\r\nSELECT" +
-                " STOCKCODE, OPCode, SalesLineRef, AssignTo, EstimatedTime, ActualHours, Status, " +
-                "SoSeqNo, ID, OrderQTY, ProductionQTY, ScrapQTY, StartDate, CompleteDate FROM PRO" +
-                "D_ROUTE WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [PROD_ROUTE] SET [STOCKCODE] = @STOCKCODE, [SalesLineRef] = @SalesLineRef," +
+                " [AssignTo] = @AssignTo, [EstimatedTime] = @EstimatedTime, [ActualHours] = @Actu" +
+                "alHours, [Status] = @Status, [SoSeqNo] = @SoSeqNo, [ID] = @ID, [OrderQTY] = @Ord" +
+                "erQTY, [ProductionQTY] = @ProductionQTY, [ScrapQTY] = @ScrapQTY, [StartDate] = @" +
+                "StartDate, [CompleteDate] = @CompleteDate, [Enable] = @Enable, [OPCode] = @OPCod" +
+                "e WHERE (((@IsNull_STOCKCODE = 1 AND [STOCKCODE] IS NULL) OR ([STOCKCODE] = @Ori" +
+                "ginal_STOCKCODE)) AND ((@IsNull_SalesLineRef = 1 AND [SalesLineRef] IS NULL) OR " +
+                "([SalesLineRef] = @Original_SalesLineRef)) AND ((@IsNull_AssignTo = 1 AND [Assig" +
+                "nTo] IS NULL) OR ([AssignTo] = @Original_AssignTo)) AND ((@IsNull_EstimatedTime " +
+                "= 1 AND [EstimatedTime] IS NULL) OR ([EstimatedTime] = @Original_EstimatedTime))" +
+                " AND ((@IsNull_ActualHours = 1 AND [ActualHours] IS NULL) OR ([ActualHours] = @O" +
+                "riginal_ActualHours)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status" +
+                "] = @Original_Status)) AND ([SoSeqNo] = @Original_SoSeqNo) AND ([ID] = @Original" +
+                "_ID) AND ((@IsNull_OrderQTY = 1 AND [OrderQTY] IS NULL) OR ([OrderQTY] = @Origin" +
+                "al_OrderQTY)) AND ((@IsNull_ProductionQTY = 1 AND [ProductionQTY] IS NULL) OR ([" +
+                "ProductionQTY] = @Original_ProductionQTY)) AND ((@IsNull_ScrapQTY = 1 AND [Scrap" +
+                "QTY] IS NULL) OR ([ScrapQTY] = @Original_ScrapQTY)) AND ((@IsNull_StartDate = 1 " +
+                "AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_C" +
+                "ompleteDate = 1 AND [CompleteDate] IS NULL) OR ([CompleteDate] = @Original_Compl" +
+                "eteDate)) AND ([Enable] = @Original_Enable) AND ((@IsNull_OPCode = 1 AND [OPCode" +
+                "] IS NULL) OR ([OPCode] = @Original_OPCode)));\r\nSELECT STOCKCODE, SalesLineRef, " +
+                "AssignTo, EstimatedTime, ActualHours, Status, SoSeqNo, ID, OrderQTY, ProductionQ" +
+                "TY, ScrapQTY, StartDate, CompleteDate, Enable, OPCode FROM PROD_ROUTE WHERE (ID " +
+                "= @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STOCKCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimatedTime", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimatedTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18429,10 +18477,10 @@ namespace EXO_MES_Module.MESDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScrapQTY", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScrapQTY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompleteDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompleteDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STOCKCODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STOCKCODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OPCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AssignTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18455,6 +18503,9 @@ namespace EXO_MES_Module.MESDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CompleteDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompleteDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompleteDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompleteDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OPCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPCode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18470,35 +18521,39 @@ namespace EXO_MES_Module.MESDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, OPCode, SalesLineRef, AssignTo, EstimatedTime, ActualHours, Status, SoSeqNo, ID, OrderQTY, ProductionQTY, ScrapQTY, StartDate, CompleteDate
-FROM            PROD_ROUTE
-WHERE        (SoSeqNo = @SoSeqNo) AND (Enable = 1) AND (Active IS NULL)";
+            this._commandCollection[0].CommandText = "SELECT STOCKCODE, SalesLineRef, AssignTo, EstimatedTime, ActualHours, Status, SoS" +
+                "eqNo, ID, OrderQTY, ProductionQTY, ScrapQTY, StartDate, CompleteDate, Enable, OP" +
+                "Code FROM PROD_ROUTE WHERE (SoSeqNo = @SoSeqNo) AND (Enable = 1) AND (Active IS " +
+                "NULL)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoSeqNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ActualHours, AssignTo, CompleteDate, EstimatedTime, ID, OPCode, OrderQTY, " +
-                "ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FRO" +
-                "M PROD_ROUTE WHERE (SoSeqNo = @SoSeqNo) AND (Enable = 1)  AND (Active IS NULL)";
+            this._commandCollection[1].CommandText = "SELECT ActualHours, AssignTo, CompleteDate, Enable, EstimatedTime, ID, OPCode, Or" +
+                "derQTY, ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, St" +
+                "atus FROM PROD_ROUTE WHERE (SoSeqNo = @SoSeqNo) AND (Enable = 1) AND (Active IS " +
+                "NULL)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoSeqNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ActualHours, AssignTo, CompleteDate, EstimatedTime, ID, OPCode, OrderQTY, " +
-                "ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FRO" +
-                "M PROD_ROUTE WHERE (SoSeqNo = @SOID) AND (Enable = 1) AND (Active IS NULL)";
+            this._commandCollection[2].CommandText = "SELECT ActualHours, AssignTo, CompleteDate, Enable, EstimatedTime, ID, OPCode, Or" +
+                "derQTY, ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, St" +
+                "atus FROM PROD_ROUTE WHERE (SoSeqNo = @SOID) AND (Enable = 1) AND (Active IS NUL" +
+                "L)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SOID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT ActualHours, AssignTo, CompleteDate, EstimatedTime, ID, OPCode, OrderQTY, ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_ROUTE WHERE (AssignTo = @AssignTO) AND (Enable = 1) AND (Status = 'schedule' OR Status = 'Start') AND (Active IS NULL)";
+            this._commandCollection[3].CommandText = @"SELECT ActualHours, AssignTo, CompleteDate, Enable, EstimatedTime, ID, OPCode, OrderQTY, ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_ROUTE WHERE (AssignTo = @AssignTO) AND (Enable = 1) AND (Status = 'schedule' OR Status = 'Start') AND (Active IS NULL)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignTO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT ActualHours, AssignTo, CompleteDate, EstimatedTime, ID, OPCode, OrderQTY, " +
-                "ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FRO" +
-                "M PROD_ROUTE WHERE (AssignTo = @AssignTo) AND (Enable = 1) AND (Active IS NULL)";
+            this._commandCollection[4].CommandText = "SELECT ActualHours, AssignTo, CompleteDate, Enable, EstimatedTime, ID, OPCode, Or" +
+                "derQTY, ProductionQTY, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, St" +
+                "atus FROM PROD_ROUTE WHERE (AssignTo = @AssignTo) AND (Enable = 1) AND (Active I" +
+                "S NULL)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignTo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -29969,7 +30024,6 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PROD_JobCardView";
             tableMapping.ColumnMappings.Add("STOCKCODE", "STOCKCODE");
-            tableMapping.ColumnMappings.Add("OPCode", "OPCode");
             tableMapping.ColumnMappings.Add("AssignTo", "AssignTo");
             tableMapping.ColumnMappings.Add("EstimatedTime", "EstimatedTime");
             tableMapping.ColumnMappings.Add("Status", "Status");
@@ -30013,6 +30067,7 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             tableMapping.ColumnMappings.Add("PrintBy", "PrintBy");
             tableMapping.ColumnMappings.Add("OpName", "OpName");
             tableMapping.ColumnMappings.Add("DISPATCH_INFO", "DISPATCH_INFO");
+            tableMapping.ColumnMappings.Add("OPCode", "OPCode");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -30029,51 +30084,35 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, 
-                         InStage, Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy, OpName, DISPATCH_INFO
+            this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, InStage, 
+                         Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy, OpName, DISPATCH_INFO, OPCode
 FROM            PROD_JobCardView
 WHERE        (SoSeqNo = @salesID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
-                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
-                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
-FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef) AND (OPCode = @OPCode)";
+            this._commandCollection[1].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef) AND (OPCode = @OPCode)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
-                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
-                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
-FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID) AND (SalesLineRef  IN ( @SalesLineRef))";
+            this._commandCollection[2].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef IN (@SalesLineRef))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
-                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
-                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
-FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef)";
+            this._commandCollection[3].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
-                         FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
-                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
-FROM            PROD_JobCardView
-WHERE        (SoSeqNo = @salesID) AND (STOCKCODE = @STOCKCODE)";
+            this._commandCollection[4].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (STOCKCODE = @STOCKCODE)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STOCKCODE", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

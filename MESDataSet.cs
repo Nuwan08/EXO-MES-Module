@@ -4,6 +4,9 @@
 
     partial class MESDataSet
     {
+        partial class PROD_ROUTEDataTable
+        {
+        }
     }
 }
 
