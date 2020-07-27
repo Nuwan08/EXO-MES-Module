@@ -29,7 +29,7 @@ namespace EXO_MES_Module
             // TODO: This line of code loads data into the 'MESDataSet.PROD_JOBCARD' table. You can move, or remove it, as needed.
            // this.PROD_JOBCARDTableAdapter.Summary(this.MESDataSet.PROD_JOBCARD, SalesID);
             // TODO: This line of code loads data into the 'MESDataSet.PROD_JobCardView' table. You can move, or remove it, as needed.
-            this.PROD_JobCardViewTableAdapter.FillBySalesLineRef(this.MESDataSet.PROD_JobCardView, SalesID, LineNo);
+            this.PROD_JobCardViewTableAdapter.Fill(this.MESDataSet.PROD_JobCardView, SalesID);
 
             // ReportParameterCollection rptparamter = new ReportParameterCollection();
             // rptparamter.Add(new Microsoft.Reporting.WinForms.ReportParameter("PrintBy", this.Text) );

@@ -52,6 +52,8 @@ namespace EXO_MES_Module {
         
         private PROD_JobCardViewDataTable tablePROD_JobCardView;
         
+        private PROD_STAFFDataTable tablePROD_STAFF;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -121,6 +123,9 @@ namespace EXO_MES_Module {
                 }
                 if ((ds.Tables["PROD_JobCardView"] != null)) {
                     base.Tables.Add(new PROD_JobCardViewDataTable(ds.Tables["PROD_JobCardView"]));
+                }
+                if ((ds.Tables["PROD_STAFF"] != null)) {
+                    base.Tables.Add(new PROD_STAFFDataTable(ds.Tables["PROD_STAFF"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -282,6 +287,16 @@ namespace EXO_MES_Module {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PROD_STAFFDataTable PROD_STAFF {
+            get {
+                return this.tablePROD_STAFF;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -388,6 +403,9 @@ namespace EXO_MES_Module {
                 }
                 if ((ds.Tables["PROD_JobCardView"] != null)) {
                     base.Tables.Add(new PROD_JobCardViewDataTable(ds.Tables["PROD_JobCardView"]));
+                }
+                if ((ds.Tables["PROD_STAFF"] != null)) {
+                    base.Tables.Add(new PROD_STAFFDataTable(ds.Tables["PROD_STAFF"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -506,6 +524,12 @@ namespace EXO_MES_Module {
                     this.tablePROD_JobCardView.InitVars();
                 }
             }
+            this.tablePROD_STAFF = ((PROD_STAFFDataTable)(base.Tables["PROD_STAFF"]));
+            if ((initTable == true)) {
+                if ((this.tablePROD_STAFF != null)) {
+                    this.tablePROD_STAFF.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -544,6 +568,8 @@ namespace EXO_MES_Module {
             base.Tables.Add(this.tablePROD_DIVISIONS);
             this.tablePROD_JobCardView = new PROD_JobCardViewDataTable();
             base.Tables.Add(this.tablePROD_JobCardView);
+            this.tablePROD_STAFF = new PROD_STAFFDataTable();
+            base.Tables.Add(this.tablePROD_STAFF);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -627,6 +653,12 @@ namespace EXO_MES_Module {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializePROD_JobCardView() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializePROD_STAFF() {
             return false;
         }
         
@@ -726,6 +758,9 @@ namespace EXO_MES_Module {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void PROD_JobCardViewRowChangeEventHandler(object sender, PROD_JobCardViewRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void PROD_STAFFRowChangeEventHandler(object sender, PROD_STAFFRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5207,6 +5242,8 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnActive;
             
+            private global::System.Data.DataColumn columnColor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JOBCARDDataTable() {
@@ -5474,6 +5511,14 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ColorColumn {
+                get {
+                    return this.columnColor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5537,7 +5582,8 @@ namespace EXO_MES_Module {
                         System.DateTime PlanProductionDate, 
                         string Drawing, 
                         string Division, 
-                        bool Active) {
+                        bool Active, 
+                        string Color) {
                 PROD_JOBCARDRow rowPROD_JOBCARDRow = ((PROD_JOBCARDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SalesID,
@@ -5568,7 +5614,8 @@ namespace EXO_MES_Module {
                         PlanProductionDate,
                         Drawing,
                         Division,
-                        Active};
+                        Active,
+                        Color};
                 rowPROD_JOBCARDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_JOBCARDRow);
                 return rowPROD_JOBCARDRow;
@@ -5627,6 +5674,7 @@ namespace EXO_MES_Module {
                 this.columnDrawing = base.Columns["Drawing"];
                 this.columnDivision = base.Columns["Division"];
                 this.columnActive = base.Columns["Active"];
+                this.columnColor = base.Columns["Color"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5690,6 +5738,8 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnDivision);
                 this.columnActive = new global::System.Data.DataColumn("Active", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnActive);
+                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -5705,6 +5755,7 @@ namespace EXO_MES_Module {
                 this.columnInStage.MaxLength = 23;
                 this.columnDrawing.MaxLength = 23;
                 this.columnDivision.MaxLength = 23;
+                this.columnColor.MaxLength = 23;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8093,6 +8144,8 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnOPCode;
             
+            private global::System.Data.DataColumn columnColor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewDataTable() {
@@ -8488,6 +8541,14 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ColorColumn {
+                get {
+                    return this.columnColor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8568,7 +8629,8 @@ namespace EXO_MES_Module {
                         string PrintBy, 
                         string OpName, 
                         string DISPATCH_INFO, 
-                        string OPCode) {
+                        string OPCode, 
+                        string Color) {
                 PROD_JobCardViewRow rowPROD_JobCardViewRow = ((PROD_JobCardViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STOCKCODE,
@@ -8615,7 +8677,8 @@ namespace EXO_MES_Module {
                         PrintBy,
                         OpName,
                         DISPATCH_INFO,
-                        OPCode};
+                        OPCode,
+                        Color};
                 rowPROD_JobCardViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_JobCardViewRow);
                 return rowPROD_JobCardViewRow;
@@ -8683,6 +8746,7 @@ namespace EXO_MES_Module {
                 this.columnOpName = base.Columns["OpName"];
                 this.columnDISPATCH_INFO = base.Columns["DISPATCH_INFO"];
                 this.columnOPCode = base.Columns["OPCode"];
+                this.columnColor = base.Columns["Color"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8778,6 +8842,8 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnDISPATCH_INFO);
                 this.columnOPCode = new global::System.Data.DataColumn("OPCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOPCode);
+                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColor);
                 this.columnSTOCKCODE.MaxLength = 23;
                 this.columnAssignTo.MaxLength = 50;
                 this.columnStatus.MaxLength = 10;
@@ -8802,6 +8868,7 @@ namespace EXO_MES_Module {
                 this.columnOpName.MaxLength = 50;
                 this.columnDISPATCH_INFO.MaxLength = 70;
                 this.columnOPCode.MaxLength = 30;
+                this.columnColor.MaxLength = 23;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8888,6 +8955,325 @@ namespace EXO_MES_Module {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PROD_JobCardViewDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PROD_STAFFDataTable : global::System.Data.TypedTableBase<PROD_STAFFRow> {
+            
+            private global::System.Data.DataColumn columnPassword;
+            
+            private global::System.Data.DataColumn columnUserRole;
+            
+            private global::System.Data.DataColumn columnEnable;
+            
+            private global::System.Data.DataColumn columnUserID;
+            
+            private global::System.Data.DataColumn columnID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFDataTable() {
+                this.TableName = "PROD_STAFF";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal PROD_STAFFDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected PROD_STAFFDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PasswordColumn {
+                get {
+                    return this.columnPassword;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserRoleColumn {
+                get {
+                    return this.columnUserRole;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EnableColumn {
+                get {
+                    return this.columnEnable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIDColumn {
+                get {
+                    return this.columnUserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFRow this[int index] {
+                get {
+                    return ((PROD_STAFFRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PROD_STAFFRowChangeEventHandler PROD_STAFFRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PROD_STAFFRowChangeEventHandler PROD_STAFFRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PROD_STAFFRowChangeEventHandler PROD_STAFFRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PROD_STAFFRowChangeEventHandler PROD_STAFFRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddPROD_STAFFRow(PROD_STAFFRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFRow AddPROD_STAFFRow(string Password, string UserRole, bool Enable, string UserID, int ID) {
+                PROD_STAFFRow rowPROD_STAFFRow = ((PROD_STAFFRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Password,
+                        UserRole,
+                        Enable,
+                        UserID,
+                        ID};
+                rowPROD_STAFFRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPROD_STAFFRow);
+                return rowPROD_STAFFRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFRow FindByUserID(string UserID) {
+                return ((PROD_STAFFRow)(this.Rows.Find(new object[] {
+                            UserID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PROD_STAFFDataTable cln = ((PROD_STAFFDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PROD_STAFFDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnPassword = base.Columns["Password"];
+                this.columnUserRole = base.Columns["UserRole"];
+                this.columnEnable = base.Columns["Enable"];
+                this.columnUserID = base.Columns["UserID"];
+                this.columnID = base.Columns["ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPassword);
+                this.columnUserRole = new global::System.Data.DataColumn("UserRole", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserRole);
+                this.columnEnable = new global::System.Data.DataColumn("Enable", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnable);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnUserID}, true));
+                this.columnPassword.MaxLength = 100;
+                this.columnUserRole.MaxLength = 10;
+                this.columnEnable.AllowDBNull = false;
+                this.columnUserID.AllowDBNull = false;
+                this.columnUserID.Unique = true;
+                this.columnUserID.MaxLength = 20;
+                this.columnID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFRow NewPROD_STAFFRow() {
+                return ((PROD_STAFFRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PROD_STAFFRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PROD_STAFFRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PROD_STAFFRowChanged != null)) {
+                    this.PROD_STAFFRowChanged(this, new PROD_STAFFRowChangeEvent(((PROD_STAFFRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PROD_STAFFRowChanging != null)) {
+                    this.PROD_STAFFRowChanging(this, new PROD_STAFFRowChangeEvent(((PROD_STAFFRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PROD_STAFFRowDeleted != null)) {
+                    this.PROD_STAFFRowDeleted(this, new PROD_STAFFRowChangeEvent(((PROD_STAFFRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PROD_STAFFRowDeleting != null)) {
+                    this.PROD_STAFFRowDeleting(this, new PROD_STAFFRowChangeEvent(((PROD_STAFFRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovePROD_STAFFRow(PROD_STAFFRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                MESDataSet ds = new MESDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PROD_STAFFDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -14257,6 +14643,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Color {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JOBCARD.ColorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Color\' in table \'PROD_JOBCARD\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JOBCARD.ColorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSalesIDNull() {
                 return this.IsNull(this.tablePROD_JOBCARD.SalesIDColumn);
             }
@@ -14589,6 +14991,18 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetActiveNull() {
                 this[this.tablePROD_JOBCARD.ActiveColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsColorNull() {
+                return this.IsNull(this.tablePROD_JOBCARD.ColorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetColorNull() {
+                this[this.tablePROD_JOBCARD.ColorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16628,6 +17042,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Color {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_JobCardView.ColorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Color\' in table \'PROD_JobCardView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_JobCardView.ColorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSTOCKCODENull() {
                 return this.IsNull(this.tablePROD_JobCardView.STOCKCODEColumn);
             }
@@ -17153,6 +17583,122 @@ namespace EXO_MES_Module {
             public void SetOPCodeNull() {
                 this[this.tablePROD_JobCardView.OPCodeColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsColorNull() {
+                return this.IsNull(this.tablePROD_JobCardView.ColorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetColorNull() {
+                this[this.tablePROD_JobCardView.ColorColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PROD_STAFFRow : global::System.Data.DataRow {
+            
+            private PROD_STAFFDataTable tablePROD_STAFF;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal PROD_STAFFRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePROD_STAFF = ((PROD_STAFFDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Password {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_STAFF.PasswordColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Password\' in table \'PROD_STAFF\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_STAFF.PasswordColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string UserRole {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROD_STAFF.UserRoleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserRole\' in table \'PROD_STAFF\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_STAFF.UserRoleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Enable {
+                get {
+                    return ((bool)(this[this.tablePROD_STAFF.EnableColumn]));
+                }
+                set {
+                    this[this.tablePROD_STAFF.EnableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string UserID {
+                get {
+                    return ((string)(this[this.tablePROD_STAFF.UserIDColumn]));
+                }
+                set {
+                    this[this.tablePROD_STAFF.UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablePROD_STAFF.IDColumn]));
+                }
+                set {
+                    this[this.tablePROD_STAFF.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPasswordNull() {
+                return this.IsNull(this.tablePROD_STAFF.PasswordColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPasswordNull() {
+                this[this.tablePROD_STAFF.PasswordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUserRoleNull() {
+                return this.IsNull(this.tablePROD_STAFF.UserRoleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUserRoleNull() {
+                this[this.tablePROD_STAFF.UserRoleColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -17617,6 +18163,40 @@ namespace EXO_MES_Module {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_JobCardViewRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class PROD_STAFFRowChangeEvent : global::System.EventArgs {
+            
+            private PROD_STAFFRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFRowChangeEvent(PROD_STAFFRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PROD_STAFFRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -26372,6 +26952,7 @@ SELECT IS_MES, STAFFNO, NAME, ISACTIVE FROM STAFF WHERE (STAFFNO = @STAFFNO)";
             tableMapping.ColumnMappings.Add("Drawing", "Drawing");
             tableMapping.ColumnMappings.Add("Division", "Division");
             tableMapping.ColumnMappings.Add("Active", "Active");
+            tableMapping.ColumnMappings.Add("Color", "Color");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -26407,7 +26988,7 @@ SELECT IS_MES, STAFFNO, NAME, ISACTIVE FROM STAFF WHERE (STAFFNO = @STAFFNO)";
                 "Drawing = 1 AND [Drawing] IS NULL) OR ([Drawing] = @Original_Drawing)) AND ((@Is" +
                 "Null_Division = 1 AND [Division] IS NULL) OR ([Division] = @Original_Division)) " +
                 "AND ((@IsNull_Active = 1 AND [Active] IS NULL) OR ([Active] = @Original_Active))" +
-                ")";
+                " AND ((@IsNull_Color = 1 AND [Color] IS NULL) OR ([Color] = @Original_Color)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SalesID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalesID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -26462,10 +27043,12 @@ SELECT IS_MES, STAFFNO, NAME, ISACTIVE FROM STAFF WHERE (STAFFNO = @STAFFNO)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Division", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Division", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Active", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Color", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PROD_JOBCARD] ([SalesID], [SalesLine], [STOCKCODE], [Note], [AddtionalNotes], [MakeToStock], [FinSilver], [FinFlientGrey], [FinMatBlack], [FinPickle], [FinNoPaint], [FinPaintWeldsOnly], [FinPolishWelds], [EnableAddNote], [OrderDate], [DueDate], [ProductionStartDate], [Status], [InStage], [OrderQTY], [Sales], [Cost], [GP], [ProductionComplete], [PlanProductionDate], [Drawing], [Division], [Active]) VALUES (@SalesID, @SalesLine, @STOCKCODE, @Note, @AddtionalNotes, @MakeToStock, @FinSilver, @FinFlientGrey, @FinMatBlack, @FinPickle, @FinNoPaint, @FinPaintWeldsOnly, @FinPolishWelds, @EnableAddNote, @OrderDate, @DueDate, @ProductionStartDate, @Status, @InStage, @OrderQTY, @Sales, @Cost, @GP, @ProductionComplete, @PlanProductionDate, @Drawing, @Division, @Active);
-SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, OrderDate, DueDate, ProductionStartDate, Status, InStage, OrderQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active FROM PROD_JOBCARD WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PROD_JOBCARD] ([SalesID], [SalesLine], [STOCKCODE], [Note], [AddtionalNotes], [MakeToStock], [FinSilver], [FinFlientGrey], [FinMatBlack], [FinPickle], [FinNoPaint], [FinPaintWeldsOnly], [FinPolishWelds], [EnableAddNote], [OrderDate], [DueDate], [ProductionStartDate], [Status], [InStage], [OrderQTY], [Sales], [Cost], [GP], [ProductionComplete], [PlanProductionDate], [Drawing], [Division], [Active], [Color]) VALUES (@SalesID, @SalesLine, @STOCKCODE, @Note, @AddtionalNotes, @MakeToStock, @FinSilver, @FinFlientGrey, @FinMatBlack, @FinPickle, @FinNoPaint, @FinPaintWeldsOnly, @FinPolishWelds, @EnableAddNote, @OrderDate, @DueDate, @ProductionStartDate, @Status, @InStage, @OrderQTY, @Sales, @Cost, @GP, @ProductionComplete, @PlanProductionDate, @Drawing, @Division, @Active, @Color);
+SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, OrderDate, DueDate, ProductionStartDate, Status, InStage, OrderQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active, Color FROM PROD_JOBCARD WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26495,6 +27078,7 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Drawing", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Drawing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Division", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Division", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Color", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [PROD_JOBCARD] SET [SalesID] = @SalesID, [SalesLine] = @SalesLine, [STOCKC" +
@@ -26506,44 +27090,45 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
                 "ate, [ProductionStartDate] = @ProductionStartDate, [Status] = @Status, [InStage]" +
                 " = @InStage, [OrderQTY] = @OrderQTY, [Sales] = @Sales, [Cost] = @Cost, [GP] = @G" +
                 "P, [ProductionComplete] = @ProductionComplete, [PlanProductionDate] = @PlanProdu" +
-                "ctionDate, [Drawing] = @Drawing, [Division] = @Division, [Active] = @Active WHER" +
-                "E (((@IsNull_SalesID = 1 AND [SalesID] IS NULL) OR ([SalesID] = @Original_SalesI" +
-                "D)) AND ([ID] = @Original_ID) AND ((@IsNull_SalesLine = 1 AND [SalesLine] IS NUL" +
-                "L) OR ([SalesLine] = @Original_SalesLine)) AND ((@IsNull_STOCKCODE = 1 AND [STOC" +
-                "KCODE] IS NULL) OR ([STOCKCODE] = @Original_STOCKCODE)) AND ((@IsNull_MakeToStoc" +
-                "k = 1 AND [MakeToStock] IS NULL) OR ([MakeToStock] = @Original_MakeToStock)) AND" +
-                " ((@IsNull_FinSilver = 1 AND [FinSilver] IS NULL) OR ([FinSilver] = @Original_Fi" +
-                "nSilver)) AND ((@IsNull_FinFlientGrey = 1 AND [FinFlientGrey] IS NULL) OR ([FinF" +
-                "lientGrey] = @Original_FinFlientGrey)) AND ((@IsNull_FinMatBlack = 1 AND [FinMat" +
-                "Black] IS NULL) OR ([FinMatBlack] = @Original_FinMatBlack)) AND ((@IsNull_FinPic" +
-                "kle = 1 AND [FinPickle] IS NULL) OR ([FinPickle] = @Original_FinPickle)) AND ((@" +
-                "IsNull_FinNoPaint = 1 AND [FinNoPaint] IS NULL) OR ([FinNoPaint] = @Original_Fin" +
-                "NoPaint)) AND ((@IsNull_FinPaintWeldsOnly = 1 AND [FinPaintWeldsOnly] IS NULL) O" +
-                "R ([FinPaintWeldsOnly] = @Original_FinPaintWeldsOnly)) AND ((@IsNull_FinPolishWe" +
-                "lds = 1 AND [FinPolishWelds] IS NULL) OR ([FinPolishWelds] = @Original_FinPolish" +
-                "Welds)) AND ((@IsNull_EnableAddNote = 1 AND [EnableAddNote] IS NULL) OR ([Enable" +
-                "AddNote] = @Original_EnableAddNote)) AND ((@IsNull_OrderDate = 1 AND [OrderDate]" +
-                " IS NULL) OR ([OrderDate] = @Original_OrderDate)) AND ((@IsNull_DueDate = 1 AND " +
-                "[DueDate] IS NULL) OR ([DueDate] = @Original_DueDate)) AND ((@IsNull_ProductionS" +
-                "tartDate = 1 AND [ProductionStartDate] IS NULL) OR ([ProductionStartDate] = @Ori" +
-                "ginal_ProductionStartDate)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([" +
-                "Status] = @Original_Status)) AND ((@IsNull_InStage = 1 AND [InStage] IS NULL) OR" +
-                " ([InStage] = @Original_InStage)) AND ((@IsNull_OrderQTY = 1 AND [OrderQTY] IS N" +
-                "ULL) OR ([OrderQTY] = @Original_OrderQTY)) AND ((@IsNull_Sales = 1 AND [Sales] I" +
-                "S NULL) OR ([Sales] = @Original_Sales)) AND ((@IsNull_Cost = 1 AND [Cost] IS NUL" +
-                "L) OR ([Cost] = @Original_Cost)) AND ((@IsNull_GP = 1 AND [GP] IS NULL) OR ([GP]" +
-                " = @Original_GP)) AND ((@IsNull_ProductionComplete = 1 AND [ProductionComplete] " +
-                "IS NULL) OR ([ProductionComplete] = @Original_ProductionComplete)) AND ((@IsNull" +
-                "_PlanProductionDate = 1 AND [PlanProductionDate] IS NULL) OR ([PlanProductionDat" +
-                "e] = @Original_PlanProductionDate)) AND ((@IsNull_Drawing = 1 AND [Drawing] IS N" +
-                "ULL) OR ([Drawing] = @Original_Drawing)) AND ((@IsNull_Division = 1 AND [Divisio" +
-                "n] IS NULL) OR ([Division] = @Original_Division)) AND ((@IsNull_Active = 1 AND [" +
-                "Active] IS NULL) OR ([Active] = @Original_Active)));\r\nSELECT SalesID, ID, SalesL" +
-                "ine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, Fin" +
-                "MatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNot" +
-                "e, OrderDate, DueDate, ProductionStartDate, Status, InStage, OrderQTY, Sales, Co" +
-                "st, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active FROM P" +
-                "ROD_JOBCARD WHERE (ID = @ID)";
+                "ctionDate, [Drawing] = @Drawing, [Division] = @Division, [Active] = @Active, [Co" +
+                "lor] = @Color WHERE (((@IsNull_SalesID = 1 AND [SalesID] IS NULL) OR ([SalesID] " +
+                "= @Original_SalesID)) AND ([ID] = @Original_ID) AND ((@IsNull_SalesLine = 1 AND " +
+                "[SalesLine] IS NULL) OR ([SalesLine] = @Original_SalesLine)) AND ((@IsNull_STOCK" +
+                "CODE = 1 AND [STOCKCODE] IS NULL) OR ([STOCKCODE] = @Original_STOCKCODE)) AND ((" +
+                "@IsNull_MakeToStock = 1 AND [MakeToStock] IS NULL) OR ([MakeToStock] = @Original" +
+                "_MakeToStock)) AND ((@IsNull_FinSilver = 1 AND [FinSilver] IS NULL) OR ([FinSilv" +
+                "er] = @Original_FinSilver)) AND ((@IsNull_FinFlientGrey = 1 AND [FinFlientGrey] " +
+                "IS NULL) OR ([FinFlientGrey] = @Original_FinFlientGrey)) AND ((@IsNull_FinMatBla" +
+                "ck = 1 AND [FinMatBlack] IS NULL) OR ([FinMatBlack] = @Original_FinMatBlack)) AN" +
+                "D ((@IsNull_FinPickle = 1 AND [FinPickle] IS NULL) OR ([FinPickle] = @Original_F" +
+                "inPickle)) AND ((@IsNull_FinNoPaint = 1 AND [FinNoPaint] IS NULL) OR ([FinNoPain" +
+                "t] = @Original_FinNoPaint)) AND ((@IsNull_FinPaintWeldsOnly = 1 AND [FinPaintWel" +
+                "dsOnly] IS NULL) OR ([FinPaintWeldsOnly] = @Original_FinPaintWeldsOnly)) AND ((@" +
+                "IsNull_FinPolishWelds = 1 AND [FinPolishWelds] IS NULL) OR ([FinPolishWelds] = @" +
+                "Original_FinPolishWelds)) AND ((@IsNull_EnableAddNote = 1 AND [EnableAddNote] IS" +
+                " NULL) OR ([EnableAddNote] = @Original_EnableAddNote)) AND ((@IsNull_OrderDate =" +
+                " 1 AND [OrderDate] IS NULL) OR ([OrderDate] = @Original_OrderDate)) AND ((@IsNul" +
+                "l_DueDate = 1 AND [DueDate] IS NULL) OR ([DueDate] = @Original_DueDate)) AND ((@" +
+                "IsNull_ProductionStartDate = 1 AND [ProductionStartDate] IS NULL) OR ([Productio" +
+                "nStartDate] = @Original_ProductionStartDate)) AND ((@IsNull_Status = 1 AND [Stat" +
+                "us] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_InStage = 1 AND [In" +
+                "Stage] IS NULL) OR ([InStage] = @Original_InStage)) AND ((@IsNull_OrderQTY = 1 A" +
+                "ND [OrderQTY] IS NULL) OR ([OrderQTY] = @Original_OrderQTY)) AND ((@IsNull_Sales" +
+                " = 1 AND [Sales] IS NULL) OR ([Sales] = @Original_Sales)) AND ((@IsNull_Cost = 1" +
+                " AND [Cost] IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_GP = 1 AND [GP]" +
+                " IS NULL) OR ([GP] = @Original_GP)) AND ((@IsNull_ProductionComplete = 1 AND [Pr" +
+                "oductionComplete] IS NULL) OR ([ProductionComplete] = @Original_ProductionComple" +
+                "te)) AND ((@IsNull_PlanProductionDate = 1 AND [PlanProductionDate] IS NULL) OR (" +
+                "[PlanProductionDate] = @Original_PlanProductionDate)) AND ((@IsNull_Drawing = 1 " +
+                "AND [Drawing] IS NULL) OR ([Drawing] = @Original_Drawing)) AND ((@IsNull_Divisio" +
+                "n = 1 AND [Division] IS NULL) OR ([Division] = @Original_Division)) AND ((@IsNul" +
+                "l_Active = 1 AND [Active] IS NULL) OR ([Active] = @Original_Active)) AND ((@IsNu" +
+                "ll_Color = 1 AND [Color] IS NULL) OR ([Color] = @Original_Color)));\r\nSELECT Sale" +
+                "sID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, Fin" +
+                "FlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWeld" +
+                "s, EnableAddNote, OrderDate, DueDate, ProductionStartDate, Status, InStage, Orde" +
+                "rQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division" +
+                ", Active, Color FROM PROD_JOBCARD WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26573,6 +27158,7 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Drawing", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Drawing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Division", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Division", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Color", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SalesID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalesID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -26626,6 +27212,8 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Division", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Division", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Active", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Color", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -26643,7 +27231,7 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, OrderDate, DueDate, 
-                         ProductionStartDate, Status, InStage, OrderQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active
+                         ProductionStartDate, Status, InStage, OrderQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active, Color
 FROM            PROD_JOBCARD
 WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = @stockcode) AND (Active IS NULL)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -26652,32 +27240,29 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockcode", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        Active, AddtionalNotes, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, 
-                         OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status
-FROM            PROD_JOBCARD
-WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = @stockcode) AND (Active IS NULL)";
+            this._commandCollection[1].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = @stockcode) AND (Active IS NULL)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLine", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockcode", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT Active, AddtionalNotes, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD Where  (Active IS NULL)";
+            this._commandCollection[2].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT Active, AddtionalNotes, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = @stockcode) AND (Active IS NULL)";
+            this._commandCollection[3].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = @stockcode) AND (Active IS NULL)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLine", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockcode", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT Active, AddtionalNotes, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)";
+            this._commandCollection[4].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT Active, AddtionalNotes, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (SalesID = @salesID)";
+            this._commandCollection[5].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (SalesID = @salesID)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -26926,7 +27511,8 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     global::System.Nullable<global::System.DateTime> Original_PlanProductionDate, 
                     string Original_Drawing, 
                     string Original_Division, 
-                    global::System.Nullable<bool> Original_Active) {
+                    global::System.Nullable<bool> Original_Active, 
+                    string Original_Color) {
             if ((Original_SalesID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_SalesID.Value));
@@ -27136,6 +27722,14 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                 this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
+            if ((Original_Color == null)) {
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_Color));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27184,7 +27778,8 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     global::System.Nullable<global::System.DateTime> PlanProductionDate, 
                     string Drawing, 
                     string Division, 
-                    global::System.Nullable<bool> Active) {
+                    global::System.Nullable<bool> Active, 
+                    string Color) {
             if ((SalesID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SalesID.Value));
             }
@@ -27353,6 +27948,12 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             else {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
+            if ((Color == null)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Color));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27402,6 +28003,7 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     string Drawing, 
                     string Division, 
                     global::System.Nullable<bool> Active, 
+                    string Color, 
                     global::System.Nullable<int> Original_SalesID, 
                     int Original_ID, 
                     global::System.Nullable<int> Original_SalesLine, 
@@ -27429,6 +28031,7 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     string Original_Drawing, 
                     string Original_Division, 
                     global::System.Nullable<bool> Original_Active, 
+                    string Original_Color, 
                     int ID) {
             if ((SalesID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SalesID.Value));
@@ -27598,216 +28201,230 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
+            if ((Color == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Color));
+            }
             if ((Original_SalesID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_SalesID.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_SalesID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_ID));
             if ((Original_SalesLine.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_SalesLine.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_SalesLine.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             if ((Original_STOCKCODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_STOCKCODE));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_STOCKCODE));
             }
             if ((Original_MakeToStock.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((bool)(Original_MakeToStock.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((bool)(Original_MakeToStock.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             if ((Original_FinSilver.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((bool)(Original_FinSilver.Value));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((bool)(Original_FinSilver.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             if ((Original_FinFlientGrey.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((bool)(Original_FinFlientGrey.Value));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_FinFlientGrey.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             if ((Original_FinMatBlack.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((bool)(Original_FinMatBlack.Value));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((bool)(Original_FinMatBlack.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             if ((Original_FinPickle.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((bool)(Original_FinPickle.Value));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_FinPickle.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             if ((Original_FinNoPaint.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((bool)(Original_FinNoPaint.Value));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_FinNoPaint.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             if ((Original_FinPaintWeldsOnly.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((bool)(Original_FinPaintWeldsOnly.Value));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((bool)(Original_FinPaintWeldsOnly.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             if ((Original_FinPolishWelds.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((bool)(Original_FinPolishWelds.Value));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((bool)(Original_FinPolishWelds.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             if ((Original_EnableAddNote.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((bool)(Original_EnableAddNote.Value));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((bool)(Original_EnableAddNote.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             if ((Original_OrderDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((System.DateTime)(Original_OrderDate.Value));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((System.DateTime)(Original_OrderDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             if ((Original_DueDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((System.DateTime)(Original_DueDate.Value));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((System.DateTime)(Original_DueDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
             if ((Original_ProductionStartDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((System.DateTime)(Original_ProductionStartDate.Value));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((System.DateTime)(Original_ProductionStartDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
             if ((Original_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_Status));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_Status));
             }
             if ((Original_InStage == null)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_InStage));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_InStage));
             }
             if ((Original_OrderQTY.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((float)(Original_OrderQTY.Value));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((float)(Original_OrderQTY.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
             }
             if ((Original_Sales.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((float)(Original_Sales.Value));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((float)(Original_Sales.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
             if ((Original_Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((float)(Original_Cost.Value));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((float)(Original_Cost.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
             if ((Original_GP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((float)(Original_GP.Value));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((float)(Original_GP.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
             }
             if ((Original_ProductionComplete.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((System.DateTime)(Original_ProductionComplete.Value));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((System.DateTime)(Original_ProductionComplete.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
             }
             if ((Original_PlanProductionDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((System.DateTime)(Original_PlanProductionDate.Value));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((System.DateTime)(Original_PlanProductionDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
             }
             if ((Original_Drawing == null)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_Drawing));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(Original_Drawing));
             }
             if ((Original_Division == null)) {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_Division));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(Original_Division));
             }
             if ((Original_Active.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((bool)(Original_Active.Value));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((bool)(Original_Active.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[81].Value = ((int)(ID));
+            if ((Original_Color == null)) {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(Original_Color));
+            }
+            this.Adapter.UpdateCommand.Parameters[84].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27857,6 +28474,7 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     string Drawing, 
                     string Division, 
                     global::System.Nullable<bool> Active, 
+                    string Color, 
                     global::System.Nullable<int> Original_SalesID, 
                     int Original_ID, 
                     global::System.Nullable<int> Original_SalesLine, 
@@ -27883,8 +28501,9 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
                     global::System.Nullable<global::System.DateTime> Original_PlanProductionDate, 
                     string Original_Drawing, 
                     string Original_Division, 
-                    global::System.Nullable<bool> Original_Active) {
-            return this.Update(SalesID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, OrderDate, DueDate, ProductionStartDate, Status, InStage, OrderQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active, Original_SalesID, Original_ID, Original_SalesLine, Original_STOCKCODE, Original_MakeToStock, Original_FinSilver, Original_FinFlientGrey, Original_FinMatBlack, Original_FinPickle, Original_FinNoPaint, Original_FinPaintWeldsOnly, Original_FinPolishWelds, Original_EnableAddNote, Original_OrderDate, Original_DueDate, Original_ProductionStartDate, Original_Status, Original_InStage, Original_OrderQTY, Original_Sales, Original_Cost, Original_GP, Original_ProductionComplete, Original_PlanProductionDate, Original_Drawing, Original_Division, Original_Active, Original_ID);
+                    global::System.Nullable<bool> Original_Active, 
+                    string Original_Color) {
+            return this.Update(SalesID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, OrderDate, DueDate, ProductionStartDate, Status, InStage, OrderQTY, Sales, Cost, GP, ProductionComplete, PlanProductionDate, Drawing, Division, Active, Color, Original_SalesID, Original_ID, Original_SalesLine, Original_STOCKCODE, Original_MakeToStock, Original_FinSilver, Original_FinFlientGrey, Original_FinMatBlack, Original_FinPickle, Original_FinNoPaint, Original_FinPaintWeldsOnly, Original_FinPolishWelds, Original_EnableAddNote, Original_OrderDate, Original_DueDate, Original_ProductionStartDate, Original_Status, Original_InStage, Original_OrderQTY, Original_Sales, Original_Cost, Original_GP, Original_ProductionComplete, Original_PlanProductionDate, Original_Drawing, Original_Division, Original_Active, Original_Color, Original_ID);
         }
     }
     
@@ -30068,6 +30687,7 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             tableMapping.ColumnMappings.Add("OpName", "OpName");
             tableMapping.ColumnMappings.Add("DISPATCH_INFO", "DISPATCH_INFO");
             tableMapping.ColumnMappings.Add("OPCode", "OPCode");
+            tableMapping.ColumnMappings.Add("Color", "Color");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -30086,33 +30706,33 @@ SELECT DEVISIONID, NAME FROM PROD_DIVISIONS WHERE (DEVISIONID = @DEVISIONID)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        STOCKCODE, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, OrderDate, DueDate, SoSeqNo, SalesLineRef, ProductionStartDate, InStage, 
                          Drawing, Division, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, DESCRIPTION, CUSTORDERNO, ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, 
-                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy, OpName, DISPATCH_INFO, OPCode
+                         INSTRUCTIONS, NAME, PHONE, BINCODE, SalesEntered, PlanProductionDate, ProductionComplete, PrintBy, OpName, DISPATCH_INFO, OPCode, Color
 FROM            PROD_JobCardView
 WHERE        (SoSeqNo = @salesID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef) AND (OPCode = @OPCode)";
+            this._commandCollection[1].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, Color, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef) AND (OPCode = @OPCode)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPCode", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "OPCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef IN (@SalesLineRef))";
+            this._commandCollection[2].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, Color, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef IN (@SalesLineRef))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef)";
+            this._commandCollection[3].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, Color, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (SalesLineRef = @SalesLineRef)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesLineRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SalesLineRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (STOCKCODE = @STOCKCODE)";
+            this._commandCollection[4].CommandText = @"SELECT ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, Color, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_JobCardView WHERE (SoSeqNo = @salesID) AND (STOCKCODE = @STOCKCODE)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STOCKCODE", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -30259,6 +30879,216 @@ WHERE        (SoSeqNo = @salesID)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class PROD_STAFFTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public PROD_STAFFTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PROD_STAFF";
+            tableMapping.ColumnMappings.Add("Password", "Password");
+            tableMapping.ColumnMappings.Add("UserRole", "UserRole");
+            tableMapping.ColumnMappings.Add("Enable", "Enable");
+            tableMapping.ColumnMappings.Add("UserID", "UserID");
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [PROD_STAFF] ([ID], [UserID], [Password], [UserRole], [Enable]) VALUE" +
+                "S (@ID, @UserID, @Password, @UserRole, @Enable)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserRole", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserRole", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::EXO_MES_Module.Properties.Settings.Default.UpgradeConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        PROD_STAFF.*\r\nFROM            PROD_STAFF";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(MESDataSet.PROD_STAFFDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual MESDataSet.PROD_STAFFDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            MESDataSet.PROD_STAFFDataTable dataTable = new MESDataSet.PROD_STAFFDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(MESDataSet.PROD_STAFFDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(MESDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "PROD_STAFF");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -30347,6 +31177,8 @@ WHERE        (SoSeqNo = @salesID)";
         private PROD_DIVISIONREFTableAdapter _pROD_DIVISIONREFTableAdapter;
         
         private PROD_DIVISIONSTableAdapter _pROD_DIVISIONSTableAdapter;
+        
+        private PROD_STAFFTableAdapter _pROD_STAFFTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -30519,6 +31351,20 @@ WHERE        (SoSeqNo = @salesID)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public PROD_STAFFTableAdapter PROD_STAFFTableAdapter {
+            get {
+                return this._pROD_STAFFTableAdapter;
+            }
+            set {
+                this._pROD_STAFFTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -30580,6 +31426,10 @@ WHERE        (SoSeqNo = @salesID)";
                             && (this._pROD_DIVISIONSTableAdapter.Connection != null))) {
                     return this._pROD_DIVISIONSTableAdapter.Connection;
                 }
+                if (((this._pROD_STAFFTableAdapter != null) 
+                            && (this._pROD_STAFFTableAdapter.Connection != null))) {
+                    return this._pROD_STAFFTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -30624,6 +31474,9 @@ WHERE        (SoSeqNo = @salesID)";
                     count = (count + 1);
                 }
                 if ((this._pROD_DIVISIONSTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._pROD_STAFFTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -30736,6 +31589,15 @@ WHERE        (SoSeqNo = @salesID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._pROD_STAFFTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PROD_STAFF.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pROD_STAFFTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -30834,6 +31696,14 @@ WHERE        (SoSeqNo = @salesID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._pROD_STAFFTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PROD_STAFF.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pROD_STAFFTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -30844,6 +31714,14 @@ WHERE        (SoSeqNo = @salesID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(MESDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._pROD_STAFFTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PROD_STAFF.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pROD_STAFFTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._pROD_DIVISIONSTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.PROD_DIVISIONS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31026,6 +31904,11 @@ WHERE        (SoSeqNo = @salesID)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._pROD_STAFFTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._pROD_STAFFTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -31157,6 +32040,15 @@ WHERE        (SoSeqNo = @salesID)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._pROD_DIVISIONSTableAdapter.Adapter);
                     }
                 }
+                if ((this._pROD_STAFFTableAdapter != null)) {
+                    revertConnections.Add(this._pROD_STAFFTableAdapter, this._pROD_STAFFTableAdapter.Connection);
+                    this._pROD_STAFFTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._pROD_STAFFTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._pROD_STAFFTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._pROD_STAFFTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._pROD_STAFFTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -31258,6 +32150,10 @@ WHERE        (SoSeqNo = @salesID)";
                 if ((this._pROD_DIVISIONSTableAdapter != null)) {
                     this._pROD_DIVISIONSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pROD_DIVISIONSTableAdapter]));
                     this._pROD_DIVISIONSTableAdapter.Transaction = null;
+                }
+                if ((this._pROD_STAFFTableAdapter != null)) {
+                    this._pROD_STAFFTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pROD_STAFFTableAdapter]));
+                    this._pROD_STAFFTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

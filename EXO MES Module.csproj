@@ -83,6 +83,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration.Designer.cs">
+      <DependentUpon>Administration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Encryption.cs" />
     <Compile Include="dbConnectionMyob.cs" />
     <Compile Include="dbConnection.cs" />
     <Compile Include="ExoSalesHeader.cs">
@@ -162,6 +169,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administration.resx">
+      <DependentUpon>Administration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExoSalesHeader.resx">
       <DependentUpon>ExoSalesHeader.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,9 +223,9 @@
     <EmbeddedResource Include="JobCardView.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1 - Copy.rdlc" />
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <None Include="MESDataSet.xsc">
       <DependentUpon>MESDataSet.xsd</DependentUpon>
     </None>

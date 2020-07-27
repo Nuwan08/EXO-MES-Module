@@ -962,7 +962,7 @@ namespace EXO_MES_Module
 
         private void button6_Click(object sender, EventArgs e)
         {
-            INACTIVETransactions(0);
+           // INACTIVETransactions(0);
             PrintByJob jobcard = new PrintByJob((int)(System.Convert.ChangeType(TxtOrderId.Text, typeof(int))));
             jobcard.Text = this.Text;
             jobcard.Show();

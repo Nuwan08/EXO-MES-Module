@@ -41,7 +41,7 @@ namespace EXO_MES_Module
             // this.PROD_JobCardViewTableAdapter.FillByLIstofLine(this.MESDataSet.PROD_JobCardView, SalesID, IntArr);
             StrSQL = @"SELECT        ADDRESS1, ADDRESS2, ADDRESS3, ADDRESS4, AddtionalNotes, AssignTo, BINCODE, CUSTORDERNO, CompleteDate, DESCRIPTION, DISPATCH_INFO, Division, Drawing, DueDate, EnableAddNote, EstimatedTime, 
                          FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, INSTRUCTIONS, InStage, MakeToStock, NAME, Note, OPCode, OpName, OrderDate, OrderQTY, PHONE, PlanProductionDate, 
-                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
+                         PrintBy, ProductionComplete, ProductionQTY, ProductionStartDate, STOCKCODE, SalesEntered, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status,Color
 FROM            PROD_JobCardView
 WHERE        (SoSeqNo = " + SalesID + ") "
 
@@ -68,7 +68,7 @@ WHERE        (SoSeqNo = " + SalesID + ") "
             this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             var reportDataSource1 = new ReportDataSource("ProdJobCardView", datatable);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "EXO_MES_Module.Report2.rdlc";
 
             this.reportViewer1.LocalReport.Refresh();
 

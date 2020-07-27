@@ -1092,6 +1092,14 @@ namespace EXO_MES_Module
 
         }
 
+        private void administrationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Administration frmadmin = new Administration();
+            frmadmin.Show();
+
+
+        }
+
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             Save_Chanages = true;
