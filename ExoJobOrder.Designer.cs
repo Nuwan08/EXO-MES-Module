@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExoJobOrder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.Navigetor = new System.Windows.Forms.ToolStripButton();
             this.Search = new System.Windows.Forms.ToolStripButton();
@@ -47,8 +47,11 @@
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pRODJOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mESDataSet = new EXO_MES_Module.MESDataSet();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pRODSALESHEADERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -94,18 +97,10 @@
             this.BttComplete = new System.Windows.Forms.Button();
             this.BttStart = new System.Windows.Forms.Button();
             this.TxtStatusID = new System.Windows.Forms.TextBox();
-            this.RecID = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RefUID = new System.Windows.Forms.TextBox();
-            this.pROD_ROUTEDataGridView = new System.Windows.Forms.DataGridView();
-            this.OrderQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Summary = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.pRODJOBCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mESDataSet = new EXO_MES_Module.MESDataSet();
-            this.pRODSALESHEADERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pROD_ROUTEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RecID = new System.Windows.Forms.TextBox();
             this.pRODJOBCOSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iTEMCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sTOCK_ITEMSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dESCRIPTIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,13 +111,18 @@
             this.aVGCOSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lATESTCOSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefUID = new System.Windows.Forms.TextBox();
+            this.pROD_ROUTEDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OrderQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Summary = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.sTOCKCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,6 +149,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODSALESHEADERBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Setup.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,17 +162,14 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pROD_ROUTEDataGridView)).BeginInit();
-            this.Summary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODSALESHEADERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROD_ROUTEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCOSTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOCK_ITEMSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pROD_ROUTEDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
+            this.Summary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sALESORDHDRBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -212,6 +212,7 @@
             // Search
             // 
             this.Search.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Search.Enabled = false;
             this.Search.Image = ((System.Drawing.Image)(resources.GetObject("Search.Image")));
             this.Search.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Search.Name = "Search";
@@ -333,6 +334,16 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 31;
             // 
+            // pRODJOBCARDBindingSource
+            // 
+            this.pRODJOBCARDBindingSource.DataMember = "PROD_JOBCARD";
+            this.pRODJOBCARDBindingSource.DataSource = this.mESDataSet;
+            // 
+            // mESDataSet
+            // 
+            this.mESDataSet.DataSetName = "MESDataSet";
+            this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -353,6 +364,11 @@
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(366, 20);
             this.textBox4.TabIndex = 13;
+            // 
+            // pRODSALESHEADERBindingSource
+            // 
+            this.pRODSALESHEADERBindingSource.DataMember = "PROD_SALESHEADER";
+            this.pRODSALESHEADERBindingSource.DataSource = this.mESDataSet;
             // 
             // label8
             // 
@@ -797,51 +813,51 @@
             this.SubFormGrid.AllowUserToAddRows = false;
             this.SubFormGrid.AllowUserToDeleteRows = false;
             this.SubFormGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.SubFormGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.SubFormGrid.BackgroundColor = System.Drawing.Color.DimGray;
             this.SubFormGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SubFormGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.SubFormGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.SubFormGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SubFormGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.SubFormGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubFormGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SubFormGrid.Location = new System.Drawing.Point(3, 3);
             this.SubFormGrid.Name = "SubFormGrid";
             this.SubFormGrid.ReadOnly = true;
             this.SubFormGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 9.75F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubFormGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SubFormGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubFormGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.InfoText;
             this.SubFormGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -933,6 +949,11 @@
             this.TxtStatusID.Size = new System.Drawing.Size(100, 13);
             this.TxtStatusID.TabIndex = 5;
             // 
+            // pROD_ROUTEBindingSource
+            // 
+            this.pROD_ROUTEBindingSource.DataMember = "PROD_ROUTE";
+            this.pROD_ROUTEBindingSource.DataSource = this.mESDataSet;
+            // 
             // RecID
             // 
             this.RecID.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -943,6 +964,11 @@
             this.RecID.Size = new System.Drawing.Size(67, 13);
             this.RecID.TabIndex = 4;
             this.RecID.TextChanged += new System.EventHandler(this.RecID_TextChanged);
+            // 
+            // pRODJOBCOSTBindingSource
+            // 
+            this.pRODJOBCOSTBindingSource.DataMember = "PROD_JOBCOST";
+            this.pRODJOBCOSTBindingSource.DataSource = this.mESDataSet;
             // 
             // dataGridView1
             // 
@@ -968,112 +994,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.EditJobcostline);
-            // 
-            // RefUID
-            // 
-            this.RefUID.BackColor = System.Drawing.Color.White;
-            this.RefUID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RefUID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pROD_ROUTEBindingSource, "ID", true));
-            this.RefUID.ForeColor = System.Drawing.Color.White;
-            this.RefUID.Location = new System.Drawing.Point(-61, 242);
-            this.RefUID.Name = "RefUID";
-            this.RefUID.Size = new System.Drawing.Size(23, 13);
-            this.RefUID.TabIndex = 2;
-            // 
-            // pROD_ROUTEDataGridView
-            // 
-            this.pROD_ROUTEDataGridView.AllowUserToAddRows = false;
-            this.pROD_ROUTEDataGridView.AllowUserToDeleteRows = false;
-            this.pROD_ROUTEDataGridView.AllowUserToOrderColumns = true;
-            this.pROD_ROUTEDataGridView.AutoGenerateColumns = false;
-            this.pROD_ROUTEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pROD_ROUTEDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn5,
-            this.OrderQTY,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.pROD_ROUTEDataGridView.DataSource = this.pROD_ROUTEBindingSource;
-            this.pROD_ROUTEDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pROD_ROUTEDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.pROD_ROUTEDataGridView.MultiSelect = false;
-            this.pROD_ROUTEDataGridView.Name = "pROD_ROUTEDataGridView";
-            this.pROD_ROUTEDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pROD_ROUTEDataGridView.Size = new System.Drawing.Size(842, 223);
-            this.pROD_ROUTEDataGridView.TabIndex = 0;
-            this.pROD_ROUTEDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pROD_ROUTEDataGridView_CellContentClick);
-            this.pROD_ROUTEDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pROD_ROUTEDataGridView_CellContentClick);
-            this.pROD_ROUTEDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.pROD_JOBCOSTDataGridView_CellContentClick);
-            this.pROD_ROUTEDataGridView.SelectionChanged += new System.EventHandler(this.pROD_ROUTEDataGridView_SelectionChanged);
-            // 
-            // OrderQTY
-            // 
-            this.OrderQTY.DataPropertyName = "OrderQTY";
-            this.OrderQTY.HeaderText = "OrderQTY";
-            this.OrderQTY.Name = "OrderQTY";
-            // 
-            // Summary
-            // 
-            this.Summary.Controls.Add(this.dataGridView2);
-            this.Summary.Location = new System.Drawing.Point(4, 22);
-            this.Summary.Name = "Summary";
-            this.Summary.Size = new System.Drawing.Size(865, 550);
-            this.Summary.TabIndex = 3;
-            this.Summary.Text = "Summary";
-            this.Summary.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sTOCKCODEDataGridViewTextBoxColumn,
-            this.orderQTYDataGridViewTextBoxColumn,
-            this.salesDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.gPDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.inStageDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.dueDateDataGridViewTextBoxColumn,
-            this.productionStartDateDataGridViewTextBoxColumn,
-            this.productionCompleteDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.pRODJOBCARDBindingSource1;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(865, 550);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // pRODJOBCARDBindingSource
-            // 
-            this.pRODJOBCARDBindingSource.DataMember = "PROD_JOBCARD";
-            this.pRODJOBCARDBindingSource.DataSource = this.mESDataSet;
-            // 
-            // mESDataSet
-            // 
-            this.mESDataSet.DataSetName = "MESDataSet";
-            this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pRODSALESHEADERBindingSource
-            // 
-            this.pRODSALESHEADERBindingSource.DataMember = "PROD_SALESHEADER";
-            this.pRODSALESHEADERBindingSource.DataSource = this.mESDataSet;
-            // 
-            // pROD_ROUTEBindingSource
-            // 
-            this.pROD_ROUTEBindingSource.DataMember = "PROD_ROUTE";
-            this.pROD_ROUTEBindingSource.DataSource = this.mESDataSet;
-            // 
-            // pRODJOBCOSTBindingSource
-            // 
-            this.pRODJOBCOSTBindingSource.DataMember = "PROD_JOBCOST";
-            this.pRODJOBCOSTBindingSource.DataSource = this.mESDataSet;
             // 
             // iTEMCODEDataGridViewTextBoxColumn
             // 
@@ -1152,6 +1072,45 @@
             this.recIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.recIdDataGridViewTextBoxColumn.Visible = false;
             // 
+            // RefUID
+            // 
+            this.RefUID.BackColor = System.Drawing.Color.White;
+            this.RefUID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RefUID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pROD_ROUTEBindingSource, "ID", true));
+            this.RefUID.ForeColor = System.Drawing.Color.White;
+            this.RefUID.Location = new System.Drawing.Point(-61, 242);
+            this.RefUID.Name = "RefUID";
+            this.RefUID.Size = new System.Drawing.Size(23, 13);
+            this.RefUID.TabIndex = 2;
+            // 
+            // pROD_ROUTEDataGridView
+            // 
+            this.pROD_ROUTEDataGridView.AllowUserToAddRows = false;
+            this.pROD_ROUTEDataGridView.AllowUserToDeleteRows = false;
+            this.pROD_ROUTEDataGridView.AllowUserToOrderColumns = true;
+            this.pROD_ROUTEDataGridView.AutoGenerateColumns = false;
+            this.pROD_ROUTEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pROD_ROUTEDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn5,
+            this.OrderQTY,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.pROD_ROUTEDataGridView.DataSource = this.pROD_ROUTEBindingSource;
+            this.pROD_ROUTEDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pROD_ROUTEDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.pROD_ROUTEDataGridView.MultiSelect = false;
+            this.pROD_ROUTEDataGridView.Name = "pROD_ROUTEDataGridView";
+            this.pROD_ROUTEDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pROD_ROUTEDataGridView.Size = new System.Drawing.Size(842, 223);
+            this.pROD_ROUTEDataGridView.TabIndex = 0;
+            this.pROD_ROUTEDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pROD_ROUTEDataGridView_CellContentClick);
+            this.pROD_ROUTEDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pROD_ROUTEDataGridView_CellContentClick);
+            this.pROD_ROUTEDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.pROD_JOBCOSTDataGridView_CellContentClick);
+            this.pROD_ROUTEDataGridView.SelectionChanged += new System.EventHandler(this.pROD_ROUTEDataGridView_SelectionChanged);
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "STOCKCODE";
@@ -1182,6 +1141,12 @@
             this.sTAFFBindingSource.DataMember = "STAFF";
             this.sTAFFBindingSource.DataSource = this.mESDataSet;
             // 
+            // OrderQTY
+            // 
+            this.OrderQTY.DataPropertyName = "OrderQTY";
+            this.OrderQTY.HeaderText = "OrderQTY";
+            this.OrderQTY.Name = "OrderQTY";
+            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "EstimatedTime";
@@ -1201,6 +1166,42 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "ID";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // Summary
+            // 
+            this.Summary.Controls.Add(this.dataGridView2);
+            this.Summary.Location = new System.Drawing.Point(4, 22);
+            this.Summary.Name = "Summary";
+            this.Summary.Size = new System.Drawing.Size(865, 550);
+            this.Summary.TabIndex = 3;
+            this.Summary.Text = "Summary";
+            this.Summary.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sTOCKCODEDataGridViewTextBoxColumn,
+            this.orderQTYDataGridViewTextBoxColumn,
+            this.salesDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.gPDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.inStageDataGridViewTextBoxColumn,
+            this.orderDateDataGridViewTextBoxColumn,
+            this.dueDateDataGridViewTextBoxColumn,
+            this.productionStartDateDataGridViewTextBoxColumn,
+            this.productionCompleteDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.pRODJOBCARDBindingSource1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(865, 550);
+            this.dataGridView2.TabIndex = 0;
             // 
             // sTOCKCODEDataGridViewTextBoxColumn
             // 
@@ -1357,6 +1358,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODSALESHEADERBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.Setup.ResumeLayout(false);
             this.Setup.PerformLayout();
@@ -1370,17 +1374,14 @@
             this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pROD_ROUTEDataGridView)).EndInit();
-            this.Summary.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODSALESHEADERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROD_ROUTEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCOSTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOCK_ITEMSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pROD_ROUTEDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
+            this.Summary.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODJOBCARDBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sALESORDHDRBindingSource)).EndInit();
             this.ResumeLayout(false);

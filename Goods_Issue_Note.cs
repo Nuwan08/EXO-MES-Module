@@ -419,9 +419,9 @@ namespace EXO_MES_Module
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ListofValue LI = new ListofValue("Main");
-            LI.GetCurrentSubForm(8,M1, "Supplier Profile");
-            LI.Show();
+           // ListofValue LI = new ListofValue("Main");
+           // LI.GetCurrentSubForm(8,M1, "Supplier Profile");
+          //  LI.Show();
         }
 
         private void ConfigerationGROup_Enter(object sender, EventArgs e)

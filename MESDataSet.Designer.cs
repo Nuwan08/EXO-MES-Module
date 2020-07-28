@@ -27247,7 +27247,7 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockcode", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)";
+            this._commandCollection[2].CommandText = @"SELECT top 400 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL) order by salesID Desc";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -27258,7 +27258,7 @@ WHERE        (SalesID = @salesID) AND (SalesLine = @SalesLine) AND (STOCKCODE = 
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockcode", global::System.Data.SqlDbType.NVarChar, 23, global::System.Data.ParameterDirection.Input, 0, 0, "STOCKCODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)";
+            this._commandCollection[4].CommandText = @"SELECT  top 300 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL) order by salesID Desc";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
@@ -29166,26 +29166,17 @@ WHERE        (AssignTo = @Assignto)";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, 
-                         Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
-FROM            PROD_Dashboard
-WHERE        (AssignTo = @Assignto)";
+            this._commandCollection[1].CommandText = @"SELECT AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (AssignTo = @Assignto)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, 
-                         FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, [Order Date], [Due Date], SoSeqNo, SalesLineRef, InStage, Drawing, Division, ProductionStartDate
-FROM            PROD_Dashboard
-WHERE        (AssignTo = @Assignto)";
+            this._commandCollection[2].CommandText = @"SELECT AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (AssignTo = @Assignto)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "AssignTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, OrderQTY, StartDate, ProductionQTY, CompleteDate, AddtionalNotes, Note, MakeToStock, [Order Date] AS OrderDate, [Due Date] AS DueDate, SoSeqNo, SalesLineRef, 
-                         ProductionStartDate, InStage, Drawing, Division, EnableAddNote
-FROM            PROD_Dashboard
-WHERE        (SoSeqNo = @SoSeqNo)";
+            this._commandCollection[3].CommandText = @"SELECT AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, Note, OPCode, OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (SoSeqNo = @SoSeqNo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoSeqNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SoSeqNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

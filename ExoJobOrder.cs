@@ -991,8 +991,8 @@ namespace EXO_MES_Module
 
         private void Search_Click(object sender, EventArgs e)
         {
-            ListofValue L1 = new ListofValue("JobCard");
-            L1.ShowDialog();
+           // ListofValue L1 = new ListofValue("JobCard");
+           // L1.ShowDialog();
         }
 
         private void SubFormGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)

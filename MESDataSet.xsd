@@ -1806,7 +1806,7 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
               <DbSource ConnectionRef="UpgradeConnectionString (Settings)" DbObjectName="Upgrade.dbo.PROD_JOBCARD" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)</CommandText>
+                    <CommandText>SELECT top 400 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL) order by salesID Desc</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1826,7 +1826,7 @@ SELECT SalesID, ID, SalesLine, STOCKCODE, Note, AddtionalNotes, MakeToStock, Fin
               <DbSource ConnectionRef="UpgradeConnectionString (Settings)" DbObjectName="Upgrade.dbo.PROD_JOBCARD" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Main" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Main" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Main">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL)</CommandText>
+                    <CommandText>SELECT  top 300 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD WHERE (Active IS NULL) order by salesID Desc</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1972,10 +1972,7 @@ WHERE        (AssignTo = @Assignto)</CommandText>
               <DbSource ConnectionRef="UpgradeConnectionString (Settings)" DbObjectName="Upgrade.dbo.PROD_Dashboard" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, 
-                         Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status
-FROM            PROD_Dashboard
-WHERE        (AssignTo = @Assignto)</CommandText>
+                    <CommandText>SELECT AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (AssignTo = @Assignto)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Assignto" ColumnName="AssignTo" DataSourceName="Upgrade.dbo.PROD_Dashboard" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Assignto" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="AssignTo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1985,10 +1982,7 @@ WHERE        (AssignTo = @Assignto)</CommandText>
               <DbSource ConnectionRef="UpgradeConnectionString (Settings)" DbObjectName="Upgrade.dbo.PROD_Dashboard" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, Status, OrderQTY, StartDate, ProductionQTY, ScrapQTY, CompleteDate, Note, AddtionalNotes, MakeToStock, FinSilver, FinFlientGrey, FinMatBlack, FinPickle, FinNoPaint, 
-                         FinPaintWeldsOnly, FinPolishWelds, EnableAddNote, [Order Date], [Due Date], SoSeqNo, SalesLineRef, InStage, Drawing, Division, ProductionStartDate
-FROM            PROD_Dashboard
-WHERE        (AssignTo = @Assignto)</CommandText>
+                    <CommandText>SELECT AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, [Due Date], EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, Note, OPCode, [Order Date], OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (AssignTo = @Assignto)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Assignto" ColumnName="AssignTo" DataSourceName="Upgrade.dbo.PROD_Dashboard" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Assignto" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="AssignTo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1998,10 +1992,7 @@ WHERE        (AssignTo = @Assignto)</CommandText>
               <DbSource ConnectionRef="UpgradeConnectionString (Settings)" DbObjectName="Upgrade.dbo.PROD_Dashboard" DbObjectType="View" FillMethodModifier="Public" FillMethodName="JobCard" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="JobCard" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="JobCard">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        STOCKCODE, OPCode, AssignTo, EstimatedTime, OrderQTY, StartDate, ProductionQTY, CompleteDate, AddtionalNotes, Note, MakeToStock, [Order Date] AS OrderDate, [Due Date] AS DueDate, SoSeqNo, SalesLineRef, 
-                         ProductionStartDate, InStage, Drawing, Division, EnableAddNote
-FROM            PROD_Dashboard
-WHERE        (SoSeqNo = @SoSeqNo)</CommandText>
+                    <CommandText>SELECT AddtionalNotes, AssignTo, CompleteDate, Division, Drawing, EnableAddNote, EstimatedTime, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, InStage, MakeToStock, Note, OPCode, OrderQTY, ProductionQTY, ProductionStartDate, STOCKCODE, SalesLineRef, ScrapQTY, SoSeqNo, StartDate, Status FROM PROD_Dashboard WHERE (SoSeqNo = @SoSeqNo)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="SoSeqNo" ColumnName="SoSeqNo" DataSourceName="Upgrade.dbo.PROD_Dashboard" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SoSeqNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SoSeqNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>

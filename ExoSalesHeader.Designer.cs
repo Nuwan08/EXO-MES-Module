@@ -499,6 +499,7 @@
             // Navigetor
             // 
             this.Navigetor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Navigetor.Enabled = false;
             this.Navigetor.Image = ((System.Drawing.Image)(resources.GetObject("Navigetor.Image")));
             this.Navigetor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Navigetor.Name = "Navigetor";
@@ -509,12 +510,14 @@
             // Search
             // 
             this.Search.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Search.Enabled = false;
             this.Search.Image = ((System.Drawing.Image)(resources.GetObject("Search.Image")));
             this.Search.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(23, 22);
             this.Search.Text = "Search";
             this.Search.ToolTipText = "Search";
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // InsertData
             // 
@@ -573,6 +576,7 @@
             // DeleteRecord
             // 
             this.DeleteRecord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.DeleteRecord.Enabled = false;
             this.DeleteRecord.Image = ((System.Drawing.Image)(resources.GetObject("DeleteRecord.Image")));
             this.DeleteRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteRecord.Name = "DeleteRecord";

@@ -19,7 +19,10 @@ namespace EXO_MES_Module
         
         private string  depatmentNo;
         private bool bol_SpliterFlag ,Save_Chanages;
-
+        private dbConnectionMyob db;
+        private string StrSqltable, StrSQL, StrSQL2;
+        private DataSet dbDataSet;
+        private DataTable datatable, datatable2;
 
 
         private string SelectedFrm;
@@ -139,20 +142,40 @@ namespace EXO_MES_Module
         /// </summary>
         /// <returns></returns>
 
-      //  public Company ReturnCurrentForm() { return Subform; }
+        //  public Company ReturnCurrentForm() { return Subform; }
 
-       
+
         //load Query Window.................................................................
 
-       /* public query QueryFormload()
-        {
-            // New Form Load 
-            query QueryWindow = new query();
-            QueryWindow.GetCurrentSubForm(this, "Vendor");
-            QueryWindow.Show();
-            return QueryWindow;
-        } */
+        /* public query QueryFormload()
+         {
+             // New Form Load 
+             query QueryWindow = new query();
+             QueryWindow.GetCurrentSubForm(this, "Vendor");
+             QueryWindow.Show();
+             return QueryWindow;
+         } */
 
+        public void fillter( string StrSQL )
+        {
+            StrSqltable = "PROD_JOBCARD";
+            db = new dbConnectionMyob();
+            dbDataSet = db.ConnectDataSet(StrSQL, StrSqltable);
+            datatable = dbDataSet.Tables[StrSqltable];
+            
+            dataGridView1.DataSource = dbDataSet;
+            dataGridView1.DataMember = StrSqltable;
+            dataGridView1.Refresh();
+
+          /*  try
+            {
+                this.pROD_JOBCARDTableAdapter.FillBy1(datatable);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }*/
+        }
         
         //-> Event Main Form Load 
         private void Main_Load(object sender, EventArgs e)
@@ -1078,7 +1101,7 @@ namespace EXO_MES_Module
 
         private void Search_Click(object sender, EventArgs e)
         {
-            ListofValue L1 = new ListofValue("PROD_Dashboard");
+            ListofValue L1 = new ListofValue("PROD_Dashboard", this);
             L1.ShowDialog();
         }
 

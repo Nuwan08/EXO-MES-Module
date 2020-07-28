@@ -18,9 +18,10 @@ namespace EXO_MES_Module
         //private int currRec = 1;
 
 
-        public ListofValue( string _TableName)
+        public ListofValue( string _TableName , MainForm M2)
         {
             tableName = _TableName;
+            MDIMain = M2;
             InitializeComponent();
         }
         public void GetCurrentSubForm(int fieldindex, MainForm sender, string SelectedFrm)
@@ -35,25 +36,71 @@ namespace EXO_MES_Module
 
         public void LoadData()
         {
-            String StrSQL = "select * from  " + tableName + "  ";
+            String StrSQL = "SELECT top 300 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD" +
+                 " WHERE (Active IS NULL)";
+
+
 
            
-            bool flag = false;
             for (int RecodeCount = 0; RecodeCount < dataGridView1.Rows.Count; RecodeCount++)
             {
-                if (dataGridView1[1, RecodeCount].Value != null & dataGridView1[2, RecodeCount].Value != null)
+                if (dataGridView1[2, RecodeCount].Value != null & dataGridView1[3, RecodeCount].Value != null)
                 {
-                    if (flag == false)
+                    
+
+                        StrSQL = StrSQL + "  and ";
+
+                   
+
+
+                    if (dataGridView1[1, RecodeCount].Value.ToString() == "INT")
                     {
-                        StrSQL = StrSQL + "  where  ";
-                        flag = true;
+                        switch (dataGridView1[2, RecodeCount].Value.ToString())
+                        {
+                            case "like":
+                                StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[2, RecodeCount].Value + "'" + dataGridView1[3, RecodeCount].Value + "%'";
+                                break;
+                            case "=":
+                                StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[2, RecodeCount].Value + " " + dataGridView1[3, RecodeCount].Value + " ";
+                                break;
+
+                            default:
+                                StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[2, RecodeCount].Value + " " + dataGridView1[3, RecodeCount].Value + " ";
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+
+                        switch (dataGridView1[2, RecodeCount].Value.ToString())
+                        {
+                            case "like":
+                                StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[2, RecodeCount].Value + " '" + dataGridView1[3, RecodeCount].Value + "%'";
+                                break;
+                            case "==":
+                                StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[2, RecodeCount].Value + " '" + dataGridView1[3, RecodeCount].Value + "'";
+                                break;
+
+                            default:
+                                StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[2, RecodeCount].Value + " '" + dataGridView1[3, RecodeCount].Value + "'";
+                                break;
+                        }
+
+
                     }
 
-                    
-                    StrSQL = StrSQL + dataGridView1[0, RecodeCount].Value + " " + dataGridView1[1, RecodeCount].Value + " '" + dataGridView1[2, RecodeCount].Value + " ' ";
+
+
+                   
                 }
             }
+
+            StrSQL += " order by salesID Desc";
             QueryBox.Text = StrSQL;
+
+
+            MDIMain.fillter(StrSQL);
 
           /*  dbConnectionMyob db = new dbConnectionMyob();
             dbDataSet = db.ConnectDataSet(StrSQL, tableName);
@@ -138,7 +185,17 @@ namespace EXO_MES_Module
             dbTable = db.connect(SQLstr, "QueryIndex");
             for (int RecodeCount = 0; RecodeCount < dbTable.Rows.Count; RecodeCount++)
             {
-                dataGridView1.Rows.Add(dbTable.Rows[RecodeCount][2].ToString());
+                switch (dbTable.Rows[RecodeCount][3].ToString())
+                {
+                    case "Dat":
+                        dataGridView1.Rows.Add(dbTable.Rows[RecodeCount][2].ToString(), dbTable.Rows[RecodeCount][3].ToString(), " = ");
+                        break;
+
+                    default:
+                        dataGridView1.Rows.Add(dbTable.Rows[RecodeCount][2].ToString(), dbTable.Rows[RecodeCount][3].ToString(), "like");
+                        break; 
+                }
+                       
 
             }
             LoadData(); 
@@ -148,6 +205,7 @@ namespace EXO_MES_Module
         private void GO_Click_1(object sender, EventArgs e)
         {
 
+            this.LoadData();
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

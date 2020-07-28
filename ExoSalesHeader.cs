@@ -224,6 +224,11 @@ namespace EXO_MES_Module
             
         }
 
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ExoSalesHeader_Load(object sender, EventArgs e)
         {
             MainLIstViewDataload();
