@@ -1672,7 +1672,7 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.07292in</Height>
+              <Height>0.05209in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1695,17 +1695,8 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
                       <rd:DefaultName>Textbox38</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
-                        <BottomBorder>
-                          <Style>None</Style>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Style>None</Style>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Style>None</Style>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1713,6 +1704,7 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
                       </Style>
                     </Textbox>
                     <ColSpan>8</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1867,7 +1859,7 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
           </SortExpression>
         </SortExpressions>
         <Top>0.00882in</Top>
-        <Height>5.30948in</Height>
+        <Height>5.28866in</Height>
         <Width>7.65797in</Width>
         <Style>
           <Border>
