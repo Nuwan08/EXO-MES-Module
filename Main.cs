@@ -965,7 +965,7 @@ namespace EXO_MES_Module
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //messageBox.Show("Please select sales Line", e.ColumnIndex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            JobIDtxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             if (JobIDtxt.Text == "" )
             {
                   MessageBox.Show("Please select sales Line", JobIDtxt.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
