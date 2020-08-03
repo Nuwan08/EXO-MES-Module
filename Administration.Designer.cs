@@ -30,9 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administration));
-            this.pRODSTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mESDataSet = new EXO_MES_Module.MESDataSet();
-            this.pROD_STAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_STAFFTableAdapter();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,10 +42,14 @@
             this.NewIndex = new System.Windows.Forms.ToolStripButton();
             this.DeleteRecord = new System.Windows.Forms.ToolStripButton();
             this.GridView = new System.Windows.Forms.ToolStripButton();
+            this.pRODSTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mESDataSet = new EXO_MES_Module.MESDataSet();
+            this.pROD_STAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_STAFFTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SysAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.salesModuleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.prodDashboardDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.divisionDashboardDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -57,25 +59,11 @@
             this.jobCostGPDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.jobCostCostDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODSTAFFBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODSTAFFBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pRODSTAFFBindingSource
-            // 
-            this.pRODSTAFFBindingSource.DataMember = "PROD_STAFF";
-            this.pRODSTAFFBindingSource.DataSource = this.mESDataSet;
-            // 
-            // mESDataSet
-            // 
-            this.mESDataSet.DataSetName = "MESDataSet";
-            this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pROD_STAFFTableAdapter
-            // 
-            this.pROD_STAFFTableAdapter.ClearBeforeFill = true;
             // 
             // toolStrip
             // 
@@ -108,6 +96,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -116,6 +105,7 @@
             this.nAMEDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.enableDataGridViewCheckBoxColumn,
+            this.SysAdmin,
             this.salesModuleDataGridViewCheckBoxColumn,
             this.prodDashboardDataGridViewCheckBoxColumn,
             this.divisionDashboardDataGridViewCheckBoxColumn,
@@ -216,6 +206,20 @@
             this.GridView.Size = new System.Drawing.Size(23, 22);
             this.GridView.Click += new System.EventHandler(this.GridView_Click_1);
             // 
+            // pRODSTAFFBindingSource
+            // 
+            this.pRODSTAFFBindingSource.DataMember = "PROD_STAFF";
+            this.pRODSTAFFBindingSource.DataSource = this.mESDataSet;
+            // 
+            // mESDataSet
+            // 
+            this.mESDataSet.DataSetName = "MESDataSet";
+            this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pROD_STAFFTableAdapter
+            // 
+            this.pROD_STAFFTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "USERID";
@@ -233,6 +237,11 @@
             // passwordDataGridViewTextBoxColumn
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Format = "****";
+            dataGridViewCellStyle2.NullValue = "****";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
@@ -242,22 +251,28 @@
             this.enableDataGridViewCheckBoxColumn.HeaderText = "Enable";
             this.enableDataGridViewCheckBoxColumn.Name = "enableDataGridViewCheckBoxColumn";
             // 
+            // SysAdmin
+            // 
+            this.SysAdmin.DataPropertyName = "SysAdmin";
+            this.SysAdmin.HeaderText = "SysAdmin";
+            this.SysAdmin.Name = "SysAdmin";
+            // 
             // salesModuleDataGridViewCheckBoxColumn
             // 
             this.salesModuleDataGridViewCheckBoxColumn.DataPropertyName = "SalesModule";
-            this.salesModuleDataGridViewCheckBoxColumn.HeaderText = "Job Card";
+            this.salesModuleDataGridViewCheckBoxColumn.HeaderText = "Sales Module";
             this.salesModuleDataGridViewCheckBoxColumn.Name = "salesModuleDataGridViewCheckBoxColumn";
             // 
             // prodDashboardDataGridViewCheckBoxColumn
             // 
             this.prodDashboardDataGridViewCheckBoxColumn.DataPropertyName = "ProdDashboard";
-            this.prodDashboardDataGridViewCheckBoxColumn.HeaderText = "Dashboard";
+            this.prodDashboardDataGridViewCheckBoxColumn.HeaderText = "Main Dashboard";
             this.prodDashboardDataGridViewCheckBoxColumn.Name = "prodDashboardDataGridViewCheckBoxColumn";
             // 
             // divisionDashboardDataGridViewCheckBoxColumn
             // 
             this.divisionDashboardDataGridViewCheckBoxColumn.DataPropertyName = "DivisionDashboard";
-            this.divisionDashboardDataGridViewCheckBoxColumn.HeaderText = "Divisions";
+            this.divisionDashboardDataGridViewCheckBoxColumn.HeaderText = "Division Dashbord";
             this.divisionDashboardDataGridViewCheckBoxColumn.Name = "divisionDashboardDataGridViewCheckBoxColumn";
             // 
             // prodCapacitiyPlanDataGridViewCheckBoxColumn
@@ -307,11 +322,11 @@
             this.Name = "Administration";
             this.Text = "Administration";
             this.Load += new System.EventHandler(this.Administration_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pRODSTAFFBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODSTAFFBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,6 +353,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn enableDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SysAdmin;
         private System.Windows.Forms.DataGridViewCheckBoxColumn salesModuleDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn prodDashboardDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn divisionDashboardDataGridViewCheckBoxColumn;

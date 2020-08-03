@@ -64,7 +64,7 @@ using System;using System.Collections.Generic;using System.ComponentModel;usi
         {
             
 
-                UserProfile frmadmin2 = new UserProfile();
+                UserProfile frmadmin2 = new UserProfile(this.Text);
                 frmadmin2.Show();
             
         }

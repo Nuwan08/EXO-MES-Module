@@ -13,16 +13,29 @@ namespace EXO_MES_Module
 {
     public partial class UserProfile : Form
     {
-        public UserProfile()
+
+        private string UID;
+        public UserProfile( string _UID)
         {
             InitializeComponent();
+            UID = _UID;
         }
 
         private void Administration_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mESDataSet.PROD_STAFF' table. You can move, or remove it, as needed.
-            this.pROD_STAFFTableAdapter.Fill(this.mESDataSet.PROD_STAFF);
-           
+            //this.pROD_STAFFTableAdapter.Fill(this.mESDataSet.PROD_STAFF);
+
+            try
+            {
+                this.pROD_STAFFTableAdapter.FillByUID(this.mESDataSet.PROD_STAFF, new System.Guid(UID));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+
 
         }
 
@@ -162,7 +175,26 @@ namespace EXO_MES_Module
 
         private void Refresh1_Click_1(object sender, EventArgs e)
         {
-            this.pROD_STAFFTableAdapter.Fill(this.mESDataSet.PROD_STAFF);
+            //this.pROD_STAFFTableAdapter.Fill(this.mESDataSet.PROD_STAFF);
+            try
+            {
+                this.pROD_STAFFTableAdapter.FillByUID(this.mESDataSet.PROD_STAFF, new System.Guid(UID));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByUIDToolStripButton_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

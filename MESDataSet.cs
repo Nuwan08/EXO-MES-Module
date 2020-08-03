@@ -15,6 +15,10 @@ namespace EXO_MES_Module
 
 namespace EXO_MES_Module.MESDataSetTableAdapters
 {
+    partial class PROD_STAFFTableAdapter
+    {
+    }
+
     partial class PROD_JobCardViewTableAdapter
     {
     }

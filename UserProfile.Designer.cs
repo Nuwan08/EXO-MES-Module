@@ -46,7 +46,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dashbordStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dashbordEstimatedETADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dashbordInstageDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -95,6 +94,7 @@
             this.toolStrip.TabIndex = 10;
             this.toolStrip.Text = "Main Menu";
             this.toolStrip.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270;
+            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
             // 
             // Navigetor
             // 
@@ -194,7 +194,6 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.nAMEDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
             this.dashbordStatusDataGridViewCheckBoxColumn,
             this.dashbordEstimatedETADataGridViewCheckBoxColumn,
             this.dashbordInstageDataGridViewCheckBoxColumn,
@@ -221,12 +220,6 @@
             this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
             this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
             this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
             // dashbordStatusDataGridViewCheckBoxColumn
             // 
@@ -304,7 +297,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dashbordStatusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dashbordEstimatedETADataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dashbordInstageDataGridViewCheckBoxColumn;

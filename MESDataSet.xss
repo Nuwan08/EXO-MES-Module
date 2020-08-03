@@ -20,8 +20,8 @@
     <Shape ID="DesignTable:PROD_DIVISIONREF" ZOrder="8" X="733" Y="389" Height="134" Width="260" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:PROD_DIVISIONS" ZOrder="7" X="441" Y="606" Height="115" Width="246" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PROD_JobCardView" ZOrder="3" X="0" Y="0" Height="381" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="4" X="8" Y="354" Height="49" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="45" />
     <Shape ID="DesignTable:PROD_STAFF" ZOrder="1" X="336" Y="36" Height="305" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="4" X="8" Y="354" Height="49" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="45" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

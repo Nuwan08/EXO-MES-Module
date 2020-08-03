@@ -9038,6 +9038,8 @@ namespace EXO_MES_Module {
             
             private global::System.Data.DataColumn columnJobCostCost;
             
+            private global::System.Data.DataColumn columnSysAdmin;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PROD_STAFFDataTable() {
@@ -9217,6 +9219,14 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SysAdminColumn {
+                get {
+                    return this.columnSysAdmin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9270,7 +9280,8 @@ namespace EXO_MES_Module {
                         bool DashboardProdEnd, 
                         bool JobCostSales, 
                         bool JobCostGP, 
-                        bool JobCostCost) {
+                        bool JobCostCost, 
+                        bool SysAdmin) {
                 PROD_STAFFRow rowPROD_STAFFRow = ((PROD_STAFFRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -9290,7 +9301,8 @@ namespace EXO_MES_Module {
                         DashboardProdEnd,
                         JobCostSales,
                         JobCostGP,
-                        JobCostCost};
+                        JobCostCost,
+                        SysAdmin};
                 rowPROD_STAFFRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROD_STAFFRow);
                 return rowPROD_STAFFRow;
@@ -9338,6 +9350,7 @@ namespace EXO_MES_Module {
                 this.columnJobCostSales = base.Columns["JobCostSales"];
                 this.columnJobCostGP = base.Columns["JobCostGP"];
                 this.columnJobCostCost = base.Columns["JobCostCost"];
+                this.columnSysAdmin = base.Columns["SysAdmin"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9379,6 +9392,8 @@ namespace EXO_MES_Module {
                 base.Columns.Add(this.columnJobCostGP);
                 this.columnJobCostCost = new global::System.Data.DataColumn("JobCostCost", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJobCostCost);
+                this.columnSysAdmin = new global::System.Data.DataColumn("SysAdmin", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSysAdmin);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -18090,6 +18105,22 @@ namespace EXO_MES_Module {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool SysAdmin {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePROD_STAFF.SysAdminColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SysAdmin\' in table \'PROD_STAFF\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROD_STAFF.SysAdminColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsUSERIDNull() {
                 return this.IsNull(this.tablePROD_STAFF.USERIDColumn);
             }
@@ -18278,6 +18309,18 @@ namespace EXO_MES_Module {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetJobCostCostNull() {
                 this[this.tablePROD_STAFF.JobCostCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSysAdminNull() {
+                return this.IsNull(this.tablePROD_STAFF.SysAdminColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSysAdminNull() {
+                this[this.tablePROD_STAFF.SysAdminColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -31580,6 +31623,7 @@ WHERE        (SoSeqNo = @salesID)";
             tableMapping.ColumnMappings.Add("JobCostSales", "JobCostSales");
             tableMapping.ColumnMappings.Add("JobCostGP", "JobCostGP");
             tableMapping.ColumnMappings.Add("JobCostCost", "JobCostCost");
+            tableMapping.ColumnMappings.Add("SysAdmin", "SysAdmin");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -31605,7 +31649,8 @@ WHERE        (SoSeqNo = @salesID)";
                 "tSales = 1 AND [JobCostSales] IS NULL) OR ([JobCostSales] = @Original_JobCostSal" +
                 "es)) AND ((@IsNull_JobCostGP = 1 AND [JobCostGP] IS NULL) OR ([JobCostGP] = @Ori" +
                 "ginal_JobCostGP)) AND ((@IsNull_JobCostCost = 1 AND [JobCostCost] IS NULL) OR ([" +
-                "JobCostCost] = @Original_JobCostCost)))";
+                "JobCostCost] = @Original_JobCostCost)) AND ((@IsNull_SysAdmin = 1 AND [SysAdmin]" +
+                " IS NULL) OR ([SysAdmin] = @Original_SysAdmin)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_USERID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USERID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -31641,10 +31686,12 @@ WHERE        (SoSeqNo = @salesID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobCostGP", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostGP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_JobCostCost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostCost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobCostCost", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SysAdmin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SysAdmin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SysAdmin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SysAdmin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PROD_STAFF] ([ID], [USERID], [NAME], [Password], [Enable], [SalesModule], [ProdDashboard], [DivisionDashboard], [ProdCapacitiyPlan], [JobCosting], [DashbordStatus], [DashbordEstimatedETA], [DashbordInstage], [DashbordProdStart], [DashboardProdEnd], [JobCostSales], [JobCostGP], [JobCostCost]) VALUES (@ID, @USERID, @NAME, @Password, @Enable, @SalesModule, @ProdDashboard, @DivisionDashboard, @ProdCapacitiyPlan, @JobCosting, @DashbordStatus, @DashbordEstimatedETA, @DashbordInstage, @DashbordProdStart, @DashboardProdEnd, @JobCostSales, @JobCostGP, @JobCostCost);
-SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, DashboardProdEnd, JobCostSales, JobCostGP, JobCostCost FROM PROD_STAFF WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PROD_STAFF] ([ID], [USERID], [NAME], [Password], [Enable], [SalesModule], [ProdDashboard], [DivisionDashboard], [ProdCapacitiyPlan], [JobCosting], [DashbordStatus], [DashbordEstimatedETA], [DashbordInstage], [DashbordProdStart], [DashboardProdEnd], [JobCostSales], [JobCostGP], [JobCostCost], [SysAdmin]) VALUES (@ID, @USERID, @NAME, @Password, @Enable, @SalesModule, @ProdDashboard, @DivisionDashboard, @ProdCapacitiyPlan, @JobCosting, @DashbordStatus, @DashbordEstimatedETA, @DashbordInstage, @DashbordProdStart, @DashboardProdEnd, @JobCostSales, @JobCostGP, @JobCostCost, @SysAdmin);
+SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, DashboardProdEnd, JobCostSales, JobCostGP, JobCostCost, SysAdmin FROM PROD_STAFF WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USERID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -31664,6 +31711,7 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobCostSales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostSales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobCostGP", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostGP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobCostCost", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SysAdmin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SysAdmin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [PROD_STAFF] SET [ID] = @ID, [USERID] = @USERID, [NAME] = @NAME, [Password" +
@@ -31673,33 +31721,34 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                 "tatus, [DashbordEstimatedETA] = @DashbordEstimatedETA, [DashbordInstage] = @Dash" +
                 "bordInstage, [DashbordProdStart] = @DashbordProdStart, [DashboardProdEnd] = @Das" +
                 "hboardProdEnd, [JobCostSales] = @JobCostSales, [JobCostGP] = @JobCostGP, [JobCos" +
-                "tCost] = @JobCostCost WHERE (([ID] = @Original_ID) AND ((@IsNull_USERID = 1 AND " +
-                "[USERID] IS NULL) OR ([USERID] = @Original_USERID)) AND ((@IsNull_NAME = 1 AND [" +
-                "NAME] IS NULL) OR ([NAME] = @Original_NAME)) AND ((@IsNull_Password = 1 AND [Pas" +
-                "sword] IS NULL) OR ([Password] = @Original_Password)) AND ([Enable] = @Original_" +
-                "Enable) AND ((@IsNull_SalesModule = 1 AND [SalesModule] IS NULL) OR ([SalesModul" +
-                "e] = @Original_SalesModule)) AND ((@IsNull_ProdDashboard = 1 AND [ProdDashboard]" +
-                " IS NULL) OR ([ProdDashboard] = @Original_ProdDashboard)) AND ((@IsNull_Division" +
-                "Dashboard = 1 AND [DivisionDashboard] IS NULL) OR ([DivisionDashboard] = @Origin" +
-                "al_DivisionDashboard)) AND ((@IsNull_ProdCapacitiyPlan = 1 AND [ProdCapacitiyPla" +
-                "n] IS NULL) OR ([ProdCapacitiyPlan] = @Original_ProdCapacitiyPlan)) AND ((@IsNul" +
-                "l_JobCosting = 1 AND [JobCosting] IS NULL) OR ([JobCosting] = @Original_JobCosti" +
-                "ng)) AND ((@IsNull_DashbordStatus = 1 AND [DashbordStatus] IS NULL) OR ([Dashbor" +
-                "dStatus] = @Original_DashbordStatus)) AND ((@IsNull_DashbordEstimatedETA = 1 AND" +
-                " [DashbordEstimatedETA] IS NULL) OR ([DashbordEstimatedETA] = @Original_Dashbord" +
-                "EstimatedETA)) AND ((@IsNull_DashbordInstage = 1 AND [DashbordInstage] IS NULL) " +
-                "OR ([DashbordInstage] = @Original_DashbordInstage)) AND ((@IsNull_DashbordProdSt" +
-                "art = 1 AND [DashbordProdStart] IS NULL) OR ([DashbordProdStart] = @Original_Das" +
-                "hbordProdStart)) AND ((@IsNull_DashboardProdEnd = 1 AND [DashboardProdEnd] IS NU" +
-                "LL) OR ([DashboardProdEnd] = @Original_DashboardProdEnd)) AND ((@IsNull_JobCostS" +
-                "ales = 1 AND [JobCostSales] IS NULL) OR ([JobCostSales] = @Original_JobCostSales" +
-                ")) AND ((@IsNull_JobCostGP = 1 AND [JobCostGP] IS NULL) OR ([JobCostGP] = @Origi" +
-                "nal_JobCostGP)) AND ((@IsNull_JobCostCost = 1 AND [JobCostCost] IS NULL) OR ([Jo" +
-                "bCostCost] = @Original_JobCostCost)));\r\nSELECT ID, USERID, NAME, Password, Enabl" +
-                "e, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting," +
-                " DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, Dashb" +
-                "oardProdEnd, JobCostSales, JobCostGP, JobCostCost FROM PROD_STAFF WHERE (ID = @I" +
-                "D)";
+                "tCost] = @JobCostCost, [SysAdmin] = @SysAdmin WHERE (([ID] = @Original_ID) AND (" +
+                "(@IsNull_USERID = 1 AND [USERID] IS NULL) OR ([USERID] = @Original_USERID)) AND " +
+                "((@IsNull_NAME = 1 AND [NAME] IS NULL) OR ([NAME] = @Original_NAME)) AND ((@IsNu" +
+                "ll_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)) AN" +
+                "D ([Enable] = @Original_Enable) AND ((@IsNull_SalesModule = 1 AND [SalesModule] " +
+                "IS NULL) OR ([SalesModule] = @Original_SalesModule)) AND ((@IsNull_ProdDashboard" +
+                " = 1 AND [ProdDashboard] IS NULL) OR ([ProdDashboard] = @Original_ProdDashboard)" +
+                ") AND ((@IsNull_DivisionDashboard = 1 AND [DivisionDashboard] IS NULL) OR ([Divi" +
+                "sionDashboard] = @Original_DivisionDashboard)) AND ((@IsNull_ProdCapacitiyPlan =" +
+                " 1 AND [ProdCapacitiyPlan] IS NULL) OR ([ProdCapacitiyPlan] = @Original_ProdCapa" +
+                "citiyPlan)) AND ((@IsNull_JobCosting = 1 AND [JobCosting] IS NULL) OR ([JobCosti" +
+                "ng] = @Original_JobCosting)) AND ((@IsNull_DashbordStatus = 1 AND [DashbordStatu" +
+                "s] IS NULL) OR ([DashbordStatus] = @Original_DashbordStatus)) AND ((@IsNull_Dash" +
+                "bordEstimatedETA = 1 AND [DashbordEstimatedETA] IS NULL) OR ([DashbordEstimatedE" +
+                "TA] = @Original_DashbordEstimatedETA)) AND ((@IsNull_DashbordInstage = 1 AND [Da" +
+                "shbordInstage] IS NULL) OR ([DashbordInstage] = @Original_DashbordInstage)) AND " +
+                "((@IsNull_DashbordProdStart = 1 AND [DashbordProdStart] IS NULL) OR ([DashbordPr" +
+                "odStart] = @Original_DashbordProdStart)) AND ((@IsNull_DashboardProdEnd = 1 AND " +
+                "[DashboardProdEnd] IS NULL) OR ([DashboardProdEnd] = @Original_DashboardProdEnd)" +
+                ") AND ((@IsNull_JobCostSales = 1 AND [JobCostSales] IS NULL) OR ([JobCostSales] " +
+                "= @Original_JobCostSales)) AND ((@IsNull_JobCostGP = 1 AND [JobCostGP] IS NULL) " +
+                "OR ([JobCostGP] = @Original_JobCostGP)) AND ((@IsNull_JobCostCost = 1 AND [JobCo" +
+                "stCost] IS NULL) OR ([JobCostCost] = @Original_JobCostCost)) AND ((@IsNull_SysAd" +
+                "min = 1 AND [SysAdmin] IS NULL) OR ([SysAdmin] = @Original_SysAdmin)));\r\nSELECT " +
+                "ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboar" +
+                "d, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, Dashbord" +
+                "Instage, DashbordProdStart, DashboardProdEnd, JobCostSales, JobCostGP, JobCostCo" +
+                "st, SysAdmin FROM PROD_STAFF WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USERID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -31719,6 +31768,7 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobCostSales", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostSales", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobCostGP", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostGP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JobCostCost", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SysAdmin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SysAdmin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_USERID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USERID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USERID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USERID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -31753,6 +31803,8 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobCostGP", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostGP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_JobCostCost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostCost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_JobCostCost", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JobCostCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SysAdmin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SysAdmin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SysAdmin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SysAdmin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31765,11 +31817,20 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        PROD_STAFF.*\r\nFROM            PROD_STAFF";
+            this._commandCollection[0].CommandText = @"SELECT        ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, DashboardProdEnd, 
+                         JobCostSales, JobCostGP, JobCostCost, SysAdmin
+FROM            PROD_STAFF";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, DashboardProdEnd, 
+                         JobCostSales, JobCostGP, JobCostCost, SysAdmin
+FROM            PROD_STAFF Where ID = @ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31794,6 +31855,20 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
             MESDataSet.PROD_STAFFDataTable dataTable = new MESDataSet.PROD_STAFFDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUID(MESDataSet.PROD_STAFFDataTable dataTable, System.Guid ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.Guid)(ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31847,7 +31922,8 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                     global::System.Nullable<bool> Original_DashboardProdEnd, 
                     global::System.Nullable<bool> Original_JobCostSales, 
                     global::System.Nullable<bool> Original_JobCostGP, 
-                    global::System.Nullable<bool> Original_JobCostCost) {
+                    global::System.Nullable<bool> Original_JobCostCost, 
+                    global::System.Nullable<bool> Original_SysAdmin) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((System.Guid)(Original_ID));
             if ((Original_USERID == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -31978,6 +32054,14 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                 this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
+            if ((Original_SysAdmin.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((bool)(Original_SysAdmin.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -32016,7 +32100,8 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                     global::System.Nullable<bool> DashboardProdEnd, 
                     global::System.Nullable<bool> JobCostSales, 
                     global::System.Nullable<bool> JobCostGP, 
-                    global::System.Nullable<bool> JobCostCost) {
+                    global::System.Nullable<bool> JobCostCost, 
+                    global::System.Nullable<bool> SysAdmin) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(ID));
             if ((USERID == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -32115,6 +32200,12 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
+            if ((SysAdmin.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(SysAdmin.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -32154,6 +32245,7 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                     global::System.Nullable<bool> JobCostSales, 
                     global::System.Nullable<bool> JobCostGP, 
                     global::System.Nullable<bool> JobCostCost, 
+                    global::System.Nullable<bool> SysAdmin, 
                     System.Guid Original_ID, 
                     string Original_USERID, 
                     string Original_NAME, 
@@ -32171,7 +32263,8 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                     global::System.Nullable<bool> Original_DashboardProdEnd, 
                     global::System.Nullable<bool> Original_JobCostSales, 
                     global::System.Nullable<bool> Original_JobCostGP, 
-                    global::System.Nullable<bool> Original_JobCostCost) {
+                    global::System.Nullable<bool> Original_JobCostCost, 
+                    global::System.Nullable<bool> Original_SysAdmin) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(ID));
             if ((USERID == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -32270,135 +32363,149 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.Guid)(Original_ID));
-            if ((Original_USERID == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            if ((SysAdmin.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(SysAdmin.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_USERID));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((System.Guid)(Original_ID));
+            if ((Original_USERID == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_USERID));
             }
             if ((Original_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_NAME));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_NAME));
             }
             if ((Original_Password == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Password));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Password));
             }
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((bool)(Original_Enable));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((bool)(Original_Enable));
             if ((Original_SalesModule.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((bool)(Original_SalesModule.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((bool)(Original_SalesModule.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             if ((Original_ProdDashboard.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Original_ProdDashboard.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((bool)(Original_ProdDashboard.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             if ((Original_DivisionDashboard.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_DivisionDashboard.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((bool)(Original_DivisionDashboard.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_ProdCapacitiyPlan.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((bool)(Original_ProdCapacitiyPlan.Value));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((bool)(Original_ProdCapacitiyPlan.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             if ((Original_JobCosting.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((bool)(Original_JobCosting.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((bool)(Original_JobCosting.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((Original_DashbordStatus.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((bool)(Original_DashbordStatus.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((bool)(Original_DashbordStatus.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_DashbordEstimatedETA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((bool)(Original_DashbordEstimatedETA.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((bool)(Original_DashbordEstimatedETA.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             if ((Original_DashbordInstage.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_DashbordInstage.Value));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((bool)(Original_DashbordInstage.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             if ((Original_DashbordProdStart.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((bool)(Original_DashbordProdStart.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((bool)(Original_DashbordProdStart.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             if ((Original_DashboardProdEnd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_DashboardProdEnd.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((bool)(Original_DashboardProdEnd.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             if ((Original_JobCostSales.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_JobCostSales.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((bool)(Original_JobCostSales.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             if ((Original_JobCostGP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((bool)(Original_JobCostGP.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((bool)(Original_JobCostGP.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             if ((Original_JobCostCost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((bool)(Original_JobCostCost.Value));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((bool)(Original_JobCostCost.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SysAdmin.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((bool)(Original_SysAdmin.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -32438,6 +32545,7 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                     global::System.Nullable<bool> JobCostSales, 
                     global::System.Nullable<bool> JobCostGP, 
                     global::System.Nullable<bool> JobCostCost, 
+                    global::System.Nullable<bool> SysAdmin, 
                     System.Guid Original_ID, 
                     string Original_USERID, 
                     string Original_NAME, 
@@ -32455,8 +32563,9 @@ SELECT ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionD
                     global::System.Nullable<bool> Original_DashboardProdEnd, 
                     global::System.Nullable<bool> Original_JobCostSales, 
                     global::System.Nullable<bool> Original_JobCostGP, 
-                    global::System.Nullable<bool> Original_JobCostCost) {
-            return this.Update(Original_ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, DashboardProdEnd, JobCostSales, JobCostGP, JobCostCost, Original_ID, Original_USERID, Original_NAME, Original_Password, Original_Enable, Original_SalesModule, Original_ProdDashboard, Original_DivisionDashboard, Original_ProdCapacitiyPlan, Original_JobCosting, Original_DashbordStatus, Original_DashbordEstimatedETA, Original_DashbordInstage, Original_DashbordProdStart, Original_DashboardProdEnd, Original_JobCostSales, Original_JobCostGP, Original_JobCostCost);
+                    global::System.Nullable<bool> Original_JobCostCost, 
+                    global::System.Nullable<bool> Original_SysAdmin) {
+            return this.Update(Original_ID, USERID, NAME, Password, Enable, SalesModule, ProdDashboard, DivisionDashboard, ProdCapacitiyPlan, JobCosting, DashbordStatus, DashbordEstimatedETA, DashbordInstage, DashbordProdStart, DashboardProdEnd, JobCostSales, JobCostGP, JobCostCost, SysAdmin, Original_ID, Original_USERID, Original_NAME, Original_Password, Original_Enable, Original_SalesModule, Original_ProdDashboard, Original_DivisionDashboard, Original_ProdCapacitiyPlan, Original_JobCosting, Original_DashbordStatus, Original_DashbordEstimatedETA, Original_DashbordInstage, Original_DashbordProdStart, Original_DashboardProdEnd, Original_JobCostSales, Original_JobCostGP, Original_JobCostCost, Original_SysAdmin);
         }
     }
     
