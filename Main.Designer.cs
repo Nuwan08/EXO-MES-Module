@@ -30,20 +30,20 @@ namespace EXO_MES_Module
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -194,12 +194,9 @@ namespace EXO_MES_Module
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.mPOLineDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.divisionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTOCKCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oPCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assignToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -221,6 +218,7 @@ namespace EXO_MES_Module
             this.sTAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.STAFFTableAdapter();
             this.proD_ROUTETableAdapter1 = new EXO_MES_Module.MESDataSetTableAdapters.PROD_ROUTETableAdapter();
             this.pROD_JOBCARDTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_JOBCARDTableAdapter();
+            this.userProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.MainSpliterContainer)).BeginInit();
             this.MainSpliterContainer.Panel1.SuspendLayout();
             this.MainSpliterContainer.Panel2.SuspendLayout();
@@ -585,19 +583,19 @@ namespace EXO_MES_Module
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.JobCard,
@@ -645,22 +643,22 @@ namespace EXO_MES_Module
             this.activeDataGridViewCheckBoxColumn,
             this.colorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pRODJOBCARDBindingSource2;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle51;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle52;
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -672,9 +670,9 @@ namespace EXO_MES_Module
             // 
             // JobCard
             // 
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle59.NullValue = null;
-            this.JobCard.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.NullValue = null;
+            this.JobCard.DefaultCellStyle = dataGridViewCellStyle45;
             this.JobCard.Frozen = true;
             this.JobCard.HeaderText = "Job Card";
             this.JobCard.Name = "JobCard";
@@ -723,9 +721,9 @@ namespace EXO_MES_Module
             // OrderDate
             // 
             this.OrderDate.DataPropertyName = "OrderDate";
-            dataGridViewCellStyle60.Format = "D";
-            dataGridViewCellStyle60.NullValue = null;
-            this.OrderDate.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle46.Format = "D";
+            dataGridViewCellStyle46.NullValue = null;
+            this.OrderDate.DefaultCellStyle = dataGridViewCellStyle46;
             this.OrderDate.Frozen = true;
             this.OrderDate.HeaderText = "Order Date";
             this.OrderDate.Name = "OrderDate";
@@ -735,9 +733,9 @@ namespace EXO_MES_Module
             // DueDate
             // 
             this.DueDate.DataPropertyName = "DueDate";
-            dataGridViewCellStyle61.Format = "D";
-            dataGridViewCellStyle61.NullValue = null;
-            this.DueDate.DefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle47.Format = "D";
+            dataGridViewCellStyle47.NullValue = null;
+            this.DueDate.DefaultCellStyle = dataGridViewCellStyle47;
             this.DueDate.Frozen = true;
             this.DueDate.HeaderText = "Due Date";
             this.DueDate.Name = "DueDate";
@@ -747,10 +745,10 @@ namespace EXO_MES_Module
             // PlanProductionDate
             // 
             this.PlanProductionDate.DataPropertyName = "PlanProductionDate";
-            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle62.Format = "D";
-            dataGridViewCellStyle62.NullValue = null;
-            this.PlanProductionDate.DefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle48.Format = "D";
+            dataGridViewCellStyle48.NullValue = null;
+            this.PlanProductionDate.DefaultCellStyle = dataGridViewCellStyle48;
             this.PlanProductionDate.Frozen = true;
             this.PlanProductionDate.HeaderText = "Est. Completion Date";
             this.PlanProductionDate.Name = "PlanProductionDate";
@@ -770,9 +768,9 @@ namespace EXO_MES_Module
             // ProductionStartDate
             // 
             this.ProductionStartDate.DataPropertyName = "ProductionStartDate";
-            dataGridViewCellStyle63.Format = "f";
-            dataGridViewCellStyle63.NullValue = null;
-            this.ProductionStartDate.DefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle49.Format = "f";
+            dataGridViewCellStyle49.NullValue = null;
+            this.ProductionStartDate.DefaultCellStyle = dataGridViewCellStyle49;
             this.ProductionStartDate.HeaderText = "Production Start";
             this.ProductionStartDate.Name = "ProductionStartDate";
             this.ProductionStartDate.ReadOnly = true;
@@ -780,9 +778,9 @@ namespace EXO_MES_Module
             // ProductionComplete
             // 
             this.ProductionComplete.DataPropertyName = "ProductionComplete";
-            dataGridViewCellStyle64.Format = "f";
-            dataGridViewCellStyle64.NullValue = null;
-            this.ProductionComplete.DefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle50.Format = "f";
+            dataGridViewCellStyle50.NullValue = null;
+            this.ProductionComplete.DefaultCellStyle = dataGridViewCellStyle50;
             this.ProductionComplete.HeaderText = "End Production";
             this.ProductionComplete.Name = "ProductionComplete";
             this.ProductionComplete.ReadOnly = true;
@@ -1032,19 +1030,19 @@ namespace EXO_MES_Module
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle53;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle54;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.soSeqNoDataGridViewTextBoxColumn,
@@ -1064,23 +1062,23 @@ namespace EXO_MES_Module
             this.drawingDataGridViewTextBoxColumn1,
             this.divisionDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.pRODDashboardBindingSource;
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle55;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle56;
             this.dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView2.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1476,6 +1474,7 @@ namespace EXO_MES_Module
             this.InsertData.Size = new System.Drawing.Size(23, 22);
             this.InsertData.Text = "Add New Raw";
             this.InsertData.ToolTipText = "Add New Raw";
+            this.InsertData.Click += new System.EventHandler(this.InsertData_Click);
             // 
             // Save
             // 
@@ -1627,18 +1626,6 @@ namespace EXO_MES_Module
             this.salesOrdersToolStripMenuItem.Text = "Sales Orders";
             this.salesOrdersToolStripMenuItem.Click += new System.EventHandler(this.salesOrdersToolStripMenuItem_Click);
             // 
-            // windowToolStripMenuItem
-            // 
-            this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.windowToolStripMenuItem.Text = "Window";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1646,8 +1633,6 @@ namespace EXO_MES_Module
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fIleToolStripMenuItem,
             this.toolStripMenuItem18,
-            this.windowToolStripMenuItem,
-            this.helpToolStripMenuItem,
             this.setupToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -1660,7 +1645,7 @@ namespace EXO_MES_Module
             // 
             this.setupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administrationToolStripMenuItem1,
-            this.divisionsToolStripMenuItem});
+            this.userProfileToolStripMenuItem});
             this.setupToolStripMenuItem.Name = "setupToolStripMenuItem";
             this.setupToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.setupToolStripMenuItem.Text = "Setup";
@@ -1668,15 +1653,9 @@ namespace EXO_MES_Module
             // administrationToolStripMenuItem1
             // 
             this.administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            this.administrationToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.administrationToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.administrationToolStripMenuItem1.Text = "Administration";
             this.administrationToolStripMenuItem1.Click += new System.EventHandler(this.administrationToolStripMenuItem1_Click);
-            // 
-            // divisionsToolStripMenuItem
-            // 
-            this.divisionsToolStripMenuItem.Name = "divisionsToolStripMenuItem";
-            this.divisionsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.divisionsToolStripMenuItem.Text = "Divisions";
             // 
             // sTOCKCODEDataGridViewTextBoxColumn
             // 
@@ -1840,6 +1819,13 @@ namespace EXO_MES_Module
             // 
             this.pROD_JOBCARDTableAdapter.ClearBeforeFill = true;
             // 
+            // userProfileToolStripMenuItem
+            // 
+            this.userProfileToolStripMenuItem.Name = "userProfileToolStripMenuItem";
+            this.userProfileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userProfileToolStripMenuItem.Text = "User Profile";
+            this.userProfileToolStripMenuItem.Click += new System.EventHandler(this.userProfileToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1990,8 +1976,6 @@ namespace EXO_MES_Module
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
         private System.Windows.Forms.ToolStripMenuItem mPOLineDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salesOrdersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
@@ -2022,7 +2006,6 @@ namespace EXO_MES_Module
         private System.Windows.Forms.BindingSource pRODJOBCARDBindingSource2;
         private System.Windows.Forms.ToolStripMenuItem setupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrationToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem divisionsToolStripMenuItem;
         private System.Windows.Forms.DataGridViewButtonColumn JobCard;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STOCKCODE;
@@ -2076,6 +2059,7 @@ namespace EXO_MES_Module
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.ToolStripMenuItem clearFilterToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
+        private System.Windows.Forms.ToolStripMenuItem userProfileToolStripMenuItem;
     }
 }
 

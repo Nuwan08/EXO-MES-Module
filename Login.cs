@@ -7,26 +7,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace EXO_MES_Module
 {
     public partial class Login : Form
     {
+
+        private SqlConnection conn;
+        
+        private dbConnectionMyob db;
+        private string StrSqltable, StrSQL;
+        private DataSet dbDataSet;
+        private DataTable datatable;
+        private int currRecord;
         public Login()
         {
             InitializeComponent();
+            db = new dbConnectionMyob();
+            conn = new SqlConnection(db.DbConecct());
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error with the databse connection");
+            }
         }
 
         private void ButtLogin_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "admin")
+            if (textPass.Text == "" || TxtUserID.Text == "" )
             {
-
-                MainForm M1 = new MainForm(comboBox1.SelectedValue.ToString());
-                this.Hide();
-                M1.Show();
+                MessageBox.Show("Empty Login Name or Password ");
 
             }
+            else
+            {
+                StrSQL = "Select ID from PROD_Staff where password = '" + textPass.Text + "' and UserId = '" + TxtUserID.Text + "'";
+                StrSqltable = "PROD_STAFF";
+                dbDataSet = db.ConnectDataSet(StrSQL, StrSqltable);
+                datatable = dbDataSet.Tables[StrSqltable];
+
+                if (datatable.Rows.Count > 0)
+                {
+
+                    MainForm M1 = new MainForm(datatable.Rows[0][0].ToString());
+                    this.Hide();
+                    M1.Show();
+                    
+                }else
+
+                {
+
+                    MessageBox.Show("Invalid Login Name or Password ");
+
+                }
+
+
+            }
+            
+            
+           
 
            // this.Close();
 
@@ -37,7 +80,7 @@ namespace EXO_MES_Module
         private void Login_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mesDataSet1.STAFF' table. You can move, or remove it, as needed.
-            this.sTAFFTableAdapter.Fill(this.mesDataSet1.STAFF);
+           
 
         }
 

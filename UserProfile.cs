@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace EXO_MES_Module
 {
-    public partial class Administration : Form
+    public partial class UserProfile : Form
     {
-        public Administration()
+        public UserProfile()
         {
             InitializeComponent();
         }

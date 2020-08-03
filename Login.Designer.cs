@@ -28,41 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mesDataSet1 = new EXO_MES_Module.MESDataSet();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ButtLogin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.sTAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.STAFFTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mesDataSet1)).BeginInit();
+            this.TxtUserID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.sTAFFBindingSource;
-            this.comboBox1.DisplayMember = "NAME";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(207, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "NAME";
-            // 
-            // sTAFFBindingSource
-            // 
-            this.sTAFFBindingSource.DataMember = "STAFF";
-            this.sTAFFBindingSource.DataSource = this.mesDataSet1;
-            // 
-            // mesDataSet1
-            // 
-            this.mesDataSet1.DataSetName = "MESDataSet";
-            this.mesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -73,15 +46,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Username :";
             // 
-            // textBox1
+            // textPass
             // 
-            this.textBox1.Location = new System.Drawing.Point(207, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.UseSystemPasswordChar = true;
-            this.textBox1.UseWaitCursor = true;
+            this.textPass.Location = new System.Drawing.Point(207, 125);
+            this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
+            this.textPass.Size = new System.Drawing.Size(190, 20);
+            this.textPass.TabIndex = 2;
+            this.textPass.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -116,9 +88,12 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // sTAFFTableAdapter
+            // TxtUserID
             // 
-            this.sTAFFTableAdapter.ClearBeforeFill = true;
+            this.TxtUserID.Location = new System.Drawing.Point(207, 87);
+            this.TxtUserID.Name = "TxtUserID";
+            this.TxtUserID.Size = new System.Drawing.Size(190, 20);
+            this.TxtUserID.TabIndex = 6;
             // 
             // Login
             // 
@@ -129,12 +104,12 @@
             this.BackgroundImage = global::EXO_MES_Module.Properties.Resources._2020_06_10_19h53_05;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(436, 201);
+            this.Controls.Add(this.TxtUserID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ButtLogin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textPass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -144,23 +119,17 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mesDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ButtLogin;
         private System.Windows.Forms.Button button1;
-        private MESDataSet mesDataSet1;
-        private System.Windows.Forms.BindingSource sTAFFBindingSource;
-        private MESDataSetTableAdapters.STAFFTableAdapter sTAFFTableAdapter;
+        private System.Windows.Forms.TextBox TxtUserID;
     }
 }
