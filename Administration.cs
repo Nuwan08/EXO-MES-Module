@@ -33,5 +33,23 @@ namespace EXO_MES_Module
         {
 
         }
+
+        private void InsertData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.pROD_STAFFTableAdapter.FillBy(this.mESDataSet.PROD_STAFF);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

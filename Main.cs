@@ -55,7 +55,8 @@ namespace EXO_MES_Module
 
             this.Dashboard(workerName);
             this.Text = workerName;
-           // MainSpliterContainer.SplitterDistance = 450;
+            this.setFilterDate();
+            // MainSpliterContainer.SplitterDistance = 450;
             MainSpliterContainer.Panel1Collapsed = false;
             MainSpliterContainer.Panel2Collapsed = true;
             dataGridView1.Visible = true;
@@ -1103,6 +1104,70 @@ namespace EXO_MES_Module
         {
             ListofValue L1 = new ListofValue("PROD_Dashboard", this);
             L1.ShowDialog();
+        }
+
+        private void setFilterDate()
+        {
+
+            dateTimePickerTo.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTo.CustomFormat = "dd/MM/yyyy";
+            dateTimePickerTo.Value = DateTime.Today;
+            dateTimePickerFrom.Format = DateTimePickerFormat.Custom;
+            dateTimePickerFrom.CustomFormat = "dd/MM/yyyy";
+            dateTimePickerFrom.Value = DateTime.Today;
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            String StrSQL = "SELECT top 300 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD" +
+                " WHERE (Active IS NULL)";
+            if (TxtSalesId.Text != "")
+            {
+                StrSQL += " and SalesID like'" + TxtSalesId.Text + "%' order by salesID Desc";
+                this.setFilterDate();
+            }
+            else
+            {
+                if (dateTimePickerFrom.Value > dateTimePickerTo.Value)
+                {
+                    MessageBox.Show(" From date must be ealiyer than To Date ", "Date Range");
+                }
+                else
+                {
+                    StrSQL += " and DueDate BETWEEN '" + dateTimePickerFrom.Value + "' AND '" + dateTimePickerTo.Value + "'";
+                }
+                }
+
+            this.fillter(StrSQL);
+            
+        }
+
+        private void clearFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TxtSalesId.Text = "";
+            String StrSQL = "SELECT top 300 Active, AddtionalNotes, Color, Cost, Division, Drawing, DueDate, EnableAddNote, FinFlientGrey, FinMatBlack, FinNoPaint, FinPaintWeldsOnly, FinPickle, FinPolishWelds, FinSilver, GP, ID, InStage, MakeToStock, Note, OrderDate, OrderQTY, PlanProductionDate, ProductionComplete, ProductionStartDate, STOCKCODE, Sales, SalesID, SalesLine, Status FROM PROD_JOBCARD" +
+               " WHERE (Active IS NULL)";
+
+            this.fillter(StrSQL);
+
+
+        }
+
+        private void TxtSalesId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+            TxtSalesId.Text = "";
+        }
+
+        private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
+        {
+            TxtSalesId.Text = "";
         }
 
         private void GridView_Click(object sender, EventArgs e)

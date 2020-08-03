@@ -1660,50 +1660,6 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
                       </Style>
                     </Textbox>
                     <ColSpan>8</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.05209in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox38">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox38</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>8</ColSpan>
                     <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
@@ -1842,9 +1798,6 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
                       </Visibility>
                       <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
-                    <TablixMember>
-                      <KeepWithGroup>Before</KeepWithGroup>
-                    </TablixMember>
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember />
@@ -1859,7 +1812,7 @@ Format(Cdate(First(Fields!DueDate.Value, "ProdJobCardView")),"dd/MM/yyyy")</Valu
           </SortExpression>
         </SortExpressions>
         <Top>0.00882in</Top>
-        <Height>5.28866in</Height>
+        <Height>5.23657in</Height>
         <Width>7.65797in</Width>
         <Style>
           <Border>

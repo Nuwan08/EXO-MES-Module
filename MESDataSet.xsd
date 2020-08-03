@@ -2345,7 +2345,17 @@ FROM            PROD_STAFF</CommandText>
               <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="UpgradeConnectionString (Settings)" DbObjectName="Upgrade.dbo.PROD_STAFF" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        PROD_STAFF.*
+FROM            PROD_STAFF</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources>
@@ -2365,7 +2375,7 @@ FROM            OperationMaster</CommandText>
   <xs:element name="MESDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MESDataSet" msprop:Generator_UserDSName="MESDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="PROD_JOBCOST" msprop:Generator_TableClassName="PROD_JOBCOSTDataTable" msprop:Generator_TableVarName="tablePROD_JOBCOST" msprop:Generator_TablePropName="PROD_JOBCOST" msprop:Generator_RowDeletingName="PROD_JOBCOSTRowDeleting" msprop:Generator_RowChangingName="PROD_JOBCOSTRowChanging" msprop:Generator_RowEvHandlerName="PROD_JOBCOSTRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_JOBCOSTRowDeleted" msprop:Generator_UserTableName="PROD_JOBCOST" msprop:Generator_RowChangedName="PROD_JOBCOSTRowChanged" msprop:Generator_RowEvArgName="PROD_JOBCOSTRowChangeEvent" msprop:Generator_RowClassName="PROD_JOBCOSTRow">
+        <xs:element name="PROD_JOBCOST" msprop:Generator_TableClassName="PROD_JOBCOSTDataTable" msprop:Generator_TableVarName="tablePROD_JOBCOST" msprop:Generator_RowChangedName="PROD_JOBCOSTRowChanged" msprop:Generator_TablePropName="PROD_JOBCOST" msprop:Generator_RowDeletingName="PROD_JOBCOSTRowDeleting" msprop:Generator_RowChangingName="PROD_JOBCOSTRowChanging" msprop:Generator_RowEvHandlerName="PROD_JOBCOSTRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_JOBCOSTRowDeleted" msprop:Generator_RowClassName="PROD_JOBCOSTRow" msprop:Generator_UserTableName="PROD_JOBCOST" msprop:Generator_RowEvArgName="PROD_JOBCOSTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="QTY" msprop:Generator_ColumnVarNameInTable="columnQTY" msprop:Generator_ColumnPropNameInRow="QTY" msprop:Generator_ColumnPropNameInTable="QTYColumn" msprop:Generator_UserColumnName="QTY" type="xs:float" minOccurs="0" />
@@ -2392,7 +2402,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_ROUTE" msprop:Generator_TableClassName="PROD_ROUTEDataTable" msprop:Generator_TableVarName="tablePROD_ROUTE" msprop:Generator_TablePropName="PROD_ROUTE" msprop:Generator_RowDeletingName="PROD_ROUTERowDeleting" msprop:Generator_RowChangingName="PROD_ROUTERowChanging" msprop:Generator_RowEvHandlerName="PROD_ROUTERowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_ROUTERowDeleted" msprop:Generator_UserTableName="PROD_ROUTE" msprop:Generator_RowChangedName="PROD_ROUTERowChanged" msprop:Generator_RowEvArgName="PROD_ROUTERowChangeEvent" msprop:Generator_RowClassName="PROD_ROUTERow">
+        <xs:element name="PROD_ROUTE" msprop:Generator_TableClassName="PROD_ROUTEDataTable" msprop:Generator_TableVarName="tablePROD_ROUTE" msprop:Generator_RowChangedName="PROD_ROUTERowChanged" msprop:Generator_TablePropName="PROD_ROUTE" msprop:Generator_RowDeletingName="PROD_ROUTERowDeleting" msprop:Generator_RowChangingName="PROD_ROUTERowChanging" msprop:Generator_RowEvHandlerName="PROD_ROUTERowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_ROUTERowDeleted" msprop:Generator_RowClassName="PROD_ROUTERow" msprop:Generator_UserTableName="PROD_ROUTE" msprop:Generator_RowEvArgName="PROD_ROUTERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STOCKCODE" msprop:Generator_ColumnVarNameInTable="columnSTOCKCODE" msprop:Generator_ColumnPropNameInRow="STOCKCODE" msprop:Generator_ColumnPropNameInTable="STOCKCODEColumn" msprop:Generator_UserColumnName="STOCKCODE" minOccurs="0">
@@ -2437,7 +2447,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SALESORD_HDR" msprop:Generator_TableClassName="SALESORD_HDRDataTable" msprop:Generator_TableVarName="tableSALESORD_HDR" msprop:Generator_TablePropName="SALESORD_HDR" msprop:Generator_RowDeletingName="SALESORD_HDRRowDeleting" msprop:Generator_RowChangingName="SALESORD_HDRRowChanging" msprop:Generator_RowEvHandlerName="SALESORD_HDRRowChangeEventHandler" msprop:Generator_RowDeletedName="SALESORD_HDRRowDeleted" msprop:Generator_UserTableName="SALESORD_HDR" msprop:Generator_RowChangedName="SALESORD_HDRRowChanged" msprop:Generator_RowEvArgName="SALESORD_HDRRowChangeEvent" msprop:Generator_RowClassName="SALESORD_HDRRow">
+        <xs:element name="SALESORD_HDR" msprop:Generator_TableClassName="SALESORD_HDRDataTable" msprop:Generator_TableVarName="tableSALESORD_HDR" msprop:Generator_RowChangedName="SALESORD_HDRRowChanged" msprop:Generator_TablePropName="SALESORD_HDR" msprop:Generator_RowDeletingName="SALESORD_HDRRowDeleting" msprop:Generator_RowChangingName="SALESORD_HDRRowChanging" msprop:Generator_RowEvHandlerName="SALESORD_HDRRowChangeEventHandler" msprop:Generator_RowDeletedName="SALESORD_HDRRowDeleted" msprop:Generator_RowClassName="SALESORD_HDRRow" msprop:Generator_UserTableName="SALESORD_HDR" msprop:Generator_RowEvArgName="SALESORD_HDRRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SEQNO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSEQNO" msprop:Generator_ColumnPropNameInRow="SEQNO" msprop:Generator_ColumnPropNameInTable="SEQNOColumn" msprop:Generator_UserColumnName="SEQNO" type="xs:int" />
@@ -2490,7 +2500,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SALESORD_LINES" msprop:Generator_TableClassName="SALESORD_LINESDataTable" msprop:Generator_TableVarName="tableSALESORD_LINES" msprop:Generator_TablePropName="SALESORD_LINES" msprop:Generator_RowDeletingName="SALESORD_LINESRowDeleting" msprop:Generator_RowChangingName="SALESORD_LINESRowChanging" msprop:Generator_RowEvHandlerName="SALESORD_LINESRowChangeEventHandler" msprop:Generator_RowDeletedName="SALESORD_LINESRowDeleted" msprop:Generator_UserTableName="SALESORD_LINES" msprop:Generator_RowChangedName="SALESORD_LINESRowChanged" msprop:Generator_RowEvArgName="SALESORD_LINESRowChangeEvent" msprop:Generator_RowClassName="SALESORD_LINESRow">
+        <xs:element name="SALESORD_LINES" msprop:Generator_TableClassName="SALESORD_LINESDataTable" msprop:Generator_TableVarName="tableSALESORD_LINES" msprop:Generator_RowChangedName="SALESORD_LINESRowChanged" msprop:Generator_TablePropName="SALESORD_LINES" msprop:Generator_RowDeletingName="SALESORD_LINESRowDeleting" msprop:Generator_RowChangingName="SALESORD_LINESRowChanging" msprop:Generator_RowEvHandlerName="SALESORD_LINESRowChangeEventHandler" msprop:Generator_RowDeletedName="SALESORD_LINESRowDeleted" msprop:Generator_RowClassName="SALESORD_LINESRow" msprop:Generator_UserTableName="SALESORD_LINES" msprop:Generator_RowEvArgName="SALESORD_LINESRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SEQNO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSEQNO" msprop:Generator_ColumnPropNameInRow="SEQNO" msprop:Generator_ColumnPropNameInTable="SEQNOColumn" msprop:Generator_UserColumnName="SEQNO" type="xs:int" />
@@ -2648,7 +2658,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="STAFF" msprop:Generator_TableClassName="STAFFDataTable" msprop:Generator_TableVarName="tableSTAFF" msprop:Generator_TablePropName="STAFF" msprop:Generator_RowDeletingName="STAFFRowDeleting" msprop:Generator_RowChangingName="STAFFRowChanging" msprop:Generator_RowEvHandlerName="STAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="STAFFRowDeleted" msprop:Generator_UserTableName="STAFF" msprop:Generator_RowChangedName="STAFFRowChanged" msprop:Generator_RowEvArgName="STAFFRowChangeEvent" msprop:Generator_RowClassName="STAFFRow">
+        <xs:element name="STAFF" msprop:Generator_TableClassName="STAFFDataTable" msprop:Generator_TableVarName="tableSTAFF" msprop:Generator_RowChangedName="STAFFRowChanged" msprop:Generator_TablePropName="STAFF" msprop:Generator_RowDeletingName="STAFFRowDeleting" msprop:Generator_RowChangingName="STAFFRowChanging" msprop:Generator_RowEvHandlerName="STAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="STAFFRowDeleted" msprop:Generator_RowClassName="STAFFRow" msprop:Generator_UserTableName="STAFF" msprop:Generator_RowEvArgName="STAFFRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STAFFNO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSTAFFNO" msprop:Generator_ColumnPropNameInRow="STAFFNO" msprop:Generator_ColumnPropNameInTable="STAFFNOColumn" msprop:Generator_UserColumnName="STAFFNO" type="xs:int" />
@@ -2676,7 +2686,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="STOCK_ITEMS" msprop:Generator_TableClassName="STOCK_ITEMSDataTable" msprop:Generator_TableVarName="tableSTOCK_ITEMS" msprop:Generator_TablePropName="STOCK_ITEMS" msprop:Generator_RowDeletingName="STOCK_ITEMSRowDeleting" msprop:Generator_RowChangingName="STOCK_ITEMSRowChanging" msprop:Generator_RowEvHandlerName="STOCK_ITEMSRowChangeEventHandler" msprop:Generator_RowDeletedName="STOCK_ITEMSRowDeleted" msprop:Generator_UserTableName="STOCK_ITEMS" msprop:Generator_RowChangedName="STOCK_ITEMSRowChanged" msprop:Generator_RowEvArgName="STOCK_ITEMSRowChangeEvent" msprop:Generator_RowClassName="STOCK_ITEMSRow">
+        <xs:element name="STOCK_ITEMS" msprop:Generator_TableClassName="STOCK_ITEMSDataTable" msprop:Generator_TableVarName="tableSTOCK_ITEMS" msprop:Generator_RowChangedName="STOCK_ITEMSRowChanged" msprop:Generator_TablePropName="STOCK_ITEMS" msprop:Generator_RowDeletingName="STOCK_ITEMSRowDeleting" msprop:Generator_RowChangingName="STOCK_ITEMSRowChanging" msprop:Generator_RowEvHandlerName="STOCK_ITEMSRowChangeEventHandler" msprop:Generator_RowDeletedName="STOCK_ITEMSRowDeleted" msprop:Generator_RowClassName="STOCK_ITEMSRow" msprop:Generator_UserTableName="STOCK_ITEMS" msprop:Generator_RowEvArgName="STOCK_ITEMSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STOCKCODE" msprop:Generator_ColumnVarNameInTable="columnSTOCKCODE" msprop:Generator_ColumnPropNameInRow="STOCKCODE" msprop:Generator_ColumnPropNameInTable="STOCKCODEColumn" msprop:Generator_UserColumnName="STOCKCODE">
@@ -2893,7 +2903,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_JOBCARD" msprop:Generator_TableClassName="PROD_JOBCARDDataTable" msprop:Generator_TableVarName="tablePROD_JOBCARD" msprop:Generator_TablePropName="PROD_JOBCARD" msprop:Generator_RowDeletingName="PROD_JOBCARDRowDeleting" msprop:Generator_RowChangingName="PROD_JOBCARDRowChanging" msprop:Generator_RowEvHandlerName="PROD_JOBCARDRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_JOBCARDRowDeleted" msprop:Generator_UserTableName="PROD_JOBCARD" msprop:Generator_RowChangedName="PROD_JOBCARDRowChanged" msprop:Generator_RowEvArgName="PROD_JOBCARDRowChangeEvent" msprop:Generator_RowClassName="PROD_JOBCARDRow">
+        <xs:element name="PROD_JOBCARD" msprop:Generator_TableClassName="PROD_JOBCARDDataTable" msprop:Generator_TableVarName="tablePROD_JOBCARD" msprop:Generator_RowChangedName="PROD_JOBCARDRowChanged" msprop:Generator_TablePropName="PROD_JOBCARD" msprop:Generator_RowDeletingName="PROD_JOBCARDRowDeleting" msprop:Generator_RowChangingName="PROD_JOBCARDRowChanging" msprop:Generator_RowEvHandlerName="PROD_JOBCARDRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_JOBCARDRowDeleted" msprop:Generator_RowClassName="PROD_JOBCARDRow" msprop:Generator_UserTableName="PROD_JOBCARD" msprop:Generator_RowEvArgName="PROD_JOBCARDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SalesID" msprop:Generator_ColumnVarNameInTable="columnSalesID" msprop:Generator_ColumnPropNameInRow="SalesID" msprop:Generator_ColumnPropNameInTable="SalesIDColumn" msprop:Generator_UserColumnName="SalesID" type="xs:int" minOccurs="0" />
@@ -2977,7 +2987,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OperationMaster" msprop:Generator_TableClassName="OperationMasterDataTable" msprop:Generator_TableVarName="tableOperationMaster" msprop:Generator_RowChangedName="OperationMasterRowChanged" msprop:Generator_TablePropName="OperationMaster" msprop:Generator_RowDeletingName="OperationMasterRowDeleting" msprop:Generator_RowChangingName="OperationMasterRowChanging" msprop:Generator_RowEvHandlerName="OperationMasterRowChangeEventHandler" msprop:Generator_RowDeletedName="OperationMasterRowDeleted" msprop:Generator_RowClassName="OperationMasterRow" msprop:Generator_UserTableName="OperationMaster" msprop:Generator_RowEvArgName="OperationMasterRowChangeEvent">
+        <xs:element name="OperationMaster" msprop:Generator_TableClassName="OperationMasterDataTable" msprop:Generator_TableVarName="tableOperationMaster" msprop:Generator_TablePropName="OperationMaster" msprop:Generator_RowDeletingName="OperationMasterRowDeleting" msprop:Generator_RowChangingName="OperationMasterRowChanging" msprop:Generator_RowEvHandlerName="OperationMasterRowChangeEventHandler" msprop:Generator_RowDeletedName="OperationMasterRowDeleted" msprop:Generator_UserTableName="OperationMaster" msprop:Generator_RowChangedName="OperationMasterRowChanged" msprop:Generator_RowEvArgName="OperationMasterRowChangeEvent" msprop:Generator_RowClassName="OperationMasterRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OpName" msprop:Generator_ColumnVarNameInTable="columnOpName" msprop:Generator_ColumnPropNameInRow="OpName" msprop:Generator_ColumnPropNameInTable="OpNameColumn" msprop:Generator_UserColumnName="OpName" minOccurs="0">
@@ -3007,7 +3017,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_Dashboard" msprop:Generator_TableClassName="PROD_DashboardDataTable" msprop:Generator_TableVarName="tablePROD_Dashboard" msprop:Generator_RowChangedName="PROD_DashboardRowChanged" msprop:Generator_TablePropName="PROD_Dashboard" msprop:Generator_RowDeletingName="PROD_DashboardRowDeleting" msprop:Generator_RowChangingName="PROD_DashboardRowChanging" msprop:Generator_RowEvHandlerName="PROD_DashboardRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DashboardRowDeleted" msprop:Generator_RowClassName="PROD_DashboardRow" msprop:Generator_UserTableName="PROD_Dashboard" msprop:Generator_RowEvArgName="PROD_DashboardRowChangeEvent">
+        <xs:element name="PROD_Dashboard" msprop:Generator_TableClassName="PROD_DashboardDataTable" msprop:Generator_TableVarName="tablePROD_Dashboard" msprop:Generator_TablePropName="PROD_Dashboard" msprop:Generator_RowDeletingName="PROD_DashboardRowDeleting" msprop:Generator_RowChangingName="PROD_DashboardRowChanging" msprop:Generator_RowEvHandlerName="PROD_DashboardRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DashboardRowDeleted" msprop:Generator_UserTableName="PROD_Dashboard" msprop:Generator_RowChangedName="PROD_DashboardRowChanged" msprop:Generator_RowEvArgName="PROD_DashboardRowChangeEvent" msprop:Generator_RowClassName="PROD_DashboardRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STOCKCODE" msprop:Generator_ColumnVarNameInTable="columnSTOCKCODE" msprop:Generator_ColumnPropNameInRow="STOCKCODE" msprop:Generator_ColumnPropNameInTable="STOCKCODEColumn" msprop:Generator_UserColumnName="STOCKCODE" minOccurs="0">
@@ -3096,7 +3106,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_SALESHEADER" msprop:Generator_TableClassName="PROD_SALESHEADERDataTable" msprop:Generator_TableVarName="tablePROD_SALESHEADER" msprop:Generator_TablePropName="PROD_SALESHEADER" msprop:Generator_RowDeletingName="PROD_SALESHEADERRowDeleting" msprop:Generator_RowChangingName="PROD_SALESHEADERRowChanging" msprop:Generator_RowEvHandlerName="PROD_SALESHEADERRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_SALESHEADERRowDeleted" msprop:Generator_UserTableName="PROD_SALESHEADER" msprop:Generator_RowChangedName="PROD_SALESHEADERRowChanged" msprop:Generator_RowEvArgName="PROD_SALESHEADERRowChangeEvent" msprop:Generator_RowClassName="PROD_SALESHEADERRow">
+        <xs:element name="PROD_SALESHEADER" msprop:Generator_TableClassName="PROD_SALESHEADERDataTable" msprop:Generator_TableVarName="tablePROD_SALESHEADER" msprop:Generator_RowChangedName="PROD_SALESHEADERRowChanged" msprop:Generator_TablePropName="PROD_SALESHEADER" msprop:Generator_RowDeletingName="PROD_SALESHEADERRowDeleting" msprop:Generator_RowChangingName="PROD_SALESHEADERRowChanging" msprop:Generator_RowEvHandlerName="PROD_SALESHEADERRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_SALESHEADERRowDeleted" msprop:Generator_RowClassName="PROD_SALESHEADERRow" msprop:Generator_UserTableName="PROD_SALESHEADER" msprop:Generator_RowEvArgName="PROD_SALESHEADERRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Order_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnOrder_Date" msprop:Generator_ColumnPropNameInRow="Order_Date" msprop:Generator_ColumnPropNameInTable="Order_DateColumn" msprop:Generator_UserColumnName="Order Date" type="xs:dateTime" minOccurs="0" />
@@ -3126,7 +3136,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_DRAWING" msprop:Generator_TableClassName="PROD_DRAWINGDataTable" msprop:Generator_TableVarName="tablePROD_DRAWING" msprop:Generator_RowChangedName="PROD_DRAWINGRowChanged" msprop:Generator_TablePropName="PROD_DRAWING" msprop:Generator_RowDeletingName="PROD_DRAWINGRowDeleting" msprop:Generator_RowChangingName="PROD_DRAWINGRowChanging" msprop:Generator_RowEvHandlerName="PROD_DRAWINGRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DRAWINGRowDeleted" msprop:Generator_RowClassName="PROD_DRAWINGRow" msprop:Generator_UserTableName="PROD_DRAWING" msprop:Generator_RowEvArgName="PROD_DRAWINGRowChangeEvent">
+        <xs:element name="PROD_DRAWING" msprop:Generator_TableClassName="PROD_DRAWINGDataTable" msprop:Generator_TableVarName="tablePROD_DRAWING" msprop:Generator_TablePropName="PROD_DRAWING" msprop:Generator_RowDeletingName="PROD_DRAWINGRowDeleting" msprop:Generator_RowChangingName="PROD_DRAWINGRowChanging" msprop:Generator_RowEvHandlerName="PROD_DRAWINGRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DRAWINGRowDeleted" msprop:Generator_UserTableName="PROD_DRAWING" msprop:Generator_RowChangedName="PROD_DRAWINGRowChanged" msprop:Generator_RowEvArgName="PROD_DRAWINGRowChangeEvent" msprop:Generator_RowClassName="PROD_DRAWINGRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Drawing" msprop:Generator_ColumnVarNameInTable="columnDrawing" msprop:Generator_ColumnPropNameInRow="Drawing" msprop:Generator_ColumnPropNameInTable="DrawingColumn" msprop:Generator_UserColumnName="Drawing">
@@ -3139,7 +3149,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_DIVISIONREF" msprop:Generator_TableClassName="PROD_DIVISIONREFDataTable" msprop:Generator_TableVarName="tablePROD_DIVISIONREF" msprop:Generator_RowChangedName="PROD_DIVISIONREFRowChanged" msprop:Generator_TablePropName="PROD_DIVISIONREF" msprop:Generator_RowDeletingName="PROD_DIVISIONREFRowDeleting" msprop:Generator_RowChangingName="PROD_DIVISIONREFRowChanging" msprop:Generator_RowEvHandlerName="PROD_DIVISIONREFRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DIVISIONREFRowDeleted" msprop:Generator_RowClassName="PROD_DIVISIONREFRow" msprop:Generator_UserTableName="PROD_DIVISIONREF" msprop:Generator_RowEvArgName="PROD_DIVISIONREFRowChangeEvent">
+        <xs:element name="PROD_DIVISIONREF" msprop:Generator_TableClassName="PROD_DIVISIONREFDataTable" msprop:Generator_TableVarName="tablePROD_DIVISIONREF" msprop:Generator_TablePropName="PROD_DIVISIONREF" msprop:Generator_RowDeletingName="PROD_DIVISIONREFRowDeleting" msprop:Generator_RowChangingName="PROD_DIVISIONREFRowChanging" msprop:Generator_RowEvHandlerName="PROD_DIVISIONREFRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DIVISIONREFRowDeleted" msprop:Generator_UserTableName="PROD_DIVISIONREF" msprop:Generator_RowChangedName="PROD_DIVISIONREFRowChanged" msprop:Generator_RowEvArgName="PROD_DIVISIONREFRowChangeEvent" msprop:Generator_RowClassName="PROD_DIVISIONREFRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STOCKITEM" msprop:Generator_ColumnVarNameInTable="columnSTOCKITEM" msprop:Generator_ColumnPropNameInRow="STOCKITEM" msprop:Generator_ColumnPropNameInTable="STOCKITEMColumn" msprop:Generator_UserColumnName="STOCKITEM" minOccurs="0">
@@ -3160,7 +3170,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_DIVISIONS" msprop:Generator_TableClassName="PROD_DIVISIONSDataTable" msprop:Generator_TableVarName="tablePROD_DIVISIONS" msprop:Generator_RowChangedName="PROD_DIVISIONSRowChanged" msprop:Generator_TablePropName="PROD_DIVISIONS" msprop:Generator_RowDeletingName="PROD_DIVISIONSRowDeleting" msprop:Generator_RowChangingName="PROD_DIVISIONSRowChanging" msprop:Generator_RowEvHandlerName="PROD_DIVISIONSRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DIVISIONSRowDeleted" msprop:Generator_RowClassName="PROD_DIVISIONSRow" msprop:Generator_UserTableName="PROD_DIVISIONS" msprop:Generator_RowEvArgName="PROD_DIVISIONSRowChangeEvent">
+        <xs:element name="PROD_DIVISIONS" msprop:Generator_TableClassName="PROD_DIVISIONSDataTable" msprop:Generator_TableVarName="tablePROD_DIVISIONS" msprop:Generator_TablePropName="PROD_DIVISIONS" msprop:Generator_RowDeletingName="PROD_DIVISIONSRowDeleting" msprop:Generator_RowChangingName="PROD_DIVISIONSRowChanging" msprop:Generator_RowEvHandlerName="PROD_DIVISIONSRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_DIVISIONSRowDeleted" msprop:Generator_UserTableName="PROD_DIVISIONS" msprop:Generator_RowChangedName="PROD_DIVISIONSRowChanged" msprop:Generator_RowEvArgName="PROD_DIVISIONSRowChangeEvent" msprop:Generator_RowClassName="PROD_DIVISIONSRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DEVISIONID" msprop:Generator_ColumnVarNameInTable="columnDEVISIONID" msprop:Generator_ColumnPropNameInRow="DEVISIONID" msprop:Generator_ColumnPropNameInTable="DEVISIONIDColumn" msprop:Generator_UserColumnName="DEVISIONID">
@@ -3180,7 +3190,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_JobCardView" msprop:Generator_TableClassName="PROD_JobCardViewDataTable" msprop:Generator_TableVarName="tablePROD_JobCardView" msprop:Generator_TablePropName="PROD_JobCardView" msprop:Generator_RowDeletingName="PROD_JobCardViewRowDeleting" msprop:Generator_RowChangingName="PROD_JobCardViewRowChanging" msprop:Generator_RowEvHandlerName="PROD_JobCardViewRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_JobCardViewRowDeleted" msprop:Generator_UserTableName="PROD_JobCardView" msprop:Generator_RowChangedName="PROD_JobCardViewRowChanged" msprop:Generator_RowEvArgName="PROD_JobCardViewRowChangeEvent" msprop:Generator_RowClassName="PROD_JobCardViewRow">
+        <xs:element name="PROD_JobCardView" msprop:Generator_TableClassName="PROD_JobCardViewDataTable" msprop:Generator_TableVarName="tablePROD_JobCardView" msprop:Generator_RowChangedName="PROD_JobCardViewRowChanged" msprop:Generator_TablePropName="PROD_JobCardView" msprop:Generator_RowDeletingName="PROD_JobCardViewRowDeleting" msprop:Generator_RowChangingName="PROD_JobCardViewRowChanging" msprop:Generator_RowEvHandlerName="PROD_JobCardViewRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_JobCardViewRowDeleted" msprop:Generator_RowClassName="PROD_JobCardViewRow" msprop:Generator_UserTableName="PROD_JobCardView" msprop:Generator_RowEvArgName="PROD_JobCardViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STOCKCODE" msprop:Generator_ColumnVarNameInTable="columnSTOCKCODE" msprop:Generator_ColumnPropNameInRow="STOCKCODE" msprop:Generator_ColumnPropNameInTable="STOCKCODEColumn" msprop:Generator_UserColumnName="STOCKCODE" minOccurs="0">
@@ -3376,7 +3386,7 @@ FROM            OperationMaster</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PROD_STAFF" msprop:Generator_TableClassName="PROD_STAFFDataTable" msprop:Generator_TableVarName="tablePROD_STAFF" msprop:Generator_TablePropName="PROD_STAFF" msprop:Generator_RowDeletingName="PROD_STAFFRowDeleting" msprop:Generator_RowChangingName="PROD_STAFFRowChanging" msprop:Generator_RowEvHandlerName="PROD_STAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_STAFFRowDeleted" msprop:Generator_UserTableName="PROD_STAFF" msprop:Generator_RowChangedName="PROD_STAFFRowChanged" msprop:Generator_RowEvArgName="PROD_STAFFRowChangeEvent" msprop:Generator_RowClassName="PROD_STAFFRow">
+        <xs:element name="PROD_STAFF" msprop:Generator_TableClassName="PROD_STAFFDataTable" msprop:Generator_TableVarName="tablePROD_STAFF" msprop:Generator_RowChangedName="PROD_STAFFRowChanged" msprop:Generator_TablePropName="PROD_STAFF" msprop:Generator_RowDeletingName="PROD_STAFFRowDeleting" msprop:Generator_RowChangingName="PROD_STAFFRowChanging" msprop:Generator_RowEvHandlerName="PROD_STAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="PROD_STAFFRowDeleted" msprop:Generator_RowClassName="PROD_STAFFRow" msprop:Generator_UserTableName="PROD_STAFF" msprop:Generator_RowEvArgName="PROD_STAFFRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" minOccurs="0">

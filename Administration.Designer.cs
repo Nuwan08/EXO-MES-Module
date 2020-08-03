@@ -34,15 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administration));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SubFormGrid = new System.Windows.Forms.DataGridView();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sTAFFBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mESDataSet = new EXO_MES_Module.MESDataSet();
-            this.userRoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pRODSTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.staffTableAdapter1 = new EXO_MES_Module.MESDataSetTableAdapters.STAFFTableAdapter();
@@ -59,16 +55,24 @@
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.pROD_STAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_STAFFTableAdapter();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.userRoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.SubFormGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODSTAFFBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
             this.toolStrip.SuspendLayout();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // SubFormGrid
             // 
+            this.SubFormGrid.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
@@ -128,17 +132,6 @@
             this.SubFormGrid.TabIndex = 16;
             this.SubFormGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SubFormGrid_CellContentClick);
             // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.DataSource = this.sTAFFBindingSource1;
-            this.userIDDataGridViewTextBoxColumn.DisplayMember = "NAME";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.userIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.userIDDataGridViewTextBoxColumn.ValueMember = "NAME";
-            // 
             // sTAFFBindingSource1
             // 
             this.sTAFFBindingSource1.DataMember = "STAFF";
@@ -148,35 +141,6 @@
             // 
             this.mESDataSet.DataSetName = "MESDataSet";
             this.mESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userRoleDataGridViewTextBoxColumn
-            // 
-            this.userRoleDataGridViewTextBoxColumn.DataPropertyName = "UserRole";
-            this.userRoleDataGridViewTextBoxColumn.HeaderText = "UserRole";
-            this.userRoleDataGridViewTextBoxColumn.Items.AddRange(new object[] {
-            "Admin",
-            "Production Manager",
-            "Production Planner",
-            "Staff",
-            "Team Member"});
-            this.userRoleDataGridViewTextBoxColumn.Name = "userRoleDataGridViewTextBoxColumn";
-            this.userRoleDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.userRoleDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            dataGridViewCellStyle3.Format = "*******";
-            dataGridViewCellStyle3.NullValue = null;
-            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // enableDataGridViewCheckBoxColumn
-            // 
-            this.enableDataGridViewCheckBoxColumn.DataPropertyName = "Enable";
-            this.enableDataGridViewCheckBoxColumn.HeaderText = "Enable";
-            this.enableDataGridViewCheckBoxColumn.Name = "enableDataGridViewCheckBoxColumn";
             // 
             // pRODSTAFFBindingSource
             // 
@@ -248,6 +212,7 @@
             this.InsertData.Size = new System.Drawing.Size(23, 22);
             this.InsertData.Text = "Add New Raw";
             this.InsertData.ToolTipText = "Add New Raw";
+            this.InsertData.Click += new System.EventHandler(this.InsertData_Click);
             // 
             // Save
             // 
@@ -325,11 +290,70 @@
             // 
             this.pROD_STAFFTableAdapter.ClearBeforeFill = true;
             // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            this.userIDDataGridViewTextBoxColumn.DataSource = this.sTAFFBindingSource;
+            this.userIDDataGridViewTextBoxColumn.DisplayMember = "NAME";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.userIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.userIDDataGridViewTextBoxColumn.ValueMember = "NAME";
+            // 
+            // userRoleDataGridViewTextBoxColumn
+            // 
+            this.userRoleDataGridViewTextBoxColumn.DataPropertyName = "UserRole";
+            this.userRoleDataGridViewTextBoxColumn.HeaderText = "UserRole";
+            this.userRoleDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "Admin",
+            "Production Manager",
+            "Production Planner",
+            "Staff",
+            "Team Member"});
+            this.userRoleDataGridViewTextBoxColumn.Name = "userRoleDataGridViewTextBoxColumn";
+            this.userRoleDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.userRoleDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            dataGridViewCellStyle3.Format = "*******";
+            dataGridViewCellStyle3.NullValue = null;
+            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // enableDataGridViewCheckBoxColumn
+            // 
+            this.enableDataGridViewCheckBoxColumn.DataPropertyName = "Enable";
+            this.enableDataGridViewCheckBoxColumn.HeaderText = "Enable";
+            this.enableDataGridViewCheckBoxColumn.Name = "enableDataGridViewCheckBoxColumn";
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(111, 25);
+            this.fillByToolStrip.TabIndex = 18;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
             // Administration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.SubFormGrid);
             this.Controls.Add(this.toolStrip);
             this.Name = "Administration";
@@ -342,6 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +398,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn userRoleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn enableDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
