@@ -45,7 +45,7 @@ namespace EXO_MES_Module
             }
             else
             {
-                StrSQL = "Select ID from PROD_Staff where password = '" + textPass.Text + "' and UserId = '" + TxtUserID.Text + "'";
+                StrSQL = "Select ID from PROD_Staff where ENABLE =1 and password = '" + textPass.Text + "' and UserId = '" + TxtUserID.Text + "'";
                 StrSqltable = "PROD_STAFF";
                 dbDataSet = db.ConnectDataSet(StrSQL, StrSqltable);
                 datatable = dbDataSet.Tables[StrSqltable];
