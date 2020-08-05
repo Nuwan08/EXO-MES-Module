@@ -1477,7 +1477,7 @@ namespace EXO_MES_Module
             // OrderDate
             // 
             this.OrderDate.DataPropertyName = "OrderDate";
-            dataGridViewCellStyle4.Format = "D";
+            dataGridViewCellStyle4.Format = "dd-MMM-yyyy";
             dataGridViewCellStyle4.NullValue = null;
             this.OrderDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.OrderDate.Frozen = true;
@@ -1489,7 +1489,7 @@ namespace EXO_MES_Module
             // DueDate
             // 
             this.DueDate.DataPropertyName = "DueDate";
-            dataGridViewCellStyle5.Format = "D";
+            dataGridViewCellStyle5.Format = "dd-MMM-yyyy";
             dataGridViewCellStyle5.NullValue = null;
             this.DueDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.DueDate.Frozen = true;
@@ -1502,7 +1502,7 @@ namespace EXO_MES_Module
             // 
             this.PlanProductionDate.DataPropertyName = "PlanProductionDate";
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle6.Format = "D";
+            dataGridViewCellStyle6.Format = "dd-MMM-yyyy";
             dataGridViewCellStyle6.NullValue = null;
             this.PlanProductionDate.DefaultCellStyle = dataGridViewCellStyle6;
             this.PlanProductionDate.Frozen = true;
@@ -1524,7 +1524,7 @@ namespace EXO_MES_Module
             // ProductionStartDate
             // 
             this.ProductionStartDate.DataPropertyName = "ProductionStartDate";
-            dataGridViewCellStyle7.Format = "f";
+            dataGridViewCellStyle7.Format = "dd-MMM-yyyy";
             dataGridViewCellStyle7.NullValue = null;
             this.ProductionStartDate.DefaultCellStyle = dataGridViewCellStyle7;
             this.ProductionStartDate.HeaderText = "Production Start";
@@ -1534,7 +1534,7 @@ namespace EXO_MES_Module
             // ProductionComplete
             // 
             this.ProductionComplete.DataPropertyName = "ProductionComplete";
-            dataGridViewCellStyle8.Format = "f";
+            dataGridViewCellStyle8.Format = "dd-MMM-yyyy";
             dataGridViewCellStyle8.NullValue = null;
             this.ProductionComplete.DefaultCellStyle = dataGridViewCellStyle8;
             this.ProductionComplete.HeaderText = "End Production";

@@ -23,12 +23,14 @@ namespace EXO_MES_Module
         private int currRecord;
         private SqlConnection conn;
 
+
+
+
         public ExoJobOrder( int SEQNO )
         {
             InitializeComponent();
             TxtOrderId.Text= SEQNO.ToString();
-            tabControl1.TabPages.Remove(Summary);
-            tabControl1.TabPages.Remove(Operations);
+           
             Save_Chanages = false;
            // soSeqNoToolStripTextBox.Text = SEQNO.ToString();
             this.Text = "Production Order " + TxtOrderId.Text;
@@ -90,6 +92,64 @@ namespace EXO_MES_Module
             { richTextBox2.Visible = false; }
         }
 
+
+        public void GrantAccess(string UID)
+        {
+            db = new dbConnectionMyob();
+            StrSQL = "Select Sysadmin,ProdCapacitiyPlan,JobCosting,SalesModule from PROD_Staff where ID = '" + UID + "'";
+            StrSqltable = "PROD_STAFF";
+            dbDataSet = db.ConnectDataSet(StrSQL, StrSqltable);
+            datatable = dbDataSet.Tables[StrSqltable];
+
+            if (datatable.Rows.Count > 0)
+            {
+
+                int jobcost = 0;
+                int devision = 0;
+                int Sales = 0;
+                
+                // Sys admin.....
+                if (datatable.Rows[0][0].Equals(true))
+                {
+                    jobcost = 1;
+                    devision = 1;
+                    Sales = 1;
+                }
+                else if (datatable.Rows[0][1].Equals(true))
+                {
+                    devision = 1;
+                }
+                else if (datatable.Rows[0][2].Equals(true))
+                {
+                    jobcost = 1;
+                }
+                else if (datatable.Rows[0][3].Equals(true))
+                {
+                    Sales = 1;
+                }
+
+
+                if (jobcost == 0)
+                {
+                    tabControl1.TabPages.Remove(Summary);
+                    
+                }
+
+                if (devision == 0)
+                {
+                    
+                    tabControl1.TabPages.Remove(Operations);
+                }
+
+                if (Sales == 0)
+                {
+
+                    tabControl1.TabPages.Remove(Setup);
+                }
+
+            }
+
+        }
 
         public void FillControlers(int currentRec, bool PramerterFlag)
         {

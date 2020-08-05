@@ -30,10 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administration));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Navigetor = new System.Windows.Forms.ToolStripButton();
             this.Search = new System.Windows.Forms.ToolStripButton();
             this.InsertData = new System.Windows.Forms.ToolStripButton();
@@ -42,6 +40,8 @@
             this.NewIndex = new System.Windows.Forms.ToolStripButton();
             this.DeleteRecord = new System.Windows.Forms.ToolStripButton();
             this.GridView = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pRODSTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mESDataSet = new EXO_MES_Module.MESDataSet();
             this.pROD_STAFFTableAdapter = new EXO_MES_Module.MESDataSetTableAdapters.PROD_STAFFTableAdapter();
@@ -51,8 +51,6 @@
             this.enableDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SysAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.salesModuleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.prodDashboardDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.divisionDashboardDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.prodCapacitiyPlanDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.jobCostingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.jobCostSalesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -87,40 +85,6 @@
             this.toolStrip.TabIndex = 10;
             this.toolStrip.Text = "Main Menu";
             this.toolStrip.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270;
-            // 
-            // toolStripSeparator16
-            // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
-            this.toolStripSeparator16.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.nAMEDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.enableDataGridViewCheckBoxColumn,
-            this.SysAdmin,
-            this.salesModuleDataGridViewCheckBoxColumn,
-            this.prodDashboardDataGridViewCheckBoxColumn,
-            this.divisionDashboardDataGridViewCheckBoxColumn,
-            this.prodCapacitiyPlanDataGridViewCheckBoxColumn,
-            this.jobCostingDataGridViewCheckBoxColumn,
-            this.jobCostSalesDataGridViewCheckBoxColumn,
-            this.jobCostGPDataGridViewCheckBoxColumn,
-            this.jobCostCostDataGridViewCheckBoxColumn,
-            this.iDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pRODSTAFFBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 425);
-            this.dataGridView1.TabIndex = 11;
             // 
             // Navigetor
             // 
@@ -206,6 +170,38 @@
             this.GridView.Size = new System.Drawing.Size(23, 22);
             this.GridView.Click += new System.EventHandler(this.GridView_Click_1);
             // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator16.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.nAMEDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.enableDataGridViewCheckBoxColumn,
+            this.SysAdmin,
+            this.salesModuleDataGridViewCheckBoxColumn,
+            this.prodCapacitiyPlanDataGridViewCheckBoxColumn,
+            this.jobCostingDataGridViewCheckBoxColumn,
+            this.jobCostSalesDataGridViewCheckBoxColumn,
+            this.jobCostGPDataGridViewCheckBoxColumn,
+            this.jobCostCostDataGridViewCheckBoxColumn,
+            this.iDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.pRODSTAFFBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(800, 425);
+            this.dataGridView1.TabIndex = 11;
+            // 
             // pRODSTAFFBindingSource
             // 
             this.pRODSTAFFBindingSource.DataMember = "PROD_STAFF";
@@ -237,11 +233,11 @@
             // passwordDataGridViewTextBoxColumn
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.Format = "****";
-            dataGridViewCellStyle2.NullValue = "****";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Format = "****";
+            dataGridViewCellStyle1.NullValue = "****";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
@@ -263,28 +259,16 @@
             this.salesModuleDataGridViewCheckBoxColumn.HeaderText = "Sales Module";
             this.salesModuleDataGridViewCheckBoxColumn.Name = "salesModuleDataGridViewCheckBoxColumn";
             // 
-            // prodDashboardDataGridViewCheckBoxColumn
-            // 
-            this.prodDashboardDataGridViewCheckBoxColumn.DataPropertyName = "ProdDashboard";
-            this.prodDashboardDataGridViewCheckBoxColumn.HeaderText = "Main Dashboard";
-            this.prodDashboardDataGridViewCheckBoxColumn.Name = "prodDashboardDataGridViewCheckBoxColumn";
-            // 
-            // divisionDashboardDataGridViewCheckBoxColumn
-            // 
-            this.divisionDashboardDataGridViewCheckBoxColumn.DataPropertyName = "DivisionDashboard";
-            this.divisionDashboardDataGridViewCheckBoxColumn.HeaderText = "Division Dashbord";
-            this.divisionDashboardDataGridViewCheckBoxColumn.Name = "divisionDashboardDataGridViewCheckBoxColumn";
-            // 
             // prodCapacitiyPlanDataGridViewCheckBoxColumn
             // 
             this.prodCapacitiyPlanDataGridViewCheckBoxColumn.DataPropertyName = "ProdCapacitiyPlan";
-            this.prodCapacitiyPlanDataGridViewCheckBoxColumn.HeaderText = "Assign Worker";
+            this.prodCapacitiyPlanDataGridViewCheckBoxColumn.HeaderText = "Assign Worker Module";
             this.prodCapacitiyPlanDataGridViewCheckBoxColumn.Name = "prodCapacitiyPlanDataGridViewCheckBoxColumn";
             // 
             // jobCostingDataGridViewCheckBoxColumn
             // 
             this.jobCostingDataGridViewCheckBoxColumn.DataPropertyName = "JobCosting";
-            this.jobCostingDataGridViewCheckBoxColumn.HeaderText = "Job Costing";
+            this.jobCostingDataGridViewCheckBoxColumn.HeaderText = "Job Costing Module";
             this.jobCostingDataGridViewCheckBoxColumn.Name = "jobCostingDataGridViewCheckBoxColumn";
             // 
             // jobCostSalesDataGridViewCheckBoxColumn
@@ -355,8 +339,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn enableDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn SysAdmin;
         private System.Windows.Forms.DataGridViewCheckBoxColumn salesModuleDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn prodDashboardDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn divisionDashboardDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn prodCapacitiyPlanDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn jobCostingDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn jobCostSalesDataGridViewCheckBoxColumn;
